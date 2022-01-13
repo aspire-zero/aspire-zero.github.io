@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="（一）一群小青蛙呱蹦呱蹦呱, Hexo,HTML,CSS">
+    <meta name="keywords" content="笨拙的手指, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>（一）一群小青蛙呱蹦呱蹦呱 | 你的姜小白</title>
+    <title>笨拙的手指 | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">（一）一群小青蛙呱蹦呱蹦呱</h1>
+                    <h1 class="description center-align post-title">笨拙的手指</h1>
                 </div>
             </div>
         </div>
@@ -373,14 +373,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BC%96%E7%A8%8B%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">编程算法</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -389,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-01
+                    2022-01-13
                 </div>
                 
 
@@ -410,24 +419,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/9981/J">https://ac.nowcoder.com/acm/contest/9981/J</a><br>来源：牛客网</p>
-<p>有n个格子，每个格子里有一个数，1,2,3,4…n   </p>
-<p>   牛牛放出<strong>无穷</strong>只青蛙。   </p>
-<p>   第一只青蛙的路线是：1-&gt;2-&gt;4-&gt;8-&gt;16-&gt;….   </p>
-<p>   第二只青蛙的路线是：1-&gt;3-&gt;9-&gt;27-&gt;81-&gt;….   </p>
-<p>   第三只青蛙的路线是：1-&gt;5-&gt;25-&gt;125….   </p>
-<p>   第四只青蛙的路线是：1-&gt;7-&gt;49……..   </p>
-<p>   。。。。。。   </p>
-<p>   用数学语言描述，第 i只青蛙的路线是首项为1，公比为p(i)的等比数列，其中p(i)代表第个素数。   </p>
-<p>   当青蛙跳到一个格子上，如果这个格子上面有一个数，青蛙就会把这个数吃掉。   </p>
-<p>   牛牛想知道，所有<strong>没有被</strong>吃掉的数的lcm（最小公倍数 ，Least common multiple）是多少？   </p>
-<p>   由于这个lcm可能非常大，请输出它对10<sup>9</sup> + 7取模的值。</p>
-<h4 id="输入描述："><a href="#输入描述：" class="headerlink" title="输入描述："></a>输入描述：</h4><p>一个整数n</p>
-<p>1 &lt;= n &lt;= 1.6 * 10<sup>8</sup></p>
-<h4 id="输出描述："><a href="#输出描述：" class="headerlink" title="输出描述："></a>输出描述：</h4><p>如果所有数都被吃掉了，请输出一个字符串”empty”</p>
-<p>否则输出所有没有被吃掉的数的lcm，对模10<sup>9</sup> + 7</p>
-<h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h5><p><img src="/2021/03/01/yi-qun-xiao-qing-wa-gu-beng-gu-beng-gu/silu.png" style="zoom: 67%;"></p>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI acos(-1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mset(s, _) memset(s, _, sizeof(s))</span></span><br><span class="line"><span class="comment">//#define lo</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">coutx</span><span class="params">(<span class="keyword">double</span> q, <span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="comment">//cout.setf(ios::fixed);</span></span><br><span class="line">	<span class="comment">//cout.unsetf(ios::fixed);</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; fixed &lt;&lt; setprecision(x) &lt;&lt; q &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">ksc</span><span class="params">(ll x, ll y, ll mod)</span><span class="comment">//快速乘</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> ( x * y - (ll) ( (<span class="keyword">long</span> <span class="keyword">double</span>) x / mod*y )*mod + mod ) % mod;</span><br><span class="line">}</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> b==<span class="number">0</span>?a:gcd(b,a%b);</span><br><span class="line">}</span><br><span class="line"><span class="function">ll <span class="title">lcm</span><span class="params">(ll a,ll b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> a/gcd(a,b)*b;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod1 = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">8e7</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">bool</span> isprime[N];</span><br><span class="line">ll vis[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sieve</span><span class="params">(<span class="keyword">int</span> n)</span><span class="comment">//线性筛</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	isprime[<span class="number">0</span>] = isprime[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i ++)</span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">if</span>(!isprime[i])		vis[ ++ cnt] = i;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * vis[j] &lt;= n; j ++)</span><br><span class="line">		{</span><br><span class="line">			isprime[i * vis[j]] = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span>(i % vis[j] == <span class="number">0</span>)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		}	</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> cnt;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">log</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	ll res = <span class="number">0</span>;</span><br><span class="line">	ll t = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(t &lt;= m)</span><br><span class="line">	{</span><br><span class="line">		t *= n;</span><br><span class="line">		res ++;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> res - <span class="number">1</span>;</span><br><span class="line">}</span><br><span class="line"><span class="function">ll <span class="title">poww</span><span class="params">(ll a, ll b)</span><span class="comment">//快速幂</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	ll ans = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(b)</span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">if</span>(b &amp; <span class="number">1</span>) </span><br><span class="line">			ans = ksc(ans, a, mod1) % mod1;</span><br><span class="line">		a = ksc(a, a, mod1) % mod1;</span><br><span class="line">		a %= mod1;</span><br><span class="line">		b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		ans %= mod1;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> ans % mod1;</span><br><span class="line"> } </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">ifdef</span> lo</span></span><br><span class="line">	 freopen(<span class="string">"data.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	 freopen(<span class="string">"data.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	srand((<span class="keyword">unsigned</span> <span class="keyword">int</span>)time(<span class="number">0</span>));</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">int</span> n, cnt;</span><br><span class="line">	ll ans;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">if</span>(n &lt;= <span class="number">5</span>)</span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"empty"</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	}</span><br><span class="line">	cnt = sieve(n / <span class="number">2</span>);</span><br><span class="line">	ans = poww(<span class="number">2</span>, <span class="built_in">log</span>(<span class="number">2</span>, n / <span class="number">3</span>));</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= cnt; i ++)</span><br><span class="line">	{</span><br><span class="line">		ans = (ans % mod1) * poww(vis[i], <span class="built_in">log</span>(vis[i], n / <span class="number">2</span>));</span><br><span class="line">		ans %= mod1;</span><br><span class="line">	}</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans % mod1;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> }</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+                <h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>奶牛贝茜正在学习如何在不同进制之间转换数字。</p>
+<p>但是她总是犯错误，因为她无法轻易的用两个前蹄握住笔。</p>
+<p>每当贝茜将数字转换为一个新的进制并写下结果时，她总是将其中的某一位数字写错。</p>
+<p>例如，如果她将数字 $14$ 转换为二进制数，那么正确的结果应为$ 11101110$，但她可能会写下 $01100110 或 11111111$。</p>
+<p>贝茜不会额外添加或删除数字，但是可能会由于写错数字的原因，写下包含前导 00 的数字。</p>
+<p>给定贝茜将数字 $N$ 转换为二进制数字以及三进制数字的结果，请确定 $N$ 的正确初始值（十进制表示）。</p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>进行枚举，枚举每位出错，然后对比出错后两者是否相等。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">import</span> java.lang.Math;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">work</span><span class="params">(String a, String b)</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">int</span> la = a.length();</span><br><span class="line">        <span class="keyword">int</span> lb = b.length();</span><br><span class="line">        <span class="keyword">char</span>[] sa = a.toCharArray();</span><br><span class="line">        <span class="keyword">char</span>[] sb = b.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; la; i ++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">char</span> qa = sa[i];</span><br><span class="line">            <span class="keyword">if</span>(sa[i] == <span class="string">'0'</span>)</span><br><span class="line">                sa[i] = <span class="string">'1'</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                sa[i] = <span class="string">'0'</span>;</span><br><span class="line">            String a1 = <span class="keyword">new</span> String(sa);</span><br><span class="line">            <span class="keyword">int</span> na = Integer.parseInt(a1, <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; lb; j ++)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">char</span> qb = sb[j];</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">char</span> k = <span class="string">'0'</span>; k &lt;= <span class="string">'2'</span>; k ++)</span><br><span class="line">                {    </span><br><span class="line">                    <span class="keyword">if</span>(k != qb)</span><br><span class="line">                    {</span><br><span class="line">                        sb[j] = k;</span><br><span class="line">                        String b1 = <span class="keyword">new</span> String(sb);</span><br><span class="line">                        <span class="keyword">int</span> nb = Integer.parseInt(b1, <span class="number">3</span>);</span><br><span class="line">                        <span class="keyword">if</span>(na == nb)</span><br><span class="line">                            <span class="keyword">return</span> na;</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                sb[j] = qb;</span><br><span class="line">            }</span><br><span class="line">            sa[i] = qa;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String s,s1;</span><br><span class="line">        s = in.next();</span><br><span class="line">        s1 = in.next();</span><br><span class="line">        <span class="keyword">int</span> ans = work(s, s1);</span><br><span class="line">        System.out.printf(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -454,7 +453,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2021/03/01/yi-qun-xiao-qing-wa-gu-beng-gu-beng-gu/">http://aspire-zero.github.io/2021/03/01/yi-qun-xiao-qing-wa-gu-beng-gu-beng-gu/</a>
+                    <a href="http://aspire-zero.github.io/2022/01/13/ben-zhuo-de-shou-zhi/">http://aspire-zero.github.io/2022/01/13/ben-zhuo-de-shou-zhi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -492,8 +491,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BC%96%E7%A8%8B%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">编程算法</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -537,17 +536,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/11/p3599-koishi-loves-construction/">
+                <a href="/2022/01/13/ben-zhuo-de-shou-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="P3599 Koishi Loves Construction">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="笨拙的手指">
                         
-                        <span class="card-title">P3599 Koishi Loves Construction</span>
+                        <span class="card-title">笨拙的手指</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -557,16 +557,29 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            你的姜小白
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -578,13 +591,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/22/xi-huan/">
+                <a href="/2021/11/06/ubuntu-da-jian-docker-yi-ji-wordpress/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="喜欢">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Ubuntu搭建docker以及wordpress">
                         
-                        <span class="card-title">喜欢</span>
+                        <span class="card-title">Ubuntu搭建docker以及wordpress</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -595,16 +608,12 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-06
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%96%9C%E6%AC%A2/" class="post-category">
-                                    喜欢
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            你的姜小白
                             
                         </span>
                     </div>
@@ -612,8 +621,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%96%9C%E6%AC%A2/">
-                        <span class="chip bg-color">喜欢</span>
+                    <a href="/tags/%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">搭建教程</span>
                     </a>
                     
                 </div>
