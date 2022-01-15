@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="笨拙的手指, Hexo,HTML,CSS">
+    <meta name="keywords" content="粉刷栅栏, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>笨拙的手指 | 你的姜小白</title>
+    <title>粉刷栅栏 | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">笨拙的手指</h1>
+                    <h1 class="description center-align post-title">粉刷栅栏</h1>
                 </div>
             </div>
         </div>
@@ -398,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-13
+                    2022-01-15
                 </div>
                 
 
@@ -419,14 +419,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>奶牛贝茜正在学习如何在不同进制之间转换数字。</p>
-<p>但是她总是犯错误，因为她无法轻易的用两个前蹄握住笔。</p>
-<p>每当贝茜将数字转换为一个新的进制并写下结果时，她总是将其中的某一位数字写错。</p>
-<p>例如，如果她将数字 $14$ 转换为二进制数，那么正确的结果应为$ 11101110$，但她可能会写下 $01100110 或 11111111$。</p>
-<p>贝茜不会额外添加或删除数字，但是可能会由于写错数字的原因，写下包含前导 00 的数字。</p>
-<p>给定贝茜将数字 $N$ 转换为二进制数字以及三进制数字的结果，请确定 $N$ 的正确初始值（十进制表示）。</p>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>进行枚举，枚举每位出错，然后对比出错后两者是否相等。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">import</span> java.lang.Math;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">work</span><span class="params">(String a, String b)</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">int</span> la = a.length();</span><br><span class="line">        <span class="keyword">int</span> lb = b.length();</span><br><span class="line">        <span class="keyword">char</span>[] sa = a.toCharArray();</span><br><span class="line">        <span class="keyword">char</span>[] sb = b.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; la; i ++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">char</span> qa = sa[i];</span><br><span class="line">            <span class="keyword">if</span>(sa[i] == <span class="string">'0'</span>)</span><br><span class="line">                sa[i] = <span class="string">'1'</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                sa[i] = <span class="string">'0'</span>;</span><br><span class="line">            String a1 = <span class="keyword">new</span> String(sa);</span><br><span class="line">            <span class="keyword">int</span> na = Integer.parseInt(a1, <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; lb; j ++)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">char</span> qb = sb[j];</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">char</span> k = <span class="string">'0'</span>; k &lt;= <span class="string">'2'</span>; k ++)</span><br><span class="line">                {    </span><br><span class="line">                    <span class="keyword">if</span>(k != qb)</span><br><span class="line">                    {</span><br><span class="line">                        sb[j] = k;</span><br><span class="line">                        String b1 = <span class="keyword">new</span> String(sb);</span><br><span class="line">                        <span class="keyword">int</span> nb = Integer.parseInt(b1, <span class="number">3</span>);</span><br><span class="line">                        <span class="keyword">if</span>(na == nb)</span><br><span class="line">                            <span class="keyword">return</span> na;</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                sb[j] = qb;</span><br><span class="line">            }</span><br><span class="line">            sa[i] = qa;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String s,s1;</span><br><span class="line">        s = in.next();</span><br><span class="line">        s1 = in.next();</span><br><span class="line">        <span class="keyword">int</span> ans = work(s, s1);</span><br><span class="line">        System.out.printf(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>题目链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1989/">1987. 粉刷栅栏 - AcWing题库</a></p>
+<p>农夫约翰发明了一种绝妙的方法来粉刷牛棚旁边的长栅栏（把栅栏想象成一维的数轴）。</p>
+<p>他只需要在他最喜欢的奶牛贝茜身上挂一个刷子，然后在一旁悠闲的喝凉水就行了。</p>
+<p>贝茜沿着栅栏来回走动时，会将她走过的栅栏部分涂上油漆。</p>
+<p>贝茜从栅栏上的位置 0 处开始，共进行 N 次移动。</p>
+<p>移动可能形如 <code>10 L</code>，表示向左移动 10 单位距离，也可能形如 <code>15 R</code>，表示向右移动 15 单位距离。</p>
+<p>给定贝茜的 N 次移动列表，约翰想知道至少被涂抹了 2 层油漆的区域的总长度。</p>
+<p>整个行进过程中，贝茜距离出发地的距离不会超过 $10^9$。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        Map&lt;Integer,Integer&gt; m = <span class="keyword">new</span> TreeMap&lt;&gt;( (a,b) -&gt; a-b );</span><br><span class="line">        n = in.nextInt();</span><br><span class="line">        <span class="keyword">int</span> idx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">int</span> x;</span><br><span class="line">            String s;</span><br><span class="line">            x = in.nextInt();</span><br><span class="line">            s = in.next();</span><br><span class="line">            <span class="keyword">if</span>(s.equals(<span class="string">"L"</span>))</span><br><span class="line">            {</span><br><span class="line">                m.put(idx, m.getOrDefault(idx, <span class="number">0</span>) - <span class="number">1</span>);</span><br><span class="line">                idx -= x;</span><br><span class="line">                m.put(idx, m.getOrDefault(idx, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">                </span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            {</span><br><span class="line">                m.put(idx, m.getOrDefault(idx, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">                idx += x;</span><br><span class="line">                m.put(idx, m.getOrDefault(idx, <span class="number">0</span>) - <span class="number">1</span>);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">long</span> sum = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i : m.keySet())</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span>(sum &lt;= <span class="number">1</span> &amp;&amp; sum + m.get(i) &gt; <span class="number">1</span>)</span><br><span class="line">                p = i;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(sum &gt; <span class="number">1</span> &amp;&amp; sum + m.get(i) &lt;= <span class="number">1</span>)</span><br><span class="line">                ans += i - p;</span><br><span class="line">            sum += m.get(i);</span><br><span class="line">        }</span><br><span class="line">        System.out.println(ans);</span><br><span class="line">        in.close();</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">6</span></span><br><span class="line"><span class="comment">2 R</span></span><br><span class="line"><span class="comment">6 L</span></span><br><span class="line"><span class="comment">1 R</span></span><br><span class="line"><span class="comment">8 L</span></span><br><span class="line"><span class="comment">1 R</span></span><br><span class="line"><span class="comment">2 R</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -453,7 +454,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/01/13/ben-zhuo-de-shou-zhi/">http://aspire-zero.github.io/2022/01/13/ben-zhuo-de-shou-zhi/</a>
+                    <a href="http://aspire-zero.github.io/2022/01/15/fen-shua-zha-lan/">http://aspire-zero.github.io/2022/01/15/fen-shua-zha-lan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -536,9 +537,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/01/15/fen-shua-zha-lan/">
                     <div class="card-image">
@@ -556,9 +558,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -571,6 +573,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -589,13 +592,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/06/ubuntu-da-jian-docker-yi-ji-wordpress/">
+                <a href="/2022/01/13/ben-zhuo-de-shou-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Ubuntu搭建docker以及wordpress">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="笨拙的手指">
                         
-                        <span class="card-title">Ubuntu搭建docker以及wordpress</span>
+                        <span class="card-title">笨拙的手指</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -606,12 +609,16 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            你的姜小白
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -619,8 +626,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">搭建教程</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
