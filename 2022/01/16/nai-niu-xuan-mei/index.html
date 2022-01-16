@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="粉刷栅栏, Hexo,HTML,CSS">
+    <meta name="keywords" content="奶牛选美, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>粉刷栅栏 | 你的姜小白</title>
+    <title>奶牛选美 | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">粉刷栅栏</h1>
+                    <h1 class="description center-align post-title">奶牛选美</h1>
                 </div>
             </div>
         </div>
@@ -398,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-15
+                    2022-01-16
                 </div>
                 
 
@@ -419,15 +419,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>题目链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1989/">1987. 粉刷栅栏 - AcWing题库</a></p>
-<p>农夫约翰发明了一种绝妙的方法来粉刷牛棚旁边的长栅栏（把栅栏想象成一维的数轴）。</p>
-<p>他只需要在他最喜欢的奶牛贝茜身上挂一个刷子，然后在一旁悠闲的喝凉水就行了。</p>
-<p>贝茜沿着栅栏来回走动时，会将她走过的栅栏部分涂上油漆。</p>
-<p>贝茜从栅栏上的位置 0 处开始，共进行 N 次移动。</p>
-<p>移动可能形如 <code>10 L</code>，表示向左移动 10 单位距离，也可能形如 <code>15 R</code>，表示向右移动 15 单位距离。</p>
-<p>给定贝茜的 N 次移动列表，约翰想知道至少被涂抹了 2 层油漆的区域的总长度。</p>
-<p>整个行进过程中，贝茜距离出发地的距离不会超过 $10^9$。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        Map&lt;Integer,Integer&gt; m = <span class="keyword">new</span> TreeMap&lt;&gt;( (a,b) -&gt; a-b );</span><br><span class="line">        n = in.nextInt();</span><br><span class="line">        <span class="keyword">int</span> idx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">int</span> x;</span><br><span class="line">            String s;</span><br><span class="line">            x = in.nextInt();</span><br><span class="line">            s = in.next();</span><br><span class="line">            <span class="keyword">if</span>(s.equals(<span class="string">"L"</span>))</span><br><span class="line">            {</span><br><span class="line">                m.put(idx, m.getOrDefault(idx, <span class="number">0</span>) - <span class="number">1</span>);</span><br><span class="line">                idx -= x;</span><br><span class="line">                m.put(idx, m.getOrDefault(idx, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">                </span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            {</span><br><span class="line">                m.put(idx, m.getOrDefault(idx, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">                idx += x;</span><br><span class="line">                m.put(idx, m.getOrDefault(idx, <span class="number">0</span>) - <span class="number">1</span>);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">long</span> sum = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i : m.keySet())</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span>(sum &lt;= <span class="number">1</span> &amp;&amp; sum + m.get(i) &gt; <span class="number">1</span>)</span><br><span class="line">                p = i;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(sum &gt; <span class="number">1</span> &amp;&amp; sum + m.get(i) &lt;= <span class="number">1</span>)</span><br><span class="line">                ans += i - p;</span><br><span class="line">            sum += m.get(i);</span><br><span class="line">        }</span><br><span class="line">        System.out.println(ans);</span><br><span class="line">        in.close();</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">6</span></span><br><span class="line"><span class="comment">2 R</span></span><br><span class="line"><span class="comment">6 L</span></span><br><span class="line"><span class="comment">1 R</span></span><br><span class="line"><span class="comment">8 L</span></span><br><span class="line"><span class="comment">1 R</span></span><br><span class="line"><span class="comment">2 R</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="题目链接："><a href="#题目链接：" class="headerlink" title="题目链接："></a>题目链接：</h4><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/2062/">2060. 奶牛选美 - AcWing题库</a></p>
+<p>听说最近两斑点的奶牛最受欢迎，约翰立即购进了一批两斑点牛。</p>
+<p>不幸的是，时尚潮流往往变化很快，当前最受欢迎的牛变成了一斑点牛。</p>
+<p>约翰希望通过给每头奶牛涂色，使得它们身上的两个斑点能够合为一个斑点，让它们能够更加时尚。</p>
+<p>牛皮可用一个 N×M 的字符矩阵来表示，如下所示：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">................</span><br><span class="line">..XXXX....XXX...</span><br><span class="line">...XXXX....XX...</span><br><span class="line">.XXXX......XXX..</span><br><span class="line">........XXXXX...</span><br><span class="line">.........XXX....</span><br></pre></td></tr></tbody></table></figure>
+<p>其中，X 表示斑点部分。</p>
+<p>如果两个 X 在垂直或水平方向上相邻（对角相邻不算在内），则它们属于同一个斑点，由此看出上图中恰好有两个斑点。</p>
+<p>约翰牛群里<strong>所有的牛都有两个斑点</strong>。</p>
+<p>约翰希望通过使用油漆给奶牛尽可能少的区域内涂色，将两个斑点合为一个。</p>
+<p>在上面的例子中，他只需要给三个 .. 区域内涂色即可（新涂色区域用 ∗ 表示）：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">................</span><br><span class="line">..XXXX....XXX...</span><br><span class="line">...XXXX*...XX...</span><br><span class="line">.XXXX..**..XXX..</span><br><span class="line">........XXXXX...</span><br><span class="line">.........XXX....</span><br></pre></td></tr></tbody></table></figure>
+<p>请帮助约翰确定，为了使两个斑点合为一个，他需要涂色区域的最少数量。</p>
+<h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n, m;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> N = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] xx = {<span class="number">1</span>,<span class="number">0</span>,-<span class="number">1</span>,<span class="number">0</span>};</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] yy = {<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,-<span class="number">1</span>};</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">char</span>[][] s = <span class="keyword">new</span> <span class="keyword">char</span>[N][N];</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">boolean</span>[][] f = <span class="keyword">new</span> <span class="keyword">boolean</span>[N][N];</span><br><span class="line">	<span class="keyword">static</span> List&lt;node&gt;[] q = <span class="keyword">new</span> ArrayList[<span class="number">2</span>];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">node</span></span>{</span><br><span class="line">		<span class="keyword">int</span> x, y;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">node</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>{</span><br><span class="line">			<span class="keyword">this</span>.x = x;</span><br><span class="line">			<span class="keyword">this</span>.y = y;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> cnt)</span> </span>{</span><br><span class="line">		f[x][y] = <span class="keyword">true</span>;</span><br><span class="line">		q[cnt].add(<span class="keyword">new</span> node(x, y));</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> x1 = x + xx[i];</span><br><span class="line">			<span class="keyword">int</span> y1 = y + yy[i];</span><br><span class="line">			<span class="keyword">if</span>(<span class="number">0</span> &lt;= x1 &amp;&amp; x1 &lt; n &amp;&amp; <span class="number">0</span> &lt;= y1 &amp;&amp; y1 &lt; m &amp;&amp; !f[x1][y1] &amp;&amp; s[x1][y1] == <span class="string">'X'</span>)</span><br><span class="line">				bfs(x1, y1, cnt);</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		m = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; q.length; i ++)</span><br><span class="line">			q[i] = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">		{</span><br><span class="line">			String ss;</span><br><span class="line">			ss = inScanner.next();</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j ++)</span><br><span class="line">				s[i][j] = ss.charAt(j);</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j ++)</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">if</span>(!f[i][j] &amp;&amp; s[i][j] == <span class="string">'X'</span>)</span><br><span class="line">				{</span><br><span class="line">					bfs(i, j, cnt);</span><br><span class="line">					cnt ++;</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		<span class="keyword">int</span> ans = <span class="number">100000</span>;</span><br><span class="line">		<span class="keyword">for</span>(node a : q[<span class="number">0</span>])</span><br><span class="line">			<span class="keyword">for</span>(node b : q[<span class="number">1</span>])</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">int</span> t = Math.abs(a.x - b.x) + Math.abs(a.y - b.y) - <span class="number">1</span>;</span><br><span class="line">				ans = Math.min(ans, t);</span><br><span class="line">			}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment">6 16</span></span><br><span class="line"><span class="comment">................</span></span><br><span class="line"><span class="comment">..XXXX....XXX...</span></span><br><span class="line"><span class="comment">...XXXX....XX...</span></span><br><span class="line"><span class="comment">.XXXX......XXX..</span></span><br><span class="line"><span class="comment">........XXXXX...</span></span><br><span class="line"><span class="comment">.........XXX....</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -454,7 +459,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/01/15/fen-shua-zha-lan/">http://aspire-zero.github.io/2022/01/15/fen-shua-zha-lan/</a>
+                    <a href="http://aspire-zero.github.io/2022/01/16/nai-niu-xuan-mei/">http://aspire-zero.github.io/2022/01/16/nai-niu-xuan-mei/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -537,9 +542,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/01/16/nai-niu-xuan-mei/">
                     <div class="card-image">
@@ -557,9 +563,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -572,6 +578,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -590,13 +597,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/13/ben-zhuo-de-shou-zhi/">
+                <a href="/2022/01/15/fen-shua-zha-lan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="笨拙的手指">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="粉刷栅栏">
                         
-                        <span class="card-title">笨拙的手指</span>
+                        <span class="card-title">粉刷栅栏</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -607,7 +614,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-15
                             </span>
                         <span class="publish-author">
                             
