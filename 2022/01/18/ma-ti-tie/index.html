@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="贝茜放慢脚步, Hexo,HTML,CSS">
+    <meta name="keywords" content="马蹄铁, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>贝茜放慢脚步 | 你的姜小白</title>
+    <title>马蹄铁 | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">贝茜放慢脚步</h1>
+                    <h1 class="description center-align post-title">马蹄铁</h1>
                 </div>
             </div>
         </div>
@@ -419,21 +419,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1936/">1934. 贝茜放慢脚步 - AcWing题库</a></p>
-<p>奶牛贝茜正在参加冬季哞林匹克运动会的越野滑雪比赛。</p>
-<p>她以每秒 1 米的速度出发。</p>
-<p>但是，随着时间的推移，她变得越来越疲倦，她开始放慢脚步。</p>
-<p>每次放慢脚步，贝茜的速度都会降低：减速一次后，她以每秒 1/2 米的速度移动，减速两次后，则以每秒 1/3 米的速度移动，依此类推。</p>
-<p>你将被告知何时何地贝茜会减速。</p>
-<p>当减速信息格式为：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">T 17</span><br></pre></td></tr></tbody></table></figure>
-<p>意味着，贝茜在某个时间点减速，本例表示比赛开始第 17 秒贝茜减速。</p>
-<p>当减速信息格式为：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D 10</span><br></pre></td></tr></tbody></table></figure>
-<p>意味着，贝茜在某个地点减速，本例表示在行进 10 米处减速。</p>
-<p>给定 N 个减速信息，请计算贝茜滑完一千米需要多少秒。</p>
-<p>将你的答案四舍五入到最接近的整数（ 0.5 向上舍入为 1）。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">static</span> PriorityQueue&lt;Integer&gt; T = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">	<span class="keyword">static</span> PriorityQueue&lt;Integer&gt; D = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">while</span>(n -- &gt; <span class="number">0</span>)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">if</span>(<span class="string">"T"</span>.equals(inScanner.next()))</span><br><span class="line">				T.offer(inScanner.nextInt());</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				D.offer(inScanner.nextInt());</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">double</span> v = <span class="number">1</span>, time = <span class="number">0</span>, dis = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(!T.isEmpty() || !D.isEmpty())</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">if</span>(T.isEmpty() || (!D.isEmpty() &amp;&amp; time + (D.peek() - dis) * v &lt; T.peek()))</span><br><span class="line">			{</span><br><span class="line">				time += (D.peek() - dis) * v;</span><br><span class="line">				dis = D.poll();</span><br><span class="line">			}</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			{</span><br><span class="line">				dis += (T.peek() - time) / v;</span><br><span class="line">				time = T.poll();</span><br><span class="line">			}</span><br><span class="line">			v ++;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">int</span> ans = (<span class="keyword">int</span>)(time + (<span class="number">1000</span> - dis) * v + <span class="number">0.5</span>);</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">		inScanner.close();</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment">T 30</span></span><br><span class="line"><span class="comment">D 10</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/2007/">2005. 马蹄铁 - AcWing题库</a></p>
+<p>尽管奶牛贝茜发现每个平衡括号字符串都很美观，但她特别喜欢被她称为“完全”平衡的括号字符串——一个由 <code>(</code> 构成的字符串后接一个长度相同的 <code>)</code> 构成的字符串。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(((())))</span><br></pre></td></tr></tbody></table></figure>
+<p>有一天，当贝茜穿过牛棚时，她发现地面上有一个 N×N 的马蹄铁矩阵。每个马蹄铁的方向都看上去像 <code>(</code> 或 <code>)</code>。</p>
+<p>从矩阵的左上角开始，贝茜希望四处走动以拾起马蹄铁，使得她捡起的马蹄铁按顺序构成的括号字符串是完全平衡的。</p>
+<p>请计算她能得到的最长完全平衡括号字符串的长度。</p>
+<p>每一步中，贝茜可以沿上下左右四个方向移动。</p>
+<p>她只能移动到包含马蹄铁的方格区域内，当她进入该区域时就会拿起那里的马蹄铁，并无法再次回到该位置（因为该位置没有马蹄铁了）。</p>
+<p>她首先拿起的是左上角的马蹄铁。</p>
+<p>由于她拿起的马蹄铁要形成一个完全平衡的字符串，因此她可能无法将所有马蹄铁都拿起来。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">char</span>[][] s = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] xx = {<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, -<span class="number">1</span>};</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] yy = {<span class="number">1</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>};</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">boolean</span>[][] f = <span class="keyword">new</span> <span class="keyword">boolean</span>[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">		f[x][y] = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">if</span>(l == r)</span><br><span class="line">		{</span><br><span class="line">			ans = Math.max(ans, l + r);</span><br><span class="line">			f[x][y] = <span class="keyword">false</span>;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> x1 = x + xx[i], y1 = y + yy[i];</span><br><span class="line">			<span class="keyword">if</span>(<span class="number">0</span> &lt; x1 &amp;&amp; x1 &lt;= n &amp;&amp; <span class="number">0</span> &lt; y1 &amp;&amp; y1 &lt;= n &amp;&amp; !f[x1][y1])</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">if</span>(s[x][y] == <span class="string">')'</span> &amp;&amp; s[x1][y1] == <span class="string">'('</span>)</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				<span class="keyword">if</span>(s[x1][y1] == <span class="string">')'</span>)</span><br><span class="line">					bfs(x1, y1, l, r + <span class="number">1</span>);</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					bfs(x1, y1, l + <span class="number">1</span>, r);</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		f[x][y] = <span class="keyword">false</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			String ss;</span><br><span class="line">			ss = inScanner.next();</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j ++)</span><br><span class="line">			{</span><br><span class="line">				s[i][j + <span class="number">1</span>] = ss.charAt(j);</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		<span class="keyword">if</span>(s[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'('</span>)</span><br><span class="line">			bfs(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">(())</span></span><br><span class="line"><span class="comment">()((</span></span><br><span class="line"><span class="comment">(()(</span></span><br><span class="line"><span class="comment">))))</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -460,7 +457,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/01/18/bei-qian-fang-man-jiao-bu/">http://aspire-zero.github.io/2022/01/18/bei-qian-fang-man-jiao-bu/</a>
+                    <a href="http://aspire-zero.github.io/2022/01/18/ma-ti-tie/">http://aspire-zero.github.io/2022/01/18/ma-ti-tie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -543,9 +540,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/01/18/ma-ti-tie/">
                     <div class="card-image">
@@ -563,9 +561,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -578,6 +576,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -596,13 +595,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/18/dao/">
+                <a href="/2022/01/18/bei-qian-fang-man-jiao-bu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="岛">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="贝茜放慢脚步">
                         
-                        <span class="card-title">岛</span>
+                        <span class="card-title">贝茜放慢脚步</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
