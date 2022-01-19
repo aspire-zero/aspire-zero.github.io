@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="打乱字母, Hexo,HTML,CSS">
+    <meta name="keywords" content="奶牛过马路, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>打乱字母 | 你的姜小白</title>
+    <title>奶牛过马路 | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">打乱字母</h1>
+                    <h1 class="description center-align post-title">奶牛过马路</h1>
                 </div>
             </div>
         </div>
@@ -398,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-18
+                    2022-01-19
                 </div>
                 
 
@@ -419,16 +419,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1998/">1996. 打乱字母 - AcWing题库</a></p>
-<p>农夫约翰将按字典序排列的 NN 头奶牛的名字列表贴在了牛棚的门上。</p>
-<p>每个奶牛的名字都由一个长度介于 1 到 20 之间的由小写字母构成的唯一字符串表示。</p>
-<p>麻烦制造者贝茜将列表中的奶牛名字重新排序打乱了列表。</p>
-<p>此外，她还对每头奶牛的名字中的字母顺序进行了重新排列（也可能保持不变）。</p>
-<p>给定修改过后的列表，请帮助约翰确定列表中的每个名字可能出现在原始列表中的最低和最高位置。</p>
-<h5 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h5><p>第一行包含整数 N。</p>
-<p>接下来 N 行，按照修改过后列表的顺序，给出了修改过后的奶牛的名字。</p>
-<h5 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h5><p>共 N 行，第 i 行输出给定的第 i 个字符串在原始列表中可能的最低和最高位置。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		n = in.nextInt();</span><br><span class="line">		String[] s = <span class="keyword">new</span> String[<span class="number">50010</span>];</span><br><span class="line">		String[] a = <span class="keyword">new</span> String[<span class="number">50010</span>];</span><br><span class="line">		String[] b = <span class="keyword">new</span> String[<span class="number">50010</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			s[i] = in.next();</span><br><span class="line">			<span class="keyword">char</span>[] q = s[i].toCharArray();</span><br><span class="line">			Arrays.sort(q);</span><br><span class="line">			a[i] = String.valueOf(q);</span><br><span class="line">			StringBuilder t = <span class="keyword">new</span> StringBuilder(a[i]).reverse();</span><br><span class="line">			b[i] = String.valueOf(t);</span><br><span class="line">		}</span><br><span class="line">		in.close();</span><br><span class="line">		Arrays.sort(a, <span class="number">1</span>, n + <span class="number">1</span>);</span><br><span class="line">		Arrays.sort(b, <span class="number">1</span>, n + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">char</span>[] tt = s[i].toCharArray();</span><br><span class="line">			Arrays.sort(tt);</span><br><span class="line">			String t = String.valueOf(tt);</span><br><span class="line">			<span class="keyword">int</span> l = <span class="number">1</span>, r = n;</span><br><span class="line">			<span class="keyword">while</span>(l &lt; r)</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span>(b[mid].compareTo(t) &gt;= <span class="number">0</span>)</span><br><span class="line">					r = mid;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					l = mid + <span class="number">1</span>;</span><br><span class="line">			}</span><br><span class="line">			System.out.print(l + <span class="string">" "</span>);</span><br><span class="line">			t = String.valueOf(<span class="keyword">new</span> StringBuilder(t).reverse());</span><br><span class="line">			l = <span class="number">1</span>;</span><br><span class="line">			r = n + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span>(l &lt; r)</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span>(a[mid].compareTo(t) &gt; <span class="number">0</span>)</span><br><span class="line">					r = mid;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					l = mid + <span class="number">1</span>;</span><br><span class="line">			}</span><br><span class="line">			System.out.println(l - <span class="number">1</span>);</span><br><span class="line">			</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">essieb</span></span><br><span class="line"><span class="comment">a</span></span><br><span class="line"><span class="comment">xzy</span></span><br><span class="line"><span class="comment">elsie</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1980/">1978. 奶牛过马路 - AcWing题库</a></p>
+<p>每天，农夫约翰的 N 头奶牛都会穿过农场中间的马路。</p>
+<p>考虑约翰的农场在二维平面的地图，马路沿水平方向延伸，马路的一侧由直线 y=0 描述，另一侧由直线 y=1 描述。</p>
+<p>奶牛 ii 从马路一侧的位置 (ai,0) 沿直线过马路到达另一侧的位置 (bi,1)。</p>
+<p>所有 ai 互不相同，所有 bi 互不相同。</p>
+<p>尽管他的奶牛们行动敏捷，他还是担心行动路径交叉的两头奶牛在过马路时发生碰撞。</p>
+<p>约翰认为，如果一头奶牛的行动路径没有跟其他任何奶牛的行动路径相交，则该奶牛是安全的。</p>
+<p>请帮助约翰计算安全奶牛的数量。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">node</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">node</span>&gt; </span>{</span><br><span class="line">		<span class="keyword">int</span> x, y;</span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(node o)</span> </span>{</span><br><span class="line">			<span class="keyword">return</span> x - o.x;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		<span class="keyword">int</span>[] suma = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100010</span>];</span><br><span class="line">		<span class="keyword">int</span>[] sumb = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100010</span>];</span><br><span class="line">		node[] a = <span class="keyword">new</span> node[<span class="number">100010</span>];</span><br><span class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			a[i] = <span class="keyword">new</span> node();</span><br><span class="line">			a[i].x = inScanner.nextInt();</span><br><span class="line">			a[i].y = inScanner.nextInt();;</span><br><span class="line">		}</span><br><span class="line">		Arrays.sort(a, <span class="number">1</span>, n + <span class="number">1</span>);</span><br><span class="line">		suma[<span class="number">0</span>] = -<span class="number">1000010</span>;</span><br><span class="line">		sumb[n + <span class="number">1</span>] = <span class="number">1000010</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">			suma[i] = Math.max(suma[i - <span class="number">1</span>], a[i].y);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &gt;= <span class="number">1</span>; i --)</span><br><span class="line">			sumb[i] = Math.min(sumb[i + <span class="number">1</span>], a[i].y);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">if</span>(suma[i - <span class="number">1</span>] &lt; a[i].y &amp;&amp; a[i].y &lt; sumb[i + <span class="number">1</span>])</span><br><span class="line">				ans ++;</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">-3 4</span></span><br><span class="line"><span class="comment">7 8</span></span><br><span class="line"><span class="comment">10 16</span></span><br><span class="line"><span class="comment">3 9</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -455,7 +454,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/01/18/da-luan-zi-mu/">http://aspire-zero.github.io/2022/01/18/da-luan-zi-mu/</a>
+                    <a href="http://aspire-zero.github.io/2022/01/19/nai-niu-guo-ma-lu/">http://aspire-zero.github.io/2022/01/19/nai-niu-guo-ma-lu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -542,13 +541,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/01/19/nai-niu-guo-ma-lu/">
+                <a href="/2022/01/19/pin-chong-lin-jin/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="奶牛过马路">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="品种邻近">
                         
-                        <span class="card-title">奶牛过马路</span>
+                        <span class="card-title">品种邻近</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -591,13 +590,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/18/ma-ti-tie/">
+                <a href="/2022/01/18/da-luan-zi-mu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="马蹄铁">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="打乱字母">
                         
-                        <span class="card-title">马蹄铁</span>
+                        <span class="card-title">打乱字母</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -625,8 +624,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">-java</span>
                     </a>
                     
                 </div>
