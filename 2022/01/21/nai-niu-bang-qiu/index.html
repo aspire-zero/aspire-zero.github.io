@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="金发姑娘和N头牛, Hexo,HTML,CSS">
+    <meta name="keywords" content="奶牛棒球, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>金发姑娘和N头牛 | 你的姜小白</title>
+    <title>奶牛棒球 | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">金发姑娘和N头牛</h1>
+                    <h1 class="description center-align post-title">奶牛棒球</h1>
                 </div>
             </div>
         </div>
@@ -398,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-20
+                    2022-01-21
                 </div>
                 
 
@@ -419,20 +419,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/1954/">1952. 金发姑娘和 N 头牛 - AcWing题库</a></p>
-<p>你可能听过关于金发姑娘和三只熊的经典故事。</p>
-<p>然而，鲜为人知的是，金发姑娘最终成了一个农民。</p>
-<p>在她的农场中，她的牛棚里有 N 头奶牛。</p>
-<p>不幸的是，她的奶牛对温度相当敏感。</p>
-<p>对于奶牛 i，使其感到舒适的温度为 Ai…Bi。</p>
-<p>如果金发姑娘将牛棚的恒温器的温度 TT 设置为 T&lt;Ai，奶牛就会觉得冷，并会产出 X 单位的牛奶。</p>
-<p>如果她将恒温器的温度 T 设置在 Ai≤T≤Bi，奶牛就会感到舒适，并会产出 Y 单位的牛奶。</p>
-<p>如果她将恒温器的温度 TT 设置为 T&gt;Bi，奶牛就会觉得热，并会产出 Z 单位的牛奶。</p>
-<p>正如所期望的那样，Y 的值始终大于 X 和 Z。</p>
-<p>给定 X,Y,Z 以及每头奶牛感到舒适的温度范围，请计算通过合理设定恒温器温度，金发姑娘可获得的最大产奶量。</p>
-<p>恒温器温度可设置为任何整数。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n, x, y, z;</span><br><span class="line">	<span class="keyword">static</span> TreeMap&lt;Integer, Integer&gt; m = <span class="keyword">new</span> TreeMap&lt;Integer, Integer&gt;();</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		x = inScanner.nextInt();</span><br><span class="line">		y = inScanner.nextInt();</span><br><span class="line">		z = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">int</span> r = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> ll, lr;</span><br><span class="line">			ll = inScanner.nextInt();</span><br><span class="line">			lr = inScanner.nextInt();</span><br><span class="line">			r = Math.max(r, lr + <span class="number">1</span>);</span><br><span class="line">			m.put(<span class="number">0</span>, m.getOrDefault(<span class="number">0</span>, <span class="number">0</span>) + x);</span><br><span class="line">			m.put(ll, m.getOrDefault(ll, <span class="number">0</span>) + y - x);</span><br><span class="line">			m.put(lr + <span class="number">1</span>, m.getOrDefault(lr + <span class="number">1</span>, <span class="number">0</span>) - y + z);</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		<span class="keyword">long</span> ans = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">		Collection&lt;Integer&gt; value = m.values();</span><br><span class="line">		<span class="keyword">for</span>(Integer i : value)</span><br><span class="line">		{</span><br><span class="line">			sum += i;</span><br><span class="line">			<span class="keyword">if</span>(ans &lt; sum)</span><br><span class="line">				ans = sum;</span><br><span class="line">		}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">4 7 9 6</span></span><br><span class="line"><span class="comment">5 8</span></span><br><span class="line"><span class="comment">3 4</span></span><br><span class="line"><span class="comment">13 20</span></span><br><span class="line"><span class="comment">7 10</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n, x, y, z;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] l = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">20010</span>];</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] r = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">20010</span>];</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] b = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">40010</span>];</span><br><span class="line">	<span class="keyword">static</span> Vector&lt;Integer&gt; v = <span class="keyword">new</span> Vector&lt;&gt;();</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">		<span class="keyword">int</span> l = <span class="number">0</span>, r = v.size() - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(l &lt; r)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span>(t &gt; v.get(mid))</span><br><span class="line">				l = mid + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				r = mid;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">return</span> r;</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		x = inScanner.nextInt();</span><br><span class="line">		y = inScanner.nextInt();</span><br><span class="line">		z = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			l[i] = inScanner.nextInt();</span><br><span class="line">			r[i] = inScanner.nextInt();</span><br><span class="line">			<span class="keyword">if</span>(!v.contains(l[i]))</span><br><span class="line">				v.add(l[i]);</span><br><span class="line">			<span class="keyword">if</span>(!v.contains(r[i]))</span><br><span class="line">				v.add(r[i]);</span><br><span class="line">		}</span><br><span class="line">		v.add(Integer.MIN_VALUE);</span><br><span class="line">		v.add(Integer.MAX_VALUE);</span><br><span class="line">		Collections.sort(v);</span><br><span class="line">		inScanner.close();</span><br><span class="line">		<span class="keyword">int</span> ll = v.size() - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> L = find(l[i]), R = find(r[i]);</span><br><span class="line">			b[<span class="number">0</span>] += x;</span><br><span class="line">			b[L] += y -x;</span><br><span class="line">			b[R + <span class="number">1</span>] += z - y;</span><br><span class="line">			b[ll] -= z;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">long</span> ans = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= ll; i ++)</span><br><span class="line">		{</span><br><span class="line">			sum += b[i];</span><br><span class="line">			<span class="keyword">if</span>(sum &gt; ans)</span><br><span class="line">				ans = sum;</span><br><span class="line">		}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">4 7 9 6</span></span><br><span class="line"><span class="comment">5 8</span></span><br><span class="line"><span class="comment">3 4</span></span><br><span class="line"><span class="comment">13 20</span></span><br><span class="line"><span class="comment">7 10</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/1947/">1945. 奶牛棒球 - AcWing题库</a></p>
+<p>农夫约翰的 <code>N</code> 头奶牛排成一排，每头奶牛都位于数轴中的不同位置上。</p>
+<p>它们正在练习投掷棒球。</p>
+<p>农夫约翰观看时，观察到一组三头牛 <code>(X,Y,Z)</code> 完成了两次成功的投掷。</p>
+<p>牛 XX 把球扔给她右边的牛 <code>Y</code>，然后牛 <code>Y</code> 把球扔给她右边的牛 <code>Z</code>。</p>
+<p>约翰指出，第二次投掷的距离不少于第一次投掷的距离，也不超过第一次投掷的距离的两倍。</p>
+<p>请计算共有多少组牛 <code>(X,Y,Z)</code> 可能是约翰所看到的。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">1010</span>];</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">			a[i] = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		inScanner.close();</span><br><span class="line">		Arrays.sort(a, <span class="number">1</span>, n + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i + <span class="number">1</span> &lt; n; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>, l = j + <span class="number">1</span>, r = j + <span class="number">1</span>; j &lt; n; j ++)</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">int</span> t = a[j] - a[i];</span><br><span class="line">				<span class="keyword">while</span>(l &lt;= n &amp;&amp; t &gt; a[l] - a[j]) l ++;</span><br><span class="line">				<span class="keyword">while</span>(r &lt;= n &amp;&amp; a[r] - a[j] &lt;= <span class="number">2</span> * t) r ++;</span><br><span class="line">				ans += r - l;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">5</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">10</span></span><br><span class="line"><span class="comment">7</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -459,7 +453,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/01/20/jin-fa-gu-niang-he-n-tou-niu/">http://aspire-zero.github.io/2022/01/20/jin-fa-gu-niang-he-n-tou-niu/</a>
+                    <a href="http://aspire-zero.github.io/2022/01/21/nai-niu-bang-qiu/">http://aspire-zero.github.io/2022/01/21/nai-niu-bang-qiu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,13 +540,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/01/21/nai-niu-bang-qiu/">
+                <a href="/2022/01/21/jing-zi-tian-di/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="奶牛棒球">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="镜子田地">
                         
-                        <span class="card-title">奶牛棒球</span>
+                        <span class="card-title">镜子田地</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -595,13 +589,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/19/pin-chong-lin-jin/">
+                <a href="/2022/01/20/jin-fa-gu-niang-he-n-tou-niu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="品种邻近">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="金发姑娘和N头牛">
                         
-                        <span class="card-title">品种邻近</span>
+                        <span class="card-title">金发姑娘和N头牛</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -612,7 +606,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-20
                             </span>
                         <span class="publish-author">
                             
@@ -630,7 +624,7 @@
                 <div class="card-action article-tags">
                     
                     <a href="/tags/java/">
-                        <span class="chip bg-color">-java</span>
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
