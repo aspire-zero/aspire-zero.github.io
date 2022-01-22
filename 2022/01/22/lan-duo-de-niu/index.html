@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="镜子田地, Hexo,HTML,CSS">
+    <meta name="keywords" content="懒惰的牛, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>镜子田地 | 你的姜小白</title>
+    <title>懒惰的牛 | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">镜子田地</h1>
+                    <h1 class="description center-align post-title">懒惰的牛</h1>
                 </div>
             </div>
         </div>
@@ -398,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-21
+                    2022-01-22
                 </div>
                 
 
@@ -419,16 +419,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1931/">1929. 镜子田地 - AcWing题库</a></p>
-<p>农夫约翰在屋子外面放了一些旧镜子，他的奶牛们像往常一样调皮地偷走了它们！</p>
-<p>奶牛们将镜子放置在了一个矩形田地中，该田地可被划分为 <code>N×M</code> 个方格区域。</p>
-<p>在每个方格区域中，奶牛在其某对对角之间放置一个双面镜，因此，共有两种放法，一种为 <code>/</code> 放置（镜子连接方格左下角和右上角），另一种为 <code>\</code> 放置（镜子连接方格左上角和右下角）。</p>
-<p>一天晚上，奶牛贝茜将激光发射器带到了该田地中。</p>
-<p>她站在田地外面，沿着田地的行或列水平或垂直照射光束，使光束反射一定数量的镜子。</p>
-<p>由于镜子都是沿对角线摆放，因此经反射镜反射的水平光束最终将垂直传播，反之亦然。</p>
-<p>贝茜想知道从田地之外射入的水平或垂直光束最多可以在田地中被反射多少次。</p>
-<p>给定镜子田地的布局，请帮助贝茜计算这个数字。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n, m;</span><br><span class="line">	<span class="keyword">static</span> String[] s = <span class="keyword">new</span> String[<span class="number">1010</span>];</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] dx = {-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>};</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] dy = {<span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>};</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> d)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">		<span class="keyword">if</span>(x &lt; <span class="number">1</span> || x &gt; n || y &lt; <span class="number">0</span> || y &gt;= m)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span>(s[x].charAt(y) == <span class="string">'/'</span>)</span><br><span class="line">			d ^= <span class="number">3</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			d ^= <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">return</span> bfs(x + dx[d], y + dy[d], d) + <span class="number">1</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		m = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">			s[i] = inScanner.next();</span><br><span class="line">		inScanner.close();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			ans = Math.max(ans, bfs(i, <span class="number">0</span>, <span class="number">3</span>));</span><br><span class="line">			ans = Math.max(ans, bfs(i, m - <span class="number">1</span>, <span class="number">1</span>));</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i ++)</span><br><span class="line">		{</span><br><span class="line">			ans = Math.max(ans, bfs(<span class="number">1</span>, i, <span class="number">2</span>));</span><br><span class="line">			ans = Math.max(ans, bfs(n, i, <span class="number">0</span>));</span><br><span class="line">		}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">3 3</span></span><br><span class="line"><span class="comment">/\\</span></span><br><span class="line"><span class="comment">\\\</span></span><br><span class="line"><span class="comment">/\/</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1924/">1922. 懒惰的牛 - AcWing题库</a></p>
+<p>这是一个炎热的夏日。</p>
+<p>懒洋洋的奶牛贝茜想将自己放置在田野中的某个位置，以便可以在短距离内尽可能多地吃到美味的草。</p>
+<p>贝茜所在的田野中共有 <code>N</code> 片草地，我们可以将田野视作一个一维数轴。</p>
+<p>第 <code>i</code> 片草地中包含 <code>gi</code> 单位的青草，位置坐标为 <code>xi</code>。</p>
+<p>不同草地的位置不同。</p>
+<p>贝茜想选取田野中的某个点作为她的初始位置（可能是某片草地所在的点）。</p>
+<p>只有一片草地与她的初始位置的距离不超过 <code>K</code> 时，贝茜才能吃到那片草地上的草。</p>
+<p>如果贝茜选择最佳初始位置，请确定她可以吃到的青草最大数量。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> N = <span class="number">1000010</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n, k, len = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] sum = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		k = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> g = inScanner.nextInt();</span><br><span class="line">			<span class="keyword">int</span> x = inScanner.nextInt();</span><br><span class="line">			a[x + <span class="number">1</span>] = g;</span><br><span class="line">			len = Math.max(x + <span class="number">1</span>, len);</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		sum[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= len; i ++)</span><br><span class="line">			sum[i] = sum[i - <span class="number">1</span>] + a[i];</span><br><span class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= len; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> l = Math.max(<span class="number">0</span>, i - k - <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">int</span> r = Math.min(len, i + k);</span><br><span class="line">			ans = Math.max(ans, sum[r] - sum[l]);</span><br><span class="line">		}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">4 3</span></span><br><span class="line"><span class="comment">4 7</span></span><br><span class="line"><span class="comment">10 15</span></span><br><span class="line"><span class="comment">2 2</span></span><br><span class="line"><span class="comment">5 1</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -455,7 +455,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/01/21/jing-zi-tian-di/">http://aspire-zero.github.io/2022/01/21/jing-zi-tian-di/</a>
+                    <a href="http://aspire-zero.github.io/2022/01/22/lan-duo-de-niu/">http://aspire-zero.github.io/2022/01/22/lan-duo-de-niu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -542,13 +542,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/01/22/lan-duo-de-niu/">
+                <a href="/2022/01/22/gong-ping-she-ying/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="懒惰的牛">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="公平摄影">
                         
-                        <span class="card-title">懒惰的牛</span>
+                        <span class="card-title">公平摄影</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -591,13 +591,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/21/nai-niu-bang-qiu/">
+                <a href="/2022/01/21/jing-zi-tian-di/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="奶牛棒球">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="镜子田地">
                         
-                        <span class="card-title">奶牛棒球</span>
+                        <span class="card-title">镜子田地</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
