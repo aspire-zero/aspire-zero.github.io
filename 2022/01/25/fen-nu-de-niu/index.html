@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="COW, Hexo,HTML,CSS">
+    <meta name="keywords" content="愤怒的奶牛, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>COW | 你的姜小白</title>
+    <title>愤怒的奶牛 | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">COW</h1>
+                    <h1 class="description center-align post-title">愤怒的奶牛</h1>
                 </div>
             </div>
         </div>
@@ -398,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-24
+                    2022-01-25
                 </div>
                 
 
@@ -419,16 +419,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1886/">1884. COW - AcWing题库</a></p>
-<p>奶牛贝茜在她最喜欢的牧场中发现了一块石碑，上面刻有神秘的碑文。</p>
-<p>碑文的文字似乎来自一种神秘的古代语言，可看作一个只包含 <code>C,O,W</code> 三种字符的字符串。</p>
-<p>尽管贝茜无法解密该文字，但是她很欣赏 <code>C,O,W</code> 按顺序构成她最喜欢的单词 <code>COW</code>。</p>
-<p>她想知道 <code>COW</code> 在碑文中一共出现了多少次。</p>
-<p>她不介意 <code>C,O,W</code> 之间是否存在其他字符，只要这三个字符按正确的顺序出现即可。</p>
-<p>她也不介意多个不同的 <code>COW</code> 是否共享了一些字符。</p>
-<p>例如，<code>COW</code> 在 <code>CWOW</code> 中只出现一次，在 <code>CCOW</code> 中出现两次，在<code>CCOOWW</code> 中出现八次。</p>
-<p>给定碑文中的文字，请帮助贝茜计算 COW 出现的次数。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		String s = inScanner.next();</span><br><span class="line">		<span class="keyword">long</span> a = <span class="number">0</span>, b = <span class="number">0</span>, c = <span class="number">0</span>;</span><br><span class="line">		inScanner.close();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">char</span> t = s.charAt(i);</span><br><span class="line">			<span class="keyword">if</span>(t == <span class="string">'C'</span>)</span><br><span class="line">				a ++;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(t == <span class="string">'O'</span>)</span><br><span class="line">				b += a;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				c += b;</span><br><span class="line">		}</span><br><span class="line">		System.out.println(c);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1857/">1855. 愤怒的奶牛 - AcWing题库</a></p>
+<p>奶牛贝茜设计了一款她认为必火的游戏：愤怒的奶牛。</p>
+<p>游戏设定（她坚信这是她的原创）是玩家用一个弹弓将一头奶牛射向一个数轴，数轴的不同位置上分布着一些干草捆。</p>
+<p>奶牛以足够的力量砸向某个干草捆，并使得该干草捆发生爆炸，爆炸可能会不断引起连锁反应，导致更多的干草捆发生爆炸。</p>
+<p>目标是用一头奶牛引起的连锁反应引爆尽可能多的干草捆。</p>
+<p>共有 <code>N</code> 个干草捆位于数轴中的不同整数位置，其坐标依次为 <code>x1,x2,…,xN</code>。</p>
+<p>如果将奶牛射向位于位置 <code>x</code> 的干草捆，则该干草捆发生爆炸，爆炸半径为 <code>1</code>，爆炸将吞噬 1 单位距离内的所有干草捆。</p>
+<p>然后这些干草捆（全部同时）发生爆炸，每个干草捆的爆炸半径为 <code>2</code>。</p>
+<p>二次爆炸中吞噬的所有尚未爆炸的干草捆也（全部同时）发生爆炸，爆炸半径为 <code>3</code>。</p>
+<p>也就是说，在 t 时刻爆炸的干草捆的爆炸半径为 <code>t</code>，其爆炸波及的干草捆在 <code>t+1</code> 时刻也会爆炸，爆炸半径为 <code>t+1</code>，以此类推。</p>
+<p>请确定，通过合理选择奶牛射向的干草捆，能够引爆的干草捆最大数量。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n, ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">110</span>];</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">bfsl</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">		<span class="keyword">if</span>(i &lt;= <span class="number">1</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> tl = <span class="number">0</span> ;</span><br><span class="line">		<span class="keyword">int</span> j = i - <span class="number">1</span> ;</span><br><span class="line">		<span class="keyword">while</span>(j &gt; <span class="number">0</span>&amp;&amp; a[i] - a[j] &lt;= len)</span><br><span class="line">		{</span><br><span class="line">			j --;</span><br><span class="line">			tl ++;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">if</span>(tl == <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		tl += bfsl(j + <span class="number">1</span>, len + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">return</span> tl;</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">bfsr</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">		<span class="keyword">if</span>(i &gt;= n)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> tr = <span class="number">0</span> ;</span><br><span class="line">		<span class="keyword">int</span> j = i + <span class="number">1</span> ;</span><br><span class="line">		<span class="keyword">while</span>(j &lt;= n&amp;&amp; a[j] - a[i] &lt;= len)</span><br><span class="line">		{</span><br><span class="line">			j ++;</span><br><span class="line">			tr ++;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">if</span>(tr == <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		tr += bfsr(j - <span class="number">1</span>, len + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">return</span> tr;</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">			a[i] = inScanner.nextInt();</span><br><span class="line">		inScanner.close();</span><br><span class="line">		Arrays.sort(a, <span class="number">1</span>, n + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> l = bfsl(i, <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">int</span> r = bfsr(i, <span class="number">1</span>);</span><br><span class="line">			ans = Math.max(ans, l + r + <span class="number">1</span>);</span><br><span class="line">		}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -455,7 +457,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/01/24/cow/">http://aspire-zero.github.io/2022/01/24/cow/</a>
+                    <a href="http://aspire-zero.github.io/2022/01/25/fen-nu-de-niu/">http://aspire-zero.github.io/2022/01/25/fen-nu-de-niu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,17 +540,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/25/bei-qian-de-bao-fu/">
+                <a href="/2022/01/25/fen-nu-de-niu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="贝茜的报复">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="愤怒的奶牛">
                         
-                        <span class="card-title">贝茜的报复</span>
+                        <span class="card-title">愤怒的奶牛</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -558,9 +561,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -573,6 +576,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -591,13 +595,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/24/nai-niu-man-pao/">
+                <a href="/2022/01/25/bei-qian-de-bao-fu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="奶牛慢跑">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="贝茜的报复">
                         
-                        <span class="card-title">奶牛慢跑</span>
+                        <span class="card-title">贝茜的报复</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -608,7 +612,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-25
                             </span>
                         <span class="publish-author">
                             
