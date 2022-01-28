@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>方块游戏</title>
+      <link href="2022/01/28/fang-kuai-you-xi/"/>
+      <url>2022/01/28/fang-kuai-you-xi/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a href="https://www.acwing.com/problem/content/1815/">1813. 方块游戏 - AcWing题库</a></p><p>农夫约翰试图通过给奶牛一套通常用于学龄前儿童的 <code>N</code> 个拼写板来教他的奶牛阅读。</p><p>每个拼写板的每一侧都有一个单词和一个图画。</p><p>例如，一侧可能有单词 <code>cat</code> 和一只小猫，另一侧可能有单词 <code>dog</code> 和一只小狗。</p><p>因此，当所有拼写板放置到地面上时，会显示一组 <code>N</code> 个单词。</p><p>通过翻转其中一部分板子，就可以得到另一组 <code>N</code> 个单词。</p><p>为了帮助奶牛练习单词拼写，约翰想要制作一些木块，在每个木块上都印上一个字母，使得奶牛可以使用这些木块拼出看到的单词。</p><p>为了使得无论哪一组 <code>N</code> 个单词朝上显示，奶牛都能将其全部拼出，就需要印有各种字母的木块都足够的多。</p><p>例如，如果 <code>N=3</code> 且单词 <code>box,cat,car</code> 朝上显示，则奶牛至少需要一个 <code>b</code> 块，一个 <code>o</code> 块，一个 <code>x</code> 块，两个 <code>c</code> 块，两个 <code>a</code> 块，一个 <code>t</code> 块和一个 <code>r</code> 块。</p><p>请帮助约翰确定，印有每种字母的木块至少需要提供多少块，才能使得不管每个板子的哪一侧朝上显示，奶牛都可以拼出所有 <code>N</code> 个可见的单词。</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span>[] sum = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span>[] sum1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">n = inScanner.nextInt();</span><br><span class="line">String a;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">{</span><br><span class="line">a = inScanner.next();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; a.length(); j ++)</span><br><span class="line">sum[a.charAt(j) - <span class="string">'a'</span>] ++;</span><br><span class="line">a = inScanner.next();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; a.length(); j ++)</span><br><span class="line">sum1[a.charAt(j) - <span class="string">'a'</span>] ++;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">26</span>; j ++)</span><br><span class="line">{</span><br><span class="line">ans[j] += Math.max(sum[j], sum1[j]);</span><br><span class="line">sum[j] = sum1[j] = <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">inScanner.close();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i ++)</span><br><span class="line">System.out.printf(<span class="string">"%d\n"</span>, ans[i]);</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>农田缩减</title>
       <link href="2022/01/27/nong-tian-suo-jian/"/>
       <url>2022/01/27/nong-tian-suo-jian/</url>
