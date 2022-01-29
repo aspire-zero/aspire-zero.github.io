@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>蹄子剪刀布</title>
+      <link href="2022/01/29/ti-zi-jian-dao-bu/"/>
+      <url>2022/01/29/ti-zi-jian-dao-bu/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a href="https://www.acwing.com/problem/content/1803/">1801. 蹄子剪刀布 - AcWing题库</a></p><p>你可能听说过“石头剪刀布”的游戏。</p><p>这个游戏在牛当中同样流行，它们称之为“蹄子剪刀布”。</p><p>游戏的规则非常简单，两头牛相互对抗，数到三之后各出一个表示蹄子，剪刀或布的手势。</p><p>蹄子赢剪刀，剪刀赢布，布赢蹄子。</p><p>例如，第一头牛出“蹄子”手势，第二头牛出“布”手势，则第二头牛获胜。</p><p>如果两头牛出相同的手势，则算平局。</p><p>农夫约翰的两头奶牛正在进行 N 轮“蹄子剪刀布”对抗，他看的十分入迷。</p><p>不幸的是，虽然他可以看到奶牛正在做出三种不同类型的手势，但他却无法分辨出哪一个代表“蹄子”，哪一个代表“布”以及哪一个代表“剪刀”。</p><p>不知道这三种手势的具体含义的情况下，农夫约翰给这三种手势分配了编号 1,2,3。</p><p>手势 1 可能代表“蹄子”，可能代表“剪刀”，也可能代表“布”，反正他傻傻分不清楚。</p><p>给出两头奶牛在 N 场比赛中所做出的具体手势对应的编号，请你判断第一头奶牛最多可能赢多少盘对抗。</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">n = inScanner.nextInt();</span><br><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(n --&gt; <span class="number">0</span>)</span><br><span class="line">{</span><br><span class="line"><span class="keyword">int</span> x, y;</span><br><span class="line">x = inScanner.nextInt();</span><br><span class="line">y = inScanner.nextInt();</span><br><span class="line">x --; </span><br><span class="line">y --;</span><br><span class="line"><span class="keyword">if</span>((x + <span class="number">1</span>) % <span class="number">3</span> == y)</span><br><span class="line">a ++;</span><br><span class="line"><span class="keyword">if</span>((y + <span class="number">1</span>) % <span class="number">3</span> == x)</span><br><span class="line">b ++;</span><br><span class="line">}</span><br><span class="line">inScanner.close();</span><br><span class="line">System.out.printf(<span class="string">"%d\n"</span>, Math.max(a, b));</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>方块游戏</title>
       <link href="2022/01/28/fang-kuai-you-xi/"/>
       <url>2022/01/28/fang-kuai-you-xi/</url>
