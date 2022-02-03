@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="蹄子剪刀布, Hexo,HTML,CSS">
+    <meta name="keywords" content="牛的基因组学, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>蹄子剪刀布 | 你的姜小白</title>
+    <title>牛的基因组学 | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -257,7 +257,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">蹄子剪刀布</h1>
+                    <h1 class="description center-align post-title">牛的基因组学</h1>
                 </div>
             </div>
         </div>
@@ -398,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-29
+                    2022-02-03
                 </div>
                 
 
@@ -419,19 +419,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1803/">1801. 蹄子剪刀布 - AcWing题库</a></p>
-<p>你可能听说过“石头剪刀布”的游戏。</p>
-<p>这个游戏在牛当中同样流行，它们称之为“蹄子剪刀布”。</p>
-<p>游戏的规则非常简单，两头牛相互对抗，数到三之后各出一个表示蹄子，剪刀或布的手势。</p>
-<p>蹄子赢剪刀，剪刀赢布，布赢蹄子。</p>
-<p>例如，第一头牛出“蹄子”手势，第二头牛出“布”手势，则第二头牛获胜。</p>
-<p>如果两头牛出相同的手势，则算平局。</p>
-<p>农夫约翰的两头奶牛正在进行 N 轮“蹄子剪刀布”对抗，他看的十分入迷。</p>
-<p>不幸的是，虽然他可以看到奶牛正在做出三种不同类型的手势，但他却无法分辨出哪一个代表“蹄子”，哪一个代表“布”以及哪一个代表“剪刀”。</p>
-<p>不知道这三种手势的具体含义的情况下，农夫约翰给这三种手势分配了编号 1,2,3。</p>
-<p>手势 1 可能代表“蹄子”，可能代表“剪刀”，也可能代表“布”，反正他傻傻分不清楚。</p>
-<p>给出两头奶牛在 N 场比赛中所做出的具体手势对应的编号，请你判断第一头奶牛最多可能赢多少盘对抗。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(n --&gt; <span class="number">0</span>)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> x, y;</span><br><span class="line">			x = inScanner.nextInt();</span><br><span class="line">			y = inScanner.nextInt();</span><br><span class="line">			x --; </span><br><span class="line">			y --;</span><br><span class="line">			<span class="keyword">if</span>((x + <span class="number">1</span>) % <span class="number">3</span> == y)</span><br><span class="line">				a ++;</span><br><span class="line">			<span class="keyword">if</span>((y + <span class="number">1</span>) % <span class="number">3</span> == x)</span><br><span class="line">				b ++;</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		System.out.printf(<span class="string">"%d\n"</span>, Math.max(a, b));</span><br><span class="line">		</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1778/">1776. 牛的基因组学 - AcWing题库</a></p>
+<p>农夫约翰拥有 N 头有斑点的牛和 N 头没有斑点的牛。</p>
+<p>他刚刚完成了牛遗传学课程，他确信奶牛上的斑点是由牛基因组突变引起的。</p>
+<p>农夫约翰花了大价钱对他的奶牛的基因组进行了测序。</p>
+<p>每个基因组都是一个由四个字符 A,C,G,T 构成的长度为 M 的字符串。</p>
+<p>当他统计得到的奶牛的基因组序列时，可以得到一个如下所示的表：（此时，N=3）</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">位置 :    1 2 3 4 5 6 7 ... M</span><br><span class="line"></span><br><span class="line">斑点牛 1: A A T C C C A ... T</span><br><span class="line">斑点牛 2: G A T T G C A ... A</span><br><span class="line">斑点牛 3: G G T C G C A ... A</span><br><span class="line"></span><br><span class="line">普通牛 1: A C T C C C A ... G</span><br><span class="line">普通牛 2: A C T C G C A ... T</span><br><span class="line">普通牛 3: A C T T C C A ... T</span><br></pre></td></tr></tbody></table></figure>
+<p>通过仔细观察该表，他发现通过位置 2 的字符足以判断奶牛是否存在斑点。</p>
+<p>也就是说，仅通过查看这个位置上的字符，农夫约翰就可以判断他的哪些奶牛有斑点，哪些没有斑点。（在这里，A 和 G 表示有斑点，C 表示无斑点，T 无关紧要，因为没有任何一头牛的第二个位置上的字符是 T）</p>
+<p>位置 1 上的字符不足以判断奶牛是否存在斑点，因为 A 既可以表示有斑点也可以表示无斑点。</p>
+<p>给定约翰的奶牛的基因组序列列表，请你计算可以单独用来判断奶牛是否存在斑点的位置的数量。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n, m, ans = 0;</span><br><span class="line">	static String[] q = new String[110];</span><br><span class="line">	static TreeSet<span class="tag">&lt;<span class="name">Integer</span>&gt;</span>[] set = new TreeSet[110];</span><br><span class="line">	public static boolean check(int k)</span><br><span class="line">	{</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			int t = q[i].charAt(k) - 'A';</span><br><span class="line">			if(set[k].contains(t))</span><br><span class="line">				return false;</span><br><span class="line">		}</span><br><span class="line">		return true;</span><br><span class="line">	}</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		m = inScanner.nextInt();</span><br><span class="line">		String s;</span><br><span class="line">		for(int i = 0; i &lt; m; i ++)</span><br><span class="line">			set[i] = new TreeSet<span class="tag">&lt;<span class="name">Integer</span>&gt;</span>();</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			s = inScanner.next();</span><br><span class="line">			for(int j = 0; j &lt; m; j ++)</span><br><span class="line">				set[j].add(s.charAt(j) - 'A');</span><br><span class="line">		}</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			q[i] = inScanner.next();</span><br><span class="line">		for(int i = 0; i &lt; m; i ++)</span><br><span class="line">		{</span><br><span class="line">			if(check(i))</span><br><span class="line">				ans ++;</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -458,7 +457,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/01/29/ti-zi-jian-dao-bu/">http://aspire-zero.github.io/2022/01/29/ti-zi-jian-dao-bu/</a>
+                    <a href="http://aspire-zero.github.io/2022/02/03/niu-de-ji-yin-zu-xue/">http://aspire-zero.github.io/2022/02/03/niu-de-ji-yin-zu-xue/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,13 +544,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/02/03/niu-wei-shi-me-guo-ma-lu-ii/">
+                <a href="/2022/02/03/niu-de-xi-pai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="牛为什么过马路II">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="牛的洗牌">
                         
-                        <span class="card-title">牛为什么过马路II</span>
+                        <span class="card-title">牛的洗牌</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -594,13 +593,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/28/fang-kuai-you-xi/">
+                <a href="/2022/02/03/niu-wei-shi-me-guo-ma-lu-ii/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="方块游戏">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="牛为什么过马路II">
                         
-                        <span class="card-title">方块游戏</span>
+                        <span class="card-title">牛为什么过马路II</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -611,7 +610,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-03
                             </span>
                         <span class="publish-author">
                             

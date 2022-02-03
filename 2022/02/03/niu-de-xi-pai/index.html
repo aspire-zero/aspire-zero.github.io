@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="蹄子剪刀布, Hexo,HTML,CSS">
+    <meta name="keywords" content="牛的洗牌, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>蹄子剪刀布 | 你的姜小白</title>
+    <title>牛的洗牌 | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">蹄子剪刀布</h1>
+                    <h1 class="description center-align post-title">牛的洗牌</h1>
                 </div>
             </div>
         </div>
@@ -398,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-29
+                    2022-02-03
                 </div>
                 
 
@@ -419,19 +419,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1803/">1801. 蹄子剪刀布 - AcWing题库</a></p>
-<p>你可能听说过“石头剪刀布”的游戏。</p>
-<p>这个游戏在牛当中同样流行，它们称之为“蹄子剪刀布”。</p>
-<p>游戏的规则非常简单，两头牛相互对抗，数到三之后各出一个表示蹄子，剪刀或布的手势。</p>
-<p>蹄子赢剪刀，剪刀赢布，布赢蹄子。</p>
-<p>例如，第一头牛出“蹄子”手势，第二头牛出“布”手势，则第二头牛获胜。</p>
-<p>如果两头牛出相同的手势，则算平局。</p>
-<p>农夫约翰的两头奶牛正在进行 N 轮“蹄子剪刀布”对抗，他看的十分入迷。</p>
-<p>不幸的是，虽然他可以看到奶牛正在做出三种不同类型的手势，但他却无法分辨出哪一个代表“蹄子”，哪一个代表“布”以及哪一个代表“剪刀”。</p>
-<p>不知道这三种手势的具体含义的情况下，农夫约翰给这三种手势分配了编号 1,2,3。</p>
-<p>手势 1 可能代表“蹄子”，可能代表“剪刀”，也可能代表“布”，反正他傻傻分不清楚。</p>
-<p>给出两头奶牛在 N 场比赛中所做出的具体手势对应的编号，请你判断第一头奶牛最多可能赢多少盘对抗。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(n --&gt; <span class="number">0</span>)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> x, y;</span><br><span class="line">			x = inScanner.nextInt();</span><br><span class="line">			y = inScanner.nextInt();</span><br><span class="line">			x --; </span><br><span class="line">			y --;</span><br><span class="line">			<span class="keyword">if</span>((x + <span class="number">1</span>) % <span class="number">3</span> == y)</span><br><span class="line">				a ++;</span><br><span class="line">			<span class="keyword">if</span>((y + <span class="number">1</span>) % <span class="number">3</span> == x)</span><br><span class="line">				b ++;</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		System.out.printf(<span class="string">"%d\n"</span>, Math.max(a, b));</span><br><span class="line">		</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1764/">1762. 牛的洗牌 - AcWing题库</a></p>
+<p>农夫约翰坚信快乐的奶牛会产出更多的牛奶，因此他在谷仓中安装了一个巨大的迪斯科球，并计划教他的奶牛跳舞！</p>
+<p>在查阅了一些牛的流行舞蹈后，约翰决定教他的奶牛“洗牌舞”。</p>
+<p>洗牌舞是由他的 NN 只奶牛按一定顺序排成一行，然后连续执行三次“洗牌”，每次“洗牌”都可能会使奶牛重新排序。</p>
+<p>为了让奶牛们更容易找到自己所处的位置，约翰用数字 1∼N1∼N 对一行中奶牛所在的位置进行了标记，一行中第一头奶牛处于位置 11，第二头奶牛处于位置 22，以此类推，直到位置 NN。</p>
+<p>每次“洗牌”用 NN 个数字 a1,a2,…,aNa1,a2,…,aN 来描述，处于位置 ii 的奶牛在一次“洗牌”过后，需要移动至位置 aiai（因此，每个 aiai 在 1…N1…N 范围内）。</p>
+<p>幸运的是，所有 aiai 都是互不相同的，因此，不会存在多头奶牛在洗牌结束后移动到同一个位置的情况。</p>
+<p>约翰的每头奶牛都有一个属于自己的唯一 77 位整数 IDID （不含前导 00）。</p>
+<p>给定你三轮“洗牌”过后的奶牛排列顺序，请你求出奶牛们的初始排列顺序。农夫约翰坚信快乐的奶牛会产出更多的牛奶，因此他在谷仓中安装了一个巨大的迪斯科球，并计划教他的奶牛跳舞！</p>
+<p>在查阅了一些牛的流行舞蹈后，约翰决定教他的奶牛“洗牌舞”。</p>
+<p>洗牌舞是由他的 N 只奶牛按一定顺序排成一行，然后连续执行三次“洗牌”，每次“洗牌”都可能会使奶牛重新排序。</p>
+<p>为了让奶牛们更容易找到自己所处的位置，约翰用数字 1∼N 对一行中奶牛所在的位置进行了标记，一行中第一头奶牛处于位置 1，第二头奶牛处于位置 2，以此类推，直到位置 N。</p>
+<p>每次“洗牌”用 N 个数字 a1,a2,…,aN 来描述，处于位置 i 的奶牛在一次“洗牌”过后，需要移动至位置 ai（因此，每个 ai 在 1…N 范围内）。</p>
+<p>幸运的是，所有 ai 都是互不相同的，因此，不会存在多头奶牛在洗牌结束后移动到同一个位置的情况。</p>
+<p>约翰的每头奶牛都有一个属于自己的唯一 7 位整数 ID （不含前导 0）。</p>
+<p>给定你三轮“洗牌”过后的奶牛排列顺序，请你求出奶牛们的初始排列顺序。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n;</span><br><span class="line">	static TreeMap&lt;Integer, Integer&gt; m = new TreeMap&lt;Integer, Integer&gt;();</span><br><span class="line">	static int[] b = new int[1000];</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			m.put(inScanner.nextInt(), i);</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			int k = i;</span><br><span class="line">			int j = 3;</span><br><span class="line">			while(j --&gt; 0)</span><br><span class="line">				k = m.get(k);</span><br><span class="line">			b[k] = inScanner.nextInt();</span><br><span class="line">		}</span><br><span class="line">		</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			System.out.println(b[i]);</span><br><span class="line">		inScanner.close();</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -458,7 +462,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/01/29/ti-zi-jian-dao-bu/">http://aspire-zero.github.io/2022/01/29/ti-zi-jian-dao-bu/</a>
+                    <a href="http://aspire-zero.github.io/2022/02/03/niu-de-xi-pai/">http://aspire-zero.github.io/2022/02/03/niu-de-xi-pai/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -541,17 +545,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/02/03/niu-wei-shi-me-guo-ma-lu-ii/">
+                <a href="/2022/02/03/niu-de-xi-pai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="牛为什么过马路II">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="牛的洗牌">
                         
-                        <span class="card-title">牛为什么过马路II</span>
+                        <span class="card-title">牛的洗牌</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -561,9 +566,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -576,6 +581,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -594,13 +600,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/28/fang-kuai-you-xi/">
+                <a href="/2022/02/03/niu-de-ji-yin-zu-xue/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="方块游戏">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="牛的基因组学">
                         
-                        <span class="card-title">方块游戏</span>
+                        <span class="card-title">牛的基因组学</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -611,7 +617,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-03
                             </span>
                         <span class="publish-author">
                             
