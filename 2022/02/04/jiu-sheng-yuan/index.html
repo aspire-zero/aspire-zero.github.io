@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="牛的洗牌, Hexo,HTML,CSS">
+    <meta name="keywords" content="救生员, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>牛的洗牌 | 你的姜小白</title>
+    <title>救生员 | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">牛的洗牌</h1>
+                    <h1 class="description center-align post-title">救生员</h1>
                 </div>
             </div>
         </div>
@@ -398,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-03
+                    2022-02-04
                 </div>
                 
 
@@ -419,23 +419,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1764/">1762. 牛的洗牌 - AcWing题库</a></p>
-<p>农夫约翰坚信快乐的奶牛会产出更多的牛奶，因此他在谷仓中安装了一个巨大的迪斯科球，并计划教他的奶牛跳舞！</p>
-<p>在查阅了一些牛的流行舞蹈后，约翰决定教他的奶牛“洗牌舞”。</p>
-<p>洗牌舞是由他的 NN 只奶牛按一定顺序排成一行，然后连续执行三次“洗牌”，每次“洗牌”都可能会使奶牛重新排序。</p>
-<p>为了让奶牛们更容易找到自己所处的位置，约翰用数字 1∼N1∼N 对一行中奶牛所在的位置进行了标记，一行中第一头奶牛处于位置 11，第二头奶牛处于位置 22，以此类推，直到位置 NN。</p>
-<p>每次“洗牌”用 NN 个数字 a1,a2,…,aNa1,a2,…,aN 来描述，处于位置 ii 的奶牛在一次“洗牌”过后，需要移动至位置 aiai（因此，每个 aiai 在 1…N1…N 范围内）。</p>
-<p>幸运的是，所有 aiai 都是互不相同的，因此，不会存在多头奶牛在洗牌结束后移动到同一个位置的情况。</p>
-<p>约翰的每头奶牛都有一个属于自己的唯一 77 位整数 IDID （不含前导 00）。</p>
-<p>给定你三轮“洗牌”过后的奶牛排列顺序，请你求出奶牛们的初始排列顺序。农夫约翰坚信快乐的奶牛会产出更多的牛奶，因此他在谷仓中安装了一个巨大的迪斯科球，并计划教他的奶牛跳舞！</p>
-<p>在查阅了一些牛的流行舞蹈后，约翰决定教他的奶牛“洗牌舞”。</p>
-<p>洗牌舞是由他的 N 只奶牛按一定顺序排成一行，然后连续执行三次“洗牌”，每次“洗牌”都可能会使奶牛重新排序。</p>
-<p>为了让奶牛们更容易找到自己所处的位置，约翰用数字 1∼N 对一行中奶牛所在的位置进行了标记，一行中第一头奶牛处于位置 1，第二头奶牛处于位置 2，以此类推，直到位置 N。</p>
-<p>每次“洗牌”用 N 个数字 a1,a2,…,aN 来描述，处于位置 i 的奶牛在一次“洗牌”过后，需要移动至位置 ai（因此，每个 ai 在 1…N 范围内）。</p>
-<p>幸运的是，所有 ai 都是互不相同的，因此，不会存在多头奶牛在洗牌结束后移动到同一个位置的情况。</p>
-<p>约翰的每头奶牛都有一个属于自己的唯一 7 位整数 ID （不含前导 0）。</p>
-<p>给定你三轮“洗牌”过后的奶牛排列顺序，请你求出奶牛们的初始排列顺序。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n;</span><br><span class="line">	static TreeMap&lt;Integer, Integer&gt; m = new TreeMap&lt;Integer, Integer&gt;();</span><br><span class="line">	static int[] b = new int[1000];</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			m.put(inScanner.nextInt(), i);</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			int k = i;</span><br><span class="line">			int j = 3;</span><br><span class="line">			while(j --&gt; 0)</span><br><span class="line">				k = m.get(k);</span><br><span class="line">			b[k] = inScanner.nextInt();</span><br><span class="line">		}</span><br><span class="line">		</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			System.out.println(b[i]);</span><br><span class="line">		inScanner.close();</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1752/">1750. 救生员 - AcWing题库</a></p>
+<p>农夫约翰为他的牛开设了一个游泳池，他认为这将帮助它们放松并产出更多的奶。</p>
+<p>为了确保安全，他雇佣了 N 头奶牛作为救生员，每头奶牛的工作班次都是一段连续的时间。</p>
+<p>为了简单起见，游泳池每天的开放时间从时刻 0 到时刻 1000。</p>
+<p>每个奶牛的工作班次都可以用两个整数来描述，它们分别表示该奶牛工作班次的开始时刻和结束时刻。</p>
+<p>例如，从时刻 t=4 开始工作并在时刻 t=7 结束工作的救生员，它的工作时间为三个时间单位（请注意，时间“段”两端的端点是时间轴上的“点”）。</p>
+<p>不幸的是，由于资金紧张问题，约翰不得不解雇一头奶牛。</p>
+<p>请问通过合理裁员，剩余救生员的工作班次仍然可以覆盖的最大时间有多长？</p>
+<p>一个时间间隔内如果存在至少一名救生员当值，那么这个时间间隔就认为是被覆盖的。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n, ans = 0;</span><br><span class="line">	static boolean[] f = new boolean[1010];</span><br><span class="line">	static node[] a = new node[110];</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		for(int i = 0; i &lt; n; i ++)</span><br><span class="line">			a[i] = new node(inScanner.nextInt(), inScanner.nextInt());</span><br><span class="line">		for(int i = 0; i &lt; n; i ++)</span><br><span class="line">		{</span><br><span class="line">			Arrays.fill(f, false);</span><br><span class="line">			int sum = 0;</span><br><span class="line">			for(int j = 0; j &lt; n; j ++)</span><br><span class="line">			{</span><br><span class="line">				if(i != j)</span><br><span class="line">				{</span><br><span class="line">					int l = a[j].l;</span><br><span class="line">					int r = a[j].r;</span><br><span class="line">					while(l &lt; r)</span><br><span class="line">					{</span><br><span class="line">						if(!f[l])</span><br><span class="line">						{</span><br><span class="line">							f[l] = true;</span><br><span class="line">							sum ++;</span><br><span class="line">						}</span><br><span class="line">						l ++;</span><br><span class="line">					}</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">			ans = sum &gt; ans ? sum : ans;</span><br><span class="line">		}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">		inScanner.close();</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line">class node</span><br><span class="line">{</span><br><span class="line">	int l, r;</span><br><span class="line">	public node(int l, int r)</span><br><span class="line">	{</span><br><span class="line">		this.l = l;</span><br><span class="line">		this.r = r;</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -462,7 +455,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/02/03/niu-de-xi-pai/">http://aspire-zero.github.io/2022/02/03/niu-de-xi-pai/</a>
+                    <a href="http://aspire-zero.github.io/2022/02/04/jiu-sheng-yuan/">http://aspire-zero.github.io/2022/02/04/jiu-sheng-yuan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,9 +538,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/02/04/jiu-sheng-yuan/">
                     <div class="card-image">
@@ -565,9 +559,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -580,6 +574,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -598,13 +593,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/03/niu-de-ji-yin-zu-xue/">
+                <a href="/2022/02/03/niu-de-xi-pai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="牛的基因组学">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="牛的洗牌">
                         
-                        <span class="card-title">牛的基因组学</span>
+                        <span class="card-title">牛的洗牌</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

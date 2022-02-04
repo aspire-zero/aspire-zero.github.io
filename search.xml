@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>救生员</title>
+      <link href="2022/02/04/jiu-sheng-yuan/"/>
+      <url>2022/02/04/jiu-sheng-yuan/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a href="https://www.acwing.com/problem/content/1752/">1750. 救生员 - AcWing题库</a></p><p>农夫约翰为他的牛开设了一个游泳池，他认为这将帮助它们放松并产出更多的奶。</p><p>为了确保安全，他雇佣了 N 头奶牛作为救生员，每头奶牛的工作班次都是一段连续的时间。</p><p>为了简单起见，游泳池每天的开放时间从时刻 0 到时刻 1000。</p><p>每个奶牛的工作班次都可以用两个整数来描述，它们分别表示该奶牛工作班次的开始时刻和结束时刻。</p><p>例如，从时刻 t=4 开始工作并在时刻 t=7 结束工作的救生员，它的工作时间为三个时间单位（请注意，时间“段”两端的端点是时间轴上的“点”）。</p><p>不幸的是，由于资金紧张问题，约翰不得不解雇一头奶牛。</p><p>请问通过合理裁员，剩余救生员的工作班次仍然可以覆盖的最大时间有多长？</p><p>一个时间间隔内如果存在至少一名救生员当值，那么这个时间间隔就认为是被覆盖的。</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">static int N = 100010;</span><br><span class="line">static int n, ans = 0;</span><br><span class="line">static boolean[] f = new boolean[1010];</span><br><span class="line">static node[] a = new node[110];</span><br><span class="line">public static void main(String[] args) {</span><br><span class="line">Scanner inScanner = new Scanner(System.in);</span><br><span class="line">n = inScanner.nextInt();</span><br><span class="line">for(int i = 0; i &lt; n; i ++)</span><br><span class="line">a[i] = new node(inScanner.nextInt(), inScanner.nextInt());</span><br><span class="line">for(int i = 0; i &lt; n; i ++)</span><br><span class="line">{</span><br><span class="line">Arrays.fill(f, false);</span><br><span class="line">int sum = 0;</span><br><span class="line">for(int j = 0; j &lt; n; j ++)</span><br><span class="line">{</span><br><span class="line">if(i != j)</span><br><span class="line">{</span><br><span class="line">int l = a[j].l;</span><br><span class="line">int r = a[j].r;</span><br><span class="line">while(l &lt; r)</span><br><span class="line">{</span><br><span class="line">if(!f[l])</span><br><span class="line">{</span><br><span class="line">f[l] = true;</span><br><span class="line">sum ++;</span><br><span class="line">}</span><br><span class="line">l ++;</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">ans = sum &gt; ans ? sum : ans;</span><br><span class="line">}</span><br><span class="line">System.out.println(ans);</span><br><span class="line">inScanner.close();</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">class node</span><br><span class="line">{</span><br><span class="line">int l, r;</span><br><span class="line">public node(int l, int r)</span><br><span class="line">{</span><br><span class="line">this.l = l;</span><br><span class="line">this.r = r;</span><br><span class="line">}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>牛的洗牌</title>
       <link href="2022/02/03/niu-de-xi-pai/"/>
       <url>2022/02/03/niu-de-xi-pai/</url>
