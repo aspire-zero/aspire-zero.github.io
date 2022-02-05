@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>蹄球</title>
+      <link href="2022/02/05/ti-qiu/"/>
+      <url>2022/02/05/ti-qiu/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a href="https://www.acwing.com/problem/content/description/1740/">1738. 蹄球 - AcWing题库</a></p><p>为了准备即将到来的蹄球锦标赛，Farmer John 正在训练他的 N 头奶牛（方便起见，编号为 1…N）进行传球。</p><p>这些奶牛在牛棚一侧沿直线排列，第 i 号奶牛位于距离牛棚 xi 的地方。</p><p>每头奶牛都在不同的位置上。</p><p>在训练开始的时候，Farmer John 会将若干个球传给不同的奶牛。</p><p>当第 i 号奶牛接到球时，无论是从 Farmer John 或是从另一头奶牛传来的，她会将球传给最近的奶牛（如果有多头奶牛与她距离相同，她会将球传给这些奶牛中最左边的那头奶牛。）。</p><p>为了使所有奶牛都有机会练习到传球，Farmer John 想要确保每头奶牛都持球至少一次。</p><p>帮助他求出为了达到这一目的他开始时至少要传出的球的数量。</p><p>假设他在开始的时候能将球传给最适当的一组奶牛。</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">static int N = 100010;</span><br><span class="line">static int n, ans = 0;</span><br><span class="line">static int[] a = new int[110];</span><br><span class="line">static int[] b = new int[110];</span><br><span class="line">public static void main(String[] args) {</span><br><span class="line">Scanner inScanner = new Scanner(System.in);</span><br><span class="line">n = inScanner.nextInt();</span><br><span class="line">for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">a[i] = inScanner.nextInt();</span><br><span class="line">Arrays.sort(a, 1, n + 1);</span><br><span class="line">for(int i = 1; i &lt; n; i ++)</span><br><span class="line">a[i] = a[i + 1] - a[i];</span><br><span class="line">for(int i = 2; i &lt; n; i ++)</span><br><span class="line">b[i] = a[i] &gt;= a[i - 1] ? 1 : -1;</span><br><span class="line">b[1] = -1;</span><br><span class="line">b[n] = 1;</span><br><span class="line">for(int i = 1; i &lt; n; i ++)</span><br><span class="line">if(b[i] &lt; 0 &amp;&amp; b[i + 1] &gt; 0)</span><br><span class="line">{</span><br><span class="line">ans ++;</span><br><span class="line">if(b[i - 1] &lt; 0 &amp;&amp; b [i + 2] &gt; 0)</span><br><span class="line">ans ++;</span><br><span class="line">}</span><br><span class="line">System.out.println(ans);</span><br><span class="line">inScanner.close();</span><br><span class="line">}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>救生员</title>
       <link href="2022/02/04/jiu-sheng-yuan/"/>
       <url>2022/02/04/jiu-sheng-yuan/</url>
