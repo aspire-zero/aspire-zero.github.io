@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="挤奶顺序, Hexo,HTML,CSS">
+    <meta name="keywords" content="桶列表, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>挤奶顺序 | 你的姜小白</title>
+    <title>桶列表 | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">挤奶顺序</h1>
+                    <h1 class="description center-align post-title">桶列表</h1>
                 </div>
             </div>
         </div>
@@ -398,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-07
+                    2022-02-08
                 </div>
                 
 
@@ -419,22 +419,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/1728/">1726. 挤奶顺序 - AcWing题库</a></p>
-<p>Farmer John 有 N 头奶牛，编号为 1…N。</p>
-<p>他每天都要给他的奶牛们挤奶。</p>
-<p>奶牛的社会结构非常复杂，其结构有两个关键特性。</p>
-<p>首先，有 M 头奶牛的地位等级分明，按照地位越高越早挤奶的规则，这些奶牛的相对挤奶顺序是固定的。</p>
-<p>此外，有 K 头奶牛的具体挤奶顺序也是固定的，比方说，奶牛 4 必须在所有奶牛中的第二位挤奶。</p>
-<p>幸运的是，Farmer John 总是能够以一种满足所有这些情况的顺序给他的奶牛们挤奶。</p>
-<p>不幸的是，奶牛 1 最近生病了，所以 Farmer John 想要尽早给这头奶牛挤奶，使得她可以回到牛棚获得急需的休息。</p>
-<p>请帮助 Farmer John 求出奶牛 1 可以在挤奶顺序中出现的最早位置。</p>
-<p>输入格式<br>第一行包含 N，M，K，表示 Farmer John 有 N 头奶牛，其中 M 头形成了社会阶层，K 头需要在挤奶顺序中处于一个特定的位置。</p>
-<p>下一行包含 M 个不同的整数 mi。在这一行出现的奶牛必须以与她们在这行出现的顺序相同的顺序进行挤奶。</p>
-<p>下面 K 行，每行包含两个整数 ci 和 pi，表示奶牛 ci 一定要在第 pi 位进行挤奶。</p>
-<p>输入数据保证在这些限制之下，Farmer John 能够建立一个符合要求的挤奶顺序。</p>
-<p>输出格式<br>输出奶牛 1 可以在挤奶顺序中出现的最早位置。</p>
-<p>数据范围<br>2≤N≤100,<br>1≤M,K&lt;N,<br>1≤mi,ci,pi≤N</p>
-<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n, m, k;</span><br><span class="line">	static int[] a = new int[110];</span><br><span class="line">	static int[] c = new int[110];</span><br><span class="line">	static int[] f = new int[110];</span><br><span class="line">	public static void work(int l, int r, int q)</span><br><span class="line">	{</span><br><span class="line">		while(r &gt;= l)</span><br><span class="line">		{</span><br><span class="line">			if(c[q] == -1)</span><br><span class="line">			{</span><br><span class="line">				c[q] = a[r];</span><br><span class="line">				r --;</span><br><span class="line">			}</span><br><span class="line">			q --;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		m = inScanner.nextInt();</span><br><span class="line">		k = inScanner.nextInt();</span><br><span class="line">		boolean t = false;</span><br><span class="line">		Arrays.fill(c, -1);</span><br><span class="line">		for(int i = 1; i &lt;= m; i ++)</span><br><span class="line">		{</span><br><span class="line">			a[i] = inScanner.nextInt();</span><br><span class="line">			if(a[i] == 1)</span><br><span class="line">				t = true;</span><br><span class="line">		}</span><br><span class="line">		for(int i = 1; i &lt;= k; i ++)</span><br><span class="line">		{</span><br><span class="line">			int ci, pi;</span><br><span class="line">			ci = inScanner.nextInt();</span><br><span class="line">			pi = inScanner.nextInt();</span><br><span class="line">			c[pi] = ci;</span><br><span class="line">			f[ci] = pi;</span><br><span class="line">		}</span><br><span class="line">		int pre = 0;</span><br><span class="line">		for(int i = 1; i &lt;= m; i ++)</span><br><span class="line">		{</span><br><span class="line">			if(f[a[i]] != 0)</span><br><span class="line">			{</span><br><span class="line">				work(pre + 1, i - 1, f[a[i]] - 1);</span><br><span class="line">				pre = i;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		if(t)</span><br><span class="line">		{</span><br><span class="line">			int j = f[a[pre]] + 1;</span><br><span class="line">			int i = pre + 1;</span><br><span class="line">			while(i &lt;= m &amp;&amp; j &lt;= n)</span><br><span class="line">			{</span><br><span class="line">				if(c[j] == -1)</span><br><span class="line">				{</span><br><span class="line">					c[j] = a[i];</span><br><span class="line">					i ++;</span><br><span class="line">				}</span><br><span class="line">				j ++;</span><br><span class="line">			}</span><br><span class="line">			for(i = 1; i &lt;= n; i ++)</span><br><span class="line">			{</span><br><span class="line">				if(c[i] == 1)</span><br><span class="line">				{</span><br><span class="line">					System.out.println(i);</span><br><span class="line">					break;</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		else</span><br><span class="line">		{</span><br><span class="line">			for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			{</span><br><span class="line">				if(c[i] == -1)</span><br><span class="line">				{</span><br><span class="line">					System.out.println(i);</span><br><span class="line">					break;</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1717/">1715. 桶列表 - AcWing题库</a></p>
+<p>Farmer John 正在考虑改变他给奶牛挤奶的时候分配牛奶桶的方式。</p>
+<p>他认为这最终能使得他使用数量更少的桶，然而他不清楚具体是多少，请帮助他！</p>
+<p>Farmer John 有 N 头奶牛，方便起见编号为 1…N。</p>
+<p>第 i 头奶牛需要从时刻 si 到时刻 ti 之间挤奶，并且挤奶过程中需要用到 bi 个桶。</p>
+<p>多头奶牛可能在同一时刻都在挤奶；每个桶在每个时刻只能供一头奶牛使用。</p>
+<p>也就是说，第 i 头奶牛在时刻 si 到时刻 ti 之间挤奶时，如果用到了某个桶，则该桶在这段时间不能被其他奶牛使用。</p>
+<p>当然，这个桶在这段时间之外可以被其他奶牛所使用。</p>
+<p>为了简化他的工作，FJ 保证在任一时刻，至多只有一头奶牛开始或是结束挤奶（也就是说，所有的 si 和 ti 各不相同）。</p>
+<p>FJ 有一个储藏室，里面有依次编号为 1、2、3、…… 的桶。</p>
+<p>在他的挤奶策略中，当某一头奶牛（比如说，奶牛 i）开始挤奶（在时刻 si），FJ 就跑到储藏室取出编号最小的 bi 个桶分配给第 i 头奶牛用来挤奶。</p>
+<p>请求出 FJ 需要在储藏室中存放多少个桶才能使得他能够顺利地给所有奶牛挤奶。</p>
+<p>输入格式<br>输入的第一行包含 N。</p>
+<p>以下 N 行，每行描述了一头奶牛，包含三个空格分隔的数 si,ti,bi。</p>
+<p>其中 si 和 ti 均为 1…1000 之间的整数，bi 为 1…10 之间的整数。</p>
+<p>输出格式<br>输出一个整数，为 FJ 需要的桶的数量。</p>
+<p>数据范围<br>1≤N≤100</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n, ans = 0;</span><br><span class="line">	static int[] a = new int[1100];</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			int s, t, b;</span><br><span class="line">			s = inScanner.nextInt();</span><br><span class="line">			t = inScanner.nextInt();</span><br><span class="line">			b = inScanner.nextInt();</span><br><span class="line">			a[s] += b;</span><br><span class="line">			a[t + 1] -= b;</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		int sum = 0;</span><br><span class="line">		for(int i = 1; i &lt;= 1001; i ++)</span><br><span class="line">		{</span><br><span class="line">			sum += a[i];</span><br><span class="line">			ans = sum &gt; ans ? sum : ans;</span><br><span class="line">		}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -461,7 +463,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/02/07/ji-nai-shun-xu/">http://aspire-zero.github.io/2022/02/07/ji-nai-shun-xu/</a>
+                    <a href="http://aspire-zero.github.io/2022/02/08/tong-lie-biao/">http://aspire-zero.github.io/2022/02/08/tong-lie-biao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -544,9 +546,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/02/08/tong-lie-biao/">
                     <div class="card-image">
@@ -564,9 +567,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -579,6 +582,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -597,13 +601,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/05/ti-qiu/">
+                <a href="/2022/02/07/ji-nai-shun-xu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="蹄球">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="挤奶顺序">
                         
-                        <span class="card-title">蹄球</span>
+                        <span class="card-title">挤奶顺序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -614,7 +618,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-07
                             </span>
                         <span class="publish-author">
                             
