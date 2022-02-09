@@ -18,12 +18,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
     </entry>
     
     
@@ -45,7 +39,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -70,7 +64,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -95,7 +89,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -120,7 +114,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -145,7 +139,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -170,7 +164,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -195,7 +189,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -220,7 +214,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -245,7 +239,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -270,7 +264,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -295,7 +289,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -320,7 +314,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -345,7 +339,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -370,7 +364,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -395,7 +389,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -420,7 +414,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -445,7 +439,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -470,7 +464,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -495,7 +489,32 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>闪烁</title>
+      <link href="2022/01/20/shan-shuo/"/>
+      <url>2022/01/20/shan-shuo/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a href="https://www.acwing.com/problem/content/1962/">1960. 闪烁 - AcWing题库</a></p><p>农夫约翰对牛棚里昏暗的灯光感到不满，刚刚安装了一个新吊灯。</p><p>新吊灯由 <code>N</code> 个灯泡组成，这 <code>N</code> 个灯泡围成一圈，编号为 <code>0∼N−1</code>。</p><p>奶牛对这个新吊灯非常着迷，并且喜欢玩以下游戏：</p><p>对于第 <code>i</code> 个灯泡，如果在 <code>T−1</code> 时刻，它左侧的灯泡（当 <code>i&gt;0</code> 时，为第 <code>i−1</code> 个灯泡；当 <code>i=0</code> 时，为第 <code>N−1</code> 个灯泡）是开着，那么在 <code>T</code> 时刻，就切换这个灯泡的状态。</p><p>这个游戏将持续 <code>B</code> 单位时间。</p><p>给定灯泡的初始状态，请确定在 <code>B</code> 单位时间后，它们的最终状态。</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">long</span> k;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">1000100</span>];</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">{</span><br><span class="line"><span class="keyword">int</span> j = (i - <span class="number">1</span> + n) % n;</span><br><span class="line"><span class="keyword">int</span> x = t &gt;&gt; i &amp; <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> y = t &gt;&gt; j &amp; <span class="number">1</span>;</span><br><span class="line">sum |= (x ^ y) &lt;&lt; i;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">return</span> sum;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">System.out.println(t &gt;&gt; i &amp; <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">n = inScanner.nextInt();</span><br><span class="line">k = inScanner.nextLong();</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">{</span><br><span class="line"><span class="keyword">int</span> t = inScanner.nextInt();</span><br><span class="line">sum = sum | t &lt;&lt; i;</span><br><span class="line">}</span><br><span class="line">inScanner.close();</span><br><span class="line">Arrays.fill(a, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; ; i ++)</span><br><span class="line">{</span><br><span class="line">sum = update(sum);</span><br><span class="line"><span class="keyword">if</span>(i == k)</span><br><span class="line">{</span><br><span class="line">print(sum);</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(a[sum] == <span class="number">0</span>)</span><br><span class="line">{</span><br><span class="line">a[sum] = i;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">{</span><br><span class="line"><span class="keyword">int</span> l = i - a[sum];</span><br><span class="line"><span class="keyword">int</span> r = (<span class="keyword">int</span>) ((k - i) % l);</span><br><span class="line"><span class="keyword">while</span>(r-- &gt; <span class="number">0</span>)</span><br><span class="line">sum = update(sum);</span><br><span class="line">print(sum);</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">5 6</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">0</span></span><br><span class="line"><span class="comment">0</span></span><br><span class="line"><span class="comment">0</span></span><br><span class="line"><span class="comment">0</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -520,7 +539,7 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -545,7 +564,7 @@
       
         <tags>
             
-            <tag> -java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -570,7 +589,7 @@
       
         <tags>
             
-            <tag> -java </tag>
+            <tag> Java </tag>
             
         </tags>
       
@@ -595,7 +614,7 @@
       
         <tags>
             
-            <tag> -java </tag>
+            <tag> Java </tag>
             
         </tags>
       
