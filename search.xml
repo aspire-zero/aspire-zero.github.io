@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>大型植被恢复</title>
+      <link href="2022/02/10/da-xing-zhi-bei-hui-fu/"/>
+      <url>2022/02/10/da-xing-zhi-bei-hui-fu/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a href="https://www.acwing.com/problem/content/description/1686/">1684. 大型植被恢复 - AcWing题库</a></p><p>长时间的干旱使得 Farmer John 的 NN 块草地上牧草匮乏。</p><p>随着雨季即将到来，现在应当是重新种植的时候了。</p><p>在 Farmer John 的储物棚里有四个桶，每个桶里装着一种不同的草种。</p><p>他想要在每块草地上播种其中一种草。</p><p>作为一名奶农，Farmer John 想要确保他的每头奶牛都能得到丰富的食谱。</p><p>他的 MM 头奶牛每一头都有两块喜爱的草地，他想要确保这两块草地种植不同种类的草，从而每头奶牛都可以选择两种草。</p><p>已知每块草地最多被 44 头奶牛喜爱。</p><p>请帮助 Farmer John 选择每块草地所种的草的种类，使得所有奶牛的营养需求都得到满足。</p><h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入的第一行包含 NN 和 MM。</p><p>以下 MM 行，每行包含两个范围为 1…N1…N 的整数，为 Farmer John 的一头奶牛喜欢的两块草地。</p><h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一个 NN 位数，每一位均为 1…41…4 之一，表示每一块草地上所种的草的种类。</p><p>第一位对应草地 11 的草的种类，第二位对应草地 22，以此类推。</p><p>如果有多种可行的解，只需输出所有解中最小的 NN 位数。</p><h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>2≤N≤1002≤N≤100,<br>1≤M≤150</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">static int N = 100010;</span><br><span class="line">static int n, m;</span><br><span class="line">static int[][] a = new int[110][110];</span><br><span class="line">static int[] ans = new int[110];</span><br><span class="line">static boolean[] f = new boolean[5];</span><br><span class="line">public static void main(String[] args) {</span><br><span class="line">Scanner inScanner = new Scanner(System.in);</span><br><span class="line">n = inScanner.nextInt();</span><br><span class="line">m = inScanner.nextInt();</span><br><span class="line">for(int i = 1; i &lt;= m; i ++)</span><br><span class="line">{</span><br><span class="line">int x, y;</span><br><span class="line">x = inScanner.nextInt();</span><br><span class="line">y = inScanner.nextInt();</span><br><span class="line">a[x][y] = 1;</span><br><span class="line">a[y][x] = 1;</span><br><span class="line">}</span><br><span class="line">for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">{</span><br><span class="line">Arrays.fill(f, false);</span><br><span class="line">for(int j = 1; j &lt;= n; j ++)</span><br><span class="line">{</span><br><span class="line">if(a[i][j] == 1)</span><br><span class="line">f[ans[j]] = true;</span><br><span class="line">}</span><br><span class="line">for(int j = 1; j &lt;= 4; j ++)</span><br><span class="line">{</span><br><span class="line">if(!f[j])</span><br><span class="line">{</span><br><span class="line">ans[i] = j;</span><br><span class="line">break;</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">System.out.print(ans[i]);</span><br><span class="line">}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>困牛排序</title>
       <link href="2022/02/09/kun-niu-pai-xu/"/>
       <url>2022/02/09/kun-niu-pai-xu/</url>
