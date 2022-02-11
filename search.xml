@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>牛奶工厂</title>
+      <link href="2022/02/11/niu-nai-gong-han/"/>
+      <url>2022/02/11/niu-nai-gong-han/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a href="https://www.acwing.com/problem/content/1473/">1471. 牛奶工厂 - AcWing题库</a></p><p>牛奶生意正红红火火！</p><p>农夫约翰的牛奶加工厂内有 N 个加工站，编号为 1…N，以及 N−1 条通道，每条连接某两个加工站。（通道建设很昂贵，所以约翰选择使用了最小数量的通道，使得从每个加工站出发都可以到达所有其他加工站）。</p><p>为了创新和提升效率，约翰在每条通道上安装了传送带。</p><p>不幸的是，当他意识到传送带是单向的已经太晚了，现在每条通道只能沿着一个方向通行了！</p><p>所以现在的情况不再是从每个加工站出发都能够到达其他加工站了。</p><p>然而，约翰认为事情可能还不算完全失败，只要至少还存在一个加工站 i 满足从其他每个加工站出发都可以到达加工站 i。</p><p>注意从其他任意一个加工站 j 前往加工站 i 可能会经过 i 和 j 之间的一些中间站点。</p><p>请帮助约翰求出是否存在这样的加工站 i。</p><p>输入格式<br>输入的第一行包含一个整数 N，为加工站的数量。</p><p>以下 N−1行每行包含两个空格分隔的整数 ai 和 bi，满足 1≤ai,bi≤N 以及 ai≠bi。</p><p>这表示有一条从加工站 ai 向加工站 bi 移动的传送带，仅允许沿从 ai 到 bi 的方向移动。</p><p>输出格式<br>如果存在加工站 i 满足可以从任意其他加工站出发都可以到达加工站 i，输出最小的满足条件的 i。</p><p>否则，输出 −1。</p><p>数据范围<br>1≤N≤100</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">static int N = 100010;</span><br><span class="line">static int n, m;</span><br><span class="line">static int[] pre = new int[110];</span><br><span class="line">public static int find(int k)</span><br><span class="line">{</span><br><span class="line">if(pre[k] != -1)</span><br><span class="line">{pre[k] = find(pre[k]);</span><br><span class="line">return pre[k];</span><br><span class="line">}</span><br><span class="line">return k;</span><br><span class="line">}</span><br><span class="line">public static void main(String[] args) {</span><br><span class="line">Scanner inScanner = new Scanner(System.in);</span><br><span class="line">n = inScanner.nextInt();</span><br><span class="line">Arrays.fill(pre, -1);</span><br><span class="line">int ans = 0;</span><br><span class="line">for(int i = 1; i &lt; n; i ++)</span><br><span class="line">{</span><br><span class="line">int x, y;</span><br><span class="line">x = inScanner.nextInt();</span><br><span class="line">y = inScanner.nextInt();</span><br><span class="line">pre[x] = y;</span><br><span class="line">}</span><br><span class="line">inScanner.close();</span><br><span class="line">for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">{</span><br><span class="line">if(pre[i] == -1)</span><br><span class="line">{</span><br><span class="line">ans = i;</span><br><span class="line">break;</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">{</span><br><span class="line">if(i != ans &amp;&amp; find(i) != ans)</span><br><span class="line">{</span><br><span class="line">ans = -1;</span><br><span class="line">break;</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">System.out.println(ans);</span><br><span class="line">}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>大型植被恢复</title>
       <link href="2022/02/10/da-xing-zhi-bei-hui-fu/"/>
       <url>2022/02/10/da-xing-zhi-bei-hui-fu/</url>
