@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="牛奶工厂, Hexo,HTML,CSS">
+    <meta name="keywords" content="我在哪？, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>牛奶工厂 | 你的姜小白</title>
+    <title>我在哪？ | 你的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">牛奶工厂</h1>
+                    <h1 class="description center-align post-title">我在哪？</h1>
                 </div>
             </div>
         </div>
@@ -398,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-11
+                    2022-02-12
                 </div>
                 
 
@@ -419,22 +419,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1473/">1471. 牛奶工厂 - AcWing题库</a></p>
-<p>牛奶生意正红红火火！</p>
-<p>农夫约翰的牛奶加工厂内有 N 个加工站，编号为 1…N，以及 N−1 条通道，每条连接某两个加工站。（通道建设很昂贵，所以约翰选择使用了最小数量的通道，使得从每个加工站出发都可以到达所有其他加工站）。</p>
-<p>为了创新和提升效率，约翰在每条通道上安装了传送带。</p>
-<p>不幸的是，当他意识到传送带是单向的已经太晚了，现在每条通道只能沿着一个方向通行了！</p>
-<p>所以现在的情况不再是从每个加工站出发都能够到达其他加工站了。</p>
-<p>然而，约翰认为事情可能还不算完全失败，只要至少还存在一个加工站 i 满足从其他每个加工站出发都可以到达加工站 i。</p>
-<p>注意从其他任意一个加工站 j 前往加工站 i 可能会经过 i 和 j 之间的一些中间站点。</p>
-<p>请帮助约翰求出是否存在这样的加工站 i。</p>
-<p>输入格式<br>输入的第一行包含一个整数 N，为加工站的数量。</p>
-<p>以下 N−1行每行包含两个空格分隔的整数 ai 和 bi，满足 1≤ai,bi≤N 以及 ai≠bi。</p>
-<p>这表示有一条从加工站 ai 向加工站 bi 移动的传送带，仅允许沿从 ai 到 bi 的方向移动。</p>
-<p>输出格式<br>如果存在加工站 i 满足可以从任意其他加工站出发都可以到达加工站 i，输出最小的满足条件的 i。</p>
-<p>否则，输出 −1。</p>
-<p>数据范围<br>1≤N≤100</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n, m;</span><br><span class="line">	static int[] pre = new int[110];</span><br><span class="line">	public static int find(int k)</span><br><span class="line">	{</span><br><span class="line">		if(pre[k] != -1)</span><br><span class="line">		{	pre[k] = find(pre[k]);</span><br><span class="line">			return pre[k];</span><br><span class="line">		}</span><br><span class="line">		return k;</span><br><span class="line">	}</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		Arrays.fill(pre, -1);</span><br><span class="line">		int ans = 0;</span><br><span class="line">		for(int i = 1; i &lt; n; i ++)</span><br><span class="line">		{</span><br><span class="line">			int x, y;</span><br><span class="line">			x = inScanner.nextInt();</span><br><span class="line">			y = inScanner.nextInt();</span><br><span class="line">			pre[x] = y;</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			if(pre[i] == -1)</span><br><span class="line">			{</span><br><span class="line">				ans = i;</span><br><span class="line">				break;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			if(i != ans &amp;&amp; find(i) != ans)</span><br><span class="line">			{</span><br><span class="line">				ans = -1;</span><br><span class="line">				break;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1462/">1460. 我在哪？ - AcWing题库</a></p>
+<p>农夫约翰出门沿着马路散步，但是他现在发现自己可能迷路了！</p>
+<p>沿路有一排共 N 个农场。</p>
+<p>不幸的是农场并没有编号，这使得约翰难以分辨他在这条路上所处的位置。</p>
+<p>然而，每个农场都沿路设有一个彩色的邮箱，所以约翰希望能够通过查看最近的几个邮箱的颜色来唯一确定他所在的位置。</p>
+<p>每个邮箱的颜色用 A..Z 之间的一个字母来指定，所以沿着道路的 N 个邮箱的序列可以用一个长为 N 的由字母 A..Z 组成的字符串来表示。</p>
+<p>某些邮箱可能会有相同的颜色。</p>
+<p>约翰想要知道最小的 K 的值，使得他查看任意连续 K 个邮箱序列，他都可以唯一确定这一序列在道路上的位置。</p>
+<p>例如，假设沿路的邮箱序列为 ABCDABC 。</p>
+<p>约翰不能令 K=3，因为如果他看到了 ABC，则沿路有两个这一连续颜色序列可能所在的位置。</p>
+<p>最小可行的 K 的值为 K=4，因为如果他查看任意连续 4 个邮箱，那么可得到的连续颜色序列可以唯一确定他在道路上的位置。</p>
+<h5 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h5><p>输入的第一行包含 N，第二行包含一个由 N 个字符组成的字符串，每个字符均在 A..Z 之内。</p>
+<h5 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h5><p>输出一行，包含一个整数，为可以解决农夫约翰的问题的最小 K 值。</p>
+<h5 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h5><p>1≤N≤100</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n, ans;</span><br><span class="line">	static String s;</span><br><span class="line">	public static boolean check(int t)</span><br><span class="line">	{</span><br><span class="line">		for(int i = 0; i &lt;= n - t; i ++)</span><br><span class="line">		{</span><br><span class="line">			for(int j = i + 1; j &lt;= n - t; j ++)</span><br><span class="line">			{</span><br><span class="line">				boolean f = false;</span><br><span class="line">				for(int k = 0; k &lt; t; k ++)</span><br><span class="line">				{</span><br><span class="line">					if(s.charAt(i + k) != s.charAt(j + k))</span><br><span class="line">					{</span><br><span class="line">						f = false;</span><br><span class="line">						break;</span><br><span class="line">					}</span><br><span class="line">					f = true;</span><br><span class="line">				}</span><br><span class="line">				if(f)</span><br><span class="line">					return true;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		return false;</span><br><span class="line">	}</span><br><span class="line">	public static int work()</span><br><span class="line">	{</span><br><span class="line">		int l = 1, r = n, mid;</span><br><span class="line">		while(l &lt; r)</span><br><span class="line">		{</span><br><span class="line">			mid = (l + r) &gt;&gt; 1;</span><br><span class="line">			if(check(mid))</span><br><span class="line">				l = mid + 1;</span><br><span class="line">			else</span><br><span class="line">				r = mid;</span><br><span class="line">		}</span><br><span class="line">		return l;</span><br><span class="line">	}</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		s = inScanner.next();</span><br><span class="line">		inScanner.close();</span><br><span class="line">		System.out.println(work());</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -461,7 +460,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/02/11/niu-nai-gong-han/">http://aspire-zero.github.io/2022/02/11/niu-nai-gong-han/</a>
+                    <a href="http://aspire-zero.github.io/2022/02/12/wo-zai-na/">http://aspire-zero.github.io/2022/02/12/wo-zai-na/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -544,9 +543,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/02/12/wo-zai-na/">
                     <div class="card-image">
@@ -564,9 +564,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -579,6 +579,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -597,13 +598,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/10/da-xing-zhi-bei-hui-fu/">
+                <a href="/2022/02/11/niu-nai-gong-han/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="大型植被恢复">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="牛奶工厂">
                         
-                        <span class="card-title">大型植被恢复</span>
+                        <span class="card-title">牛奶工厂</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -614,7 +615,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-11
                             </span>
                         <span class="publish-author">
                             
