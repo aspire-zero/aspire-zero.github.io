@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>疯狂的科学家</title>
+      <link href="2022/02/15/feng-kuang-de-ke-xue-jia/"/>
+      <url>2022/02/15/feng-kuang-de-ke-xue-jia/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a href="https://www.acwing.com/problem/content/1674/">1672. 疯狂的科学家 - AcWing题库</a></p><p>Farmer John 的远房亲戚 Ben 是一个疯狂的科学家。</p><p>通常这会在家庭聚会时造成不小的摩擦，但这偶尔也会带来些好处，尤其是当 Farmer John 发现他正面对一些有关他的奶牛们的独特而不寻常的问题时。</p><p>Farmer John 当前正面对一个有关她的奶牛们的独特而不寻常的问题。</p><p>他最近订购了 N 头奶牛，包含两种不同品种：荷斯坦牛和更赛牛。</p><p>他在订单中用一个长为 N 的字符串来指定奶牛，其中的字符为 H（表示荷斯坦牛）或 G（表示更赛牛）。</p><p>不幸的是，当这些奶牛到达他的农场，他给她们排队时，她们的品种组成的字符串与原先的不同。</p><p>我们将这两个字符串称为 A 和 B，其中 A 是 Farmer John 原先想要的品种字符组成的字符串，B 是他的奶牛们到达时组成的字符串。</p><p>Farmer John 并没有简单地检查重新排列 B 中的奶牛是否能得到 A，而是请他的远房亲戚 Ben 利用他的科学才华来解决这一问题。</p><p>经过数月的研究，Ben 发明了一台不同寻常的机器：奶牛品种转换机3000，能够选择任意奶牛组成的子串并反转她们的品种：在这个子串中的所有 H 变为 G，所有 G 变为 H。</p><p>Farmer John 想要求出将他当前的序列 B 变为他本来订购时想要的 A 需要使用这台机器的最小次数。</p><p>然而，Ben 的疯狂的科学家技能并不会处理开发奇异机器以外的事，所以你需要帮助 Farmer John 解决这个计算难题。</p><h5 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h5><p>输入的第一行包含 N，以下两行包含字符串 A 和 B。每个字符串均包含 N 个字符，字符均为 H 和 G 之一。</p><h5 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h5><p>输出将 B 变为 A 需要使用机器的最小次数。</p><h5 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h5><p>1≤N≤1000</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">static int N = 100010;</span><br><span class="line">static int n, ans = 0;</span><br><span class="line">static boolean f = false;</span><br><span class="line">public static void main(String[] args) {</span><br><span class="line">Scanner inScanner = new Scanner(System.in);</span><br><span class="line">n = inScanner.nextInt();</span><br><span class="line">StringBuilder s = new StringBuilder(inScanner.next());</span><br><span class="line">StringBuilder s1 = new StringBuilder(inScanner.next());</span><br><span class="line">for(int i = 0; i &lt; n; i ++)</span><br><span class="line">{</span><br><span class="line"></span><br><span class="line">if(!f &amp;&amp; s.charAt(i) != s1.charAt(i))</span><br><span class="line">{</span><br><span class="line">f = true;</span><br><span class="line">ans ++;</span><br><span class="line">}</span><br><span class="line">if(s.charAt(i) == s1.charAt(i))</span><br><span class="line">f = false;</span><br><span class="line">}</span><br><span class="line">inScanner.close();</span><br><span class="line">System.out.printf("%d", ans);</span><br><span class="line">}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>拍照</title>
       <link href="2022/02/14/pai-zhao/"/>
       <url>2022/02/14/pai-zhao/</url>
