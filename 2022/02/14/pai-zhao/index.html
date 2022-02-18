@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/74.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -447,7 +447,52 @@
 <p>第二行包含 N−1 个空格分隔的整数 b1,b2,…,bN−1。</p>
 <h5 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h5><p>输出一行，包含 N 个空格分隔的整数 a1,a2,…,aN。</p>
 <h5 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h5><p>2≤N≤103</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n;</span><br><span class="line">	static boolean f = false;</span><br><span class="line">	static int[] a = new int[1010];</span><br><span class="line">	static int[] b = new int[1010];</span><br><span class="line">	static boolean[] m = new boolean[1010];</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		for(int i = 1; i &lt; n; i ++)</span><br><span class="line">			b[i] = inScanner.nextInt();</span><br><span class="line">		inScanner.close();</span><br><span class="line">		for(int i = 1; i &lt; b[1]; i ++)</span><br><span class="line">		{</span><br><span class="line">			Arrays.fill(m, false);</span><br><span class="line">			m[i] = true;</span><br><span class="line">			a[1] = i;</span><br><span class="line">			for(int j = 2; j &lt;= n; j ++)</span><br><span class="line">			{</span><br><span class="line">				int t = b[j - 1] - a[j - 1];</span><br><span class="line">				if(t &gt; 0 &amp;&amp; t &lt;= n &amp;&amp; !m[t])</span><br><span class="line">				{</span><br><span class="line">					m[t] = true;</span><br><span class="line">					a[j] = t;</span><br><span class="line">					f = true;</span><br><span class="line">				}</span><br><span class="line">				else </span><br><span class="line">				{</span><br><span class="line">					f = false;</span><br><span class="line">					break;</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">			if(f)</span><br><span class="line">				break;</span><br><span class="line"></span><br><span class="line">		}</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			System.out.printf("%d ", a[i]);</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-html"><code class="language-lang-html">import java.util.*;
+
+
+public class Main {
+    static int N = 100010;
+    static int n;
+    static boolean f = false;
+    static int[] a = new int[1010];
+    static int[] b = new int[1010];
+    static boolean[] m = new boolean[1010];
+
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        for(int i = 1; i < n; i ++)
+            b[i] = inScanner.nextInt();
+        inScanner.close();
+        for(int i = 1; i < b[1]; i ++)
+        {
+            Arrays.fill(m, false);
+            m[i] = true;
+            a[1] = i;
+            for(int j = 2; j <= n; j ++)
+            {
+                int t = b[j - 1] - a[j - 1];
+                if(t > 0 && t <= n && !m[t])
+                {
+                    m[t] = true;
+                    a[j] = t;
+                    f = true;
+                }
+                else 
+                {
+                    f = false;
+                    break;
+                }
+            }
+            if(f)
+                break;
+
+        }
+        for(int i = 1; i <= n; i ++)
+            System.out.printf("%d ", a[i]);
+    }
+}
+</code></pre>
 
                 
             </div>
@@ -565,7 +610,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="疯狂的科学家">
+                        <img src="/medias/featureimages/64.jpg" class="responsive-img" alt="疯狂的科学家">
                         
                         <span class="card-title">疯狂的科学家</span>
                     </div>
@@ -614,7 +659,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="我在哪？">
+                        <img src="/medias/featureimages/76.jpg" class="responsive-img" alt="我在哪？">
                         
                         <span class="card-title">我在哪？</span>
                     </div>
@@ -814,7 +859,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

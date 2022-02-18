@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/42.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -443,7 +443,55 @@
 <p>不幸的是，由于资金紧张问题，约翰不得不解雇一头奶牛。</p>
 <p>请问通过合理裁员，剩余救生员的工作班次仍然可以覆盖的最大时间有多长？</p>
 <p>一个时间间隔内如果存在至少一名救生员当值，那么这个时间间隔就认为是被覆盖的。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n, ans = 0;</span><br><span class="line">	static boolean[] f = new boolean[1010];</span><br><span class="line">	static node[] a = new node[110];</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		for(int i = 0; i &lt; n; i ++)</span><br><span class="line">			a[i] = new node(inScanner.nextInt(), inScanner.nextInt());</span><br><span class="line">		for(int i = 0; i &lt; n; i ++)</span><br><span class="line">		{</span><br><span class="line">			Arrays.fill(f, false);</span><br><span class="line">			int sum = 0;</span><br><span class="line">			for(int j = 0; j &lt; n; j ++)</span><br><span class="line">			{</span><br><span class="line">				if(i != j)</span><br><span class="line">				{</span><br><span class="line">					int l = a[j].l;</span><br><span class="line">					int r = a[j].r;</span><br><span class="line">					while(l &lt; r)</span><br><span class="line">					{</span><br><span class="line">						if(!f[l])</span><br><span class="line">						{</span><br><span class="line">							f[l] = true;</span><br><span class="line">							sum ++;</span><br><span class="line">						}</span><br><span class="line">						l ++;</span><br><span class="line">					}</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">			ans = sum &gt; ans ? sum : ans;</span><br><span class="line">		}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">		inScanner.close();</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line">class node</span><br><span class="line">{</span><br><span class="line">	int l, r;</span><br><span class="line">	public node(int l, int r)</span><br><span class="line">	{</span><br><span class="line">		this.l = l;</span><br><span class="line">		this.r = r;</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-html"><code class="language-lang-html">import java.util.*;
+
+public class Main {
+    static int N = 100010;
+    static int n, ans = 0;
+    static boolean[] f = new boolean[1010];
+    static node[] a = new node[110];
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        for(int i = 0; i < n; i ++)
+            a[i] = new node(inScanner.nextInt(), inScanner.nextInt());
+        for(int i = 0; i < n; i ++)
+        {
+            Arrays.fill(f, false);
+            int sum = 0;
+            for(int j = 0; j < n; j ++)
+            {
+                if(i != j)
+                {
+                    int l = a[j].l;
+                    int r = a[j].r;
+                    while(l < r)
+                    {
+                        if(!f[l])
+                        {
+                            f[l] = true;
+                            sum ++;
+                        }
+                        l ++;
+                    }
+                }
+            }
+            ans = sum > ans ? sum : ans;
+        }
+        System.out.println(ans);
+        inScanner.close();
+    }
+}
+class node
+{
+    int l, r;
+    public node(int l, int r)
+    {
+        this.l = l;
+        this.r = r;
+    }
+}
+</code></pre>
 
                 
             </div>
@@ -561,7 +609,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="蹄球">
+                        <img src="/medias/featureimages/79.jpg" class="responsive-img" alt="蹄球">
                         
                         <span class="card-title">蹄球</span>
                     </div>
@@ -610,7 +658,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="牛的洗牌">
+                        <img src="/medias/featureimages/62.jpg" class="responsive-img" alt="牛的洗牌">
                         
                         <span class="card-title">牛的洗牌</span>
                     </div>
@@ -810,7 +858,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

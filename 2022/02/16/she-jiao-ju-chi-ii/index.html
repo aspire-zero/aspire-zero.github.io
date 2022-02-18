@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -446,7 +446,56 @@
 <p>以下 N 行每行用两个整数 x 和 s 描述一头奶牛，其中 x 为位置，s 为 0 表示健康的奶牛，1 表示染病的奶牛，并且所有可能因传播而染病的奶牛均已染病。</p>
 <h5 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h5><p>输出在疾病开始传播之前已经得病的奶牛的最小数量。</p>
 <h5 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h5><p>1≤N≤1000,<br>0≤x≤10^6</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n, ans = 0, l = 1000010;</span><br><span class="line">	static node[] a = new node[1010];</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			a[i] = new node(inScanner.nextInt(), inScanner.nextInt());</span><br><span class="line">		inScanner.close();</span><br><span class="line">		Arrays.sort(a, 1, n + 1);</span><br><span class="line">		for(int i = 2; i &lt;= n; i ++)</span><br><span class="line">			if((a[i].v ^ a[i - 1].v) == 1)</span><br><span class="line">			{</span><br><span class="line">				int t = a[i].x - a[i - 1].x;</span><br><span class="line">				l = t &lt; l ? t : l;</span><br><span class="line">			}</span><br><span class="line">		if(a[1].v == 1)</span><br><span class="line">			ans ++;</span><br><span class="line">		for(int i = 2; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			if(a[i].v == 1 &amp;&amp; a[i - 1].v == 0)</span><br><span class="line">				ans ++;</span><br><span class="line">			else if(a[i].v + a[i - 1].v == 2) </span><br><span class="line">			{</span><br><span class="line">				if(a[i].x - a[i - 1].x &gt;= l)</span><br><span class="line">					ans ++;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		System.out.printf("%d", ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line">class node implements Comparable<span class="tag">&lt;<span class="name">node</span>&gt;</span></span><br><span class="line">{</span><br><span class="line">	int x, v;</span><br><span class="line">	public node(int x, int v)</span><br><span class="line">	{</span><br><span class="line">		this.x = x;</span><br><span class="line">		this.v = v;</span><br><span class="line">	}</span><br><span class="line">	public int compareTo(node o)</span><br><span class="line">	{</span><br><span class="line">		return x - o.x;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-html"><code class="language-lang-html">import java.util.*;
+
+
+public class Main {
+    static int N = 100010;
+    static int n, ans = 0, l = 1000010;
+    static node[] a = new node[1010];
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        for(int i = 1; i <= n; i ++)
+            a[i] = new node(inScanner.nextInt(), inScanner.nextInt());
+        inScanner.close();
+        Arrays.sort(a, 1, n + 1);
+        for(int i = 2; i <= n; i ++)
+            if((a[i].v ^ a[i - 1].v) == 1)
+            {
+                int t = a[i].x - a[i - 1].x;
+                l = t < l ? t : l;
+            }
+        if(a[1].v == 1)
+            ans ++;
+        for(int i = 2; i <= n; i ++)
+        {
+            if(a[i].v == 1 && a[i - 1].v == 0)
+                ans ++;
+            else if(a[i].v + a[i - 1].v == 2) 
+            {
+                if(a[i].x - a[i - 1].x >= l)
+                    ans ++;
+            }
+        }
+        System.out.printf("%d", ans);
+    }
+}
+class node implements Comparable<node>
+{
+    int x, v;
+    public node(int x, int v)
+    {
+        this.x = x;
+        this.v = v;
+    }
+    public int compareTo(node o)
+    {
+        return x - o.x;
+    }
+
+}
+</code></pre>
 
                 
             </div>
@@ -564,7 +613,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="菊花链">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="菊花链">
                         
                         <span class="card-title">菊花链</span>
                     </div>
@@ -613,7 +662,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="疯狂的科学家">
+                        <img src="/medias/featureimages/64.jpg" class="responsive-img" alt="疯狂的科学家">
                         
                         <span class="card-title">疯狂的科学家</span>
                     </div>
@@ -813,7 +862,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

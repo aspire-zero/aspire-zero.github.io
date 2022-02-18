@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -444,7 +444,95 @@
 <p>例如，驾驶拖拉机先向北移动 2 单位长度，然后向东移动 3 单位长度。</p>
 <p>拖拉机无法移动到干草捆占据的位置。</p>
 <p>请帮助约翰确定他需要移除的干草捆的最小数量，以便他能够将拖拉机开到二维平面的原点。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.PriorityQueue;</span><br><span class="line"><span class="keyword">import</span> java.util.Queue;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">node</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">node</span>&gt;</span></span><br><span class="line"><span class="class"></span>{</span><br><span class="line">	<span class="keyword">int</span> x, y, dist;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">node</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> dist)</span> </span>{</span><br><span class="line">		<span class="keyword">this</span>.x = x;</span><br><span class="line">		<span class="keyword">this</span>.y = y;</span><br><span class="line">		<span class="keyword">this</span>.dist = dist;</span><br><span class="line">	}</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(node o)</span> </span>{</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.dist - o.dist;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n, sx, sy;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[][] dis = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2010</span>][<span class="number">2010</span>];</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">boolean</span>[][] f = <span class="keyword">new</span> <span class="keyword">boolean</span>[<span class="number">2010</span>][<span class="number">2010</span>];</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">boolean</span>[][] g = <span class="keyword">new</span> <span class="keyword">boolean</span>[<span class="number">2010</span>][<span class="number">2010</span>];</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] xx = {<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, -<span class="number">1</span>};</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] yy = {<span class="number">1</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>};</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">dijkstra</span><span class="params">(node root)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">		Queue&lt;node&gt; q = <span class="keyword">new</span> PriorityQueue&lt;node&gt;();</span><br><span class="line">		q.add(root);</span><br><span class="line">		<span class="keyword">while</span>(!q.isEmpty())</span><br><span class="line">		{</span><br><span class="line">			node top = q.poll();</span><br><span class="line">			<span class="keyword">if</span>(top.x == <span class="number">0</span> &amp;&amp; top.y == <span class="number">0</span>)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">if</span>(f[top.x][top.y])</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			f[top.x][top.y] = <span class="keyword">true</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i ++)</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">int</span> tx = top.x + xx[i];</span><br><span class="line">				<span class="keyword">int</span> ty = top.y + yy[i];</span><br><span class="line">				<span class="keyword">if</span>(<span class="number">0</span> &lt;= tx &amp;&amp; tx &lt; <span class="number">2000</span> &amp;&amp; <span class="number">0</span> &lt;= ty &amp;&amp; ty &lt; <span class="number">2000</span>)</span><br><span class="line">				{</span><br><span class="line">					<span class="keyword">int</span> w = <span class="number">0</span>;</span><br><span class="line">					<span class="keyword">if</span>(g[tx][ty]) </span><br><span class="line">						w = <span class="number">1</span>;</span><br><span class="line">					<span class="keyword">if</span>(top.dist + w &lt; dis[tx][ty])</span><br><span class="line">					{</span><br><span class="line">						dis[tx][ty] = top.dist + w;</span><br><span class="line">						<span class="keyword">if</span>(!f[tx][ty])</span><br><span class="line">							q.add(<span class="keyword">new</span> node(tx, ty, dis[tx][ty]));</span><br><span class="line">					}</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">return</span> dis[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dis.length; i ++)</span><br><span class="line">			Arrays.fill(dis[i], Integer.MAX_VALUE);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		sx = inScanner.nextInt();</span><br><span class="line">		sy = inScanner.nextInt();</span><br><span class="line">		dis[sx][sy] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> a, b;</span><br><span class="line">			a = inScanner.nextInt();</span><br><span class="line">			b = inScanner.nextInt();</span><br><span class="line">			g[a][b] = <span class="keyword">true</span>;</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		<span class="keyword">int</span> ans = dijkstra(<span class="keyword">new</span> node(sx, sy, <span class="number">0</span>));</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">7 6 3</span></span><br><span class="line"><span class="comment">6 2</span></span><br><span class="line"><span class="comment">5 2</span></span><br><span class="line"><span class="comment">4 3</span></span><br><span class="line"><span class="comment">2 1</span></span><br><span class="line"><span class="comment">7 3</span></span><br><span class="line"><span class="comment">5 4</span></span><br><span class="line"><span class="comment">6 4</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-java"><code class="language-lang-java">import java.util.Arrays;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Scanner;
+
+class node implements Comparable<node>
+{
+    int x, y, dist;
+    public node(int x, int y, int dist) {
+        this.x = x;
+        this.y = y;
+        this.dist = dist;
+    }
+    @Override
+    public int compareTo(node o) {
+        return this.dist - o.dist;
+    }
+
+}
+public class Main {
+    static int n, sx, sy;
+    static int[][] dis = new int[2010][2010];
+    static boolean[][] f = new boolean[2010][2010];
+    static boolean[][] g = new boolean[2010][2010];
+    static int[] xx = {0, 0, 1, -1};
+    static int[] yy = {1, -1, 0, 0};
+    public static int dijkstra(node root)
+    {
+        Queue<node> q = new PriorityQueue<node>();
+        q.add(root);
+        while(!q.isEmpty())
+        {
+            node top = q.poll();
+            if(top.x == 0 && top.y == 0)
+                break;
+            if(f[top.x][top.y])
+                continue;
+            f[top.x][top.y] = true;
+            for(int i = 0; i < 4; i ++)
+            {
+                int tx = top.x + xx[i];
+                int ty = top.y + yy[i];
+                if(0 <= tx && tx < 2000 && 0 <= ty && ty < 2000)
+                {
+                    int w = 0;
+                    if(g[tx][ty]) 
+                        w = 1;
+                    if(top.dist + w < dis[tx][ty])
+                    {
+                        dis[tx][ty] = top.dist + w;
+                        if(!f[tx][ty])
+                            q.add(new node(tx, ty, dis[tx][ty]));
+                    }
+                }
+            }
+        }
+        return dis[0][0];
+    }
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        for(int i = 0; i < dis.length; i ++)
+            Arrays.fill(dis[i], Integer.MAX_VALUE);
+        n = inScanner.nextInt();
+        sx = inScanner.nextInt();
+        sy = inScanner.nextInt();
+        dis[sx][sy] = 0;
+        for(int i = 1; i <= n; i ++)
+        {
+            int a, b;
+            a = inScanner.nextInt();
+            b = inScanner.nextInt();
+            g[a][b] = true;
+        }
+        inScanner.close();
+        int ans = dijkstra(new node(sx, sy, 0));
+        System.out.println(ans);
+    }
+}
+/*
+7 6 3
+6 2
+5 2
+4 3
+2 1
+7 3
+5 4
+6 4
+*/
+</code></pre>
 
                 
             </div>
@@ -562,7 +650,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="岛">
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="岛">
                         
                         <span class="card-title">岛</span>
                     </div>
@@ -611,7 +699,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="奶牛选美">
+                        <img src="/medias/featureimages/74.jpg" class="responsive-img" alt="奶牛选美">
                         
                         <span class="card-title">奶牛选美</span>
                     </div>
@@ -811,7 +899,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

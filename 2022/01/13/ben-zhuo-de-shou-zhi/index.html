@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/65.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -441,7 +441,58 @@
 <p>贝茜不会额外添加或删除数字，但是可能会由于写错数字的原因，写下包含前导 00 的数字。</p>
 <p>给定贝茜将数字 $N$ 转换为二进制数字以及三进制数字的结果，请确定 $N$ 的正确初始值（十进制表示）。</p>
 <h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>进行枚举，枚举每位出错，然后对比出错后两者是否相等。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">import</span> java.lang.Math;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">work</span><span class="params">(String a, String b)</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">int</span> la = a.length();</span><br><span class="line">        <span class="keyword">int</span> lb = b.length();</span><br><span class="line">        <span class="keyword">char</span>[] sa = a.toCharArray();</span><br><span class="line">        <span class="keyword">char</span>[] sb = b.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; la; i ++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">char</span> qa = sa[i];</span><br><span class="line">            <span class="keyword">if</span>(sa[i] == <span class="string">'0'</span>)</span><br><span class="line">                sa[i] = <span class="string">'1'</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                sa[i] = <span class="string">'0'</span>;</span><br><span class="line">            String a1 = <span class="keyword">new</span> String(sa);</span><br><span class="line">            <span class="keyword">int</span> na = Integer.parseInt(a1, <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; lb; j ++)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">char</span> qb = sb[j];</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">char</span> k = <span class="string">'0'</span>; k &lt;= <span class="string">'2'</span>; k ++)</span><br><span class="line">                {    </span><br><span class="line">                    <span class="keyword">if</span>(k != qb)</span><br><span class="line">                    {</span><br><span class="line">                        sb[j] = k;</span><br><span class="line">                        String b1 = <span class="keyword">new</span> String(sb);</span><br><span class="line">                        <span class="keyword">int</span> nb = Integer.parseInt(b1, <span class="number">3</span>);</span><br><span class="line">                        <span class="keyword">if</span>(na == nb)</span><br><span class="line">                            <span class="keyword">return</span> na;</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                sb[j] = qb;</span><br><span class="line">            }</span><br><span class="line">            sa[i] = qa;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String s,s1;</span><br><span class="line">        s = in.next();</span><br><span class="line">        s1 = in.next();</span><br><span class="line">        <span class="keyword">int</span> ans = work(s, s1);</span><br><span class="line">        System.out.printf(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-java"><code class="language-lang-java">import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Scanner;
+import java.lang.Math;
+public class Main{
+
+    public static int work(String a, String b)
+    {
+        int la = a.length();
+        int lb = b.length();
+        char[] sa = a.toCharArray();
+        char[] sb = b.toCharArray();
+        for(int i = 0; i < la; i ++)
+        {
+            char qa = sa[i];
+            if(sa[i] == '0')
+                sa[i] = '1';
+            else
+                sa[i] = '0';
+            String a1 = new String(sa);
+            int na = Integer.parseInt(a1, 2);
+            for(int j = 0; j < lb; j ++)
+            {
+                char qb = sb[j];
+                for(char k = '0'; k <= '2'; k ++)
+                {    
+                    if(k != qb)
+                    {
+                        sb[j] = k;
+                        String b1 = new String(sb);
+                        int nb = Integer.parseInt(b1, 3);
+                        if(na == nb)
+                            return na;
+                    }
+                }
+                sb[j] = qb;
+            }
+            sa[i] = qa;
+        }
+        return 0;
+    }
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s,s1;
+        s = in.next();
+        s1 = in.next();
+        int ans = work(s, s1);
+        System.out.printf("%d\n", ans);
+    }
+
+}
+</code></pre>
 
                 
             </div>
@@ -559,7 +610,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="粉刷栅栏">
+                        <img src="/medias/featureimages/56.jpg" class="responsive-img" alt="粉刷栅栏">
                         
                         <span class="card-title">粉刷栅栏</span>
                     </div>
@@ -608,7 +659,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="Ubuntu搭建docker以及wordpress">
+                        <img src="/medias/featureimages/64.jpg" class="responsive-img" alt="Ubuntu搭建docker以及wordpress">
                         
                         <span class="card-title">Ubuntu搭建docker以及wordpress</span>
                     </div>
@@ -804,7 +855,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

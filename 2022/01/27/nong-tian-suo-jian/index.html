@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/58.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -443,7 +443,147 @@
 <p>请帮助约翰计算，卖掉牛群中的一头奶牛以后，他可以用围栏围起来的最小面积（为剩下的奶牛建造尽可能小的围栏）。</p>
 <p>对于这个问题，请将奶牛视为点，将围栏视为四个线段的集合。</p>
 <p>注意，答案可以是零，例如，所有剩余的奶牛最终都站在同一条垂直或水平线上。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n, x, y;</span><br><span class="line">	<span class="keyword">static</span> node min_x, premin_x;</span><br><span class="line">	<span class="keyword">static</span> node max_x, premax_x;</span><br><span class="line">	<span class="keyword">static</span> node min_y, premin_y;</span><br><span class="line">	<span class="keyword">static</span> node max_y, premax_y;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">minx</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> key)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">		<span class="keyword">if</span>(x &lt; min_x.v)</span><br><span class="line">		{</span><br><span class="line">			premin_x.key = min_x.key;</span><br><span class="line">			premin_x.v = min_x.v;</span><br><span class="line">			min_x.key = key;</span><br><span class="line">			min_x.v = x;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(x &lt; premin_x.v)</span><br><span class="line">		{</span><br><span class="line">			premin_x.key = key;</span><br><span class="line">			premin_x.v = x;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">maxx</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> key)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">		<span class="keyword">if</span>(x &gt; max_x.v)</span><br><span class="line">		{</span><br><span class="line">			premax_x.key = max_x.key;</span><br><span class="line">			premax_x.v = max_x.v;</span><br><span class="line">			max_x.key = key;</span><br><span class="line">			max_x.v = x;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(x &gt; premax_x.v)</span><br><span class="line">		{</span><br><span class="line">			premax_x.key = key;</span><br><span class="line">			premax_x.v = x;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">miny</span><span class="params">(<span class="keyword">int</span> y, <span class="keyword">int</span> key)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">		<span class="keyword">if</span>(y &lt; min_y.v)</span><br><span class="line">		{</span><br><span class="line">			premin_y.key = min_y.key;</span><br><span class="line">			premin_y.v = min_y.v;</span><br><span class="line">			min_y.key = key;</span><br><span class="line">			min_y.v = y;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(y &lt; premin_y.v)</span><br><span class="line">		{</span><br><span class="line">			premin_y.key = key;</span><br><span class="line">			premin_y.v = y;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">maxy</span><span class="params">(<span class="keyword">int</span> y, <span class="keyword">int</span> key)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">		<span class="keyword">if</span>(y &gt; max_y.v)</span><br><span class="line">		{</span><br><span class="line">			premax_y.key = max_y.key;</span><br><span class="line">			premax_y.v = max_y.v;</span><br><span class="line">			max_y.key = key;</span><br><span class="line">			max_y.v = y;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(y &gt; premax_y.v)</span><br><span class="line">		{</span><br><span class="line">			premax_y.key = key;</span><br><span class="line">			premax_y.v = y;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		min_x = <span class="keyword">new</span> node(<span class="number">0</span>, Integer.MAX_VALUE);</span><br><span class="line">		premin_x = <span class="keyword">new</span> node(<span class="number">0</span>, Integer.MAX_VALUE);</span><br><span class="line">		min_y = <span class="keyword">new</span> node(<span class="number">0</span>, Integer.MAX_VALUE);</span><br><span class="line">		premin_y = <span class="keyword">new</span> node(<span class="number">0</span>, Integer.MAX_VALUE);</span><br><span class="line">		</span><br><span class="line">		max_x = <span class="keyword">new</span> node(<span class="number">0</span>, Integer.MIN_VALUE);</span><br><span class="line">		premax_x = <span class="keyword">new</span> node(<span class="number">0</span>, Integer.MIN_VALUE);</span><br><span class="line">		max_y = <span class="keyword">new</span> node(<span class="number">0</span>, Integer.MIN_VALUE);</span><br><span class="line">		premax_y = <span class="keyword">new</span> node(<span class="number">0</span>, Integer.MIN_VALUE);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			x = inScanner.nextInt();</span><br><span class="line">			y = inScanner.nextInt();</span><br><span class="line">			minx(x, i);</span><br><span class="line">			miny(y, i);</span><br><span class="line">			maxx(x, i);</span><br><span class="line">			maxy(y, i);</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		<span class="keyword">int</span> lx = premin_x.v - min_x.v;</span><br><span class="line">		<span class="keyword">int</span> rx = max_x.v - premax_x.v;</span><br><span class="line">		<span class="keyword">int</span> ly = premin_y.v - min_y.v;</span><br><span class="line">		<span class="keyword">int</span> ry = max_y.v - premax_y.v;</span><br><span class="line">		<span class="keyword">if</span>(lx &gt;= rx &amp;&amp; lx &gt;= ly &amp;&amp; lx &gt;= ry)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">if</span>(min_x.key == min_y.key)</span><br><span class="line">				min_y.v = premin_y.v;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(min_x.key == max_y.key)</span><br><span class="line">				max_y.v = premax_y.v;</span><br><span class="line">			min_x.v = premin_x.v;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(rx &gt;= lx &amp;&amp; rx &gt;= ly &amp;&amp; rx &gt;= ry)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">if</span>(max_x.key == min_y.key)</span><br><span class="line">				min_y.v = premin_y.v;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(max_x.key == max_y.key)</span><br><span class="line">				max_y.v = premax_y.v;</span><br><span class="line">			max_x.v = premax_x.v;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(ly &gt;= lx &amp;&amp; ly &gt;= rx &amp;&amp; ly &gt;= ry)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">if</span>(min_y.key == min_x.key)</span><br><span class="line">				min_x.v = premin_x.v;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(min_y.key == max_x.key)</span><br><span class="line">				max_x.v = premax_x.v;</span><br><span class="line">			min_y.v = premin_y.v;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">if</span>(max_y.key == min_x.key)</span><br><span class="line">				min_x.v = premin_x.v;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(max_y.key == max_x.key)</span><br><span class="line">				max_x.v = premax_x.v;</span><br><span class="line">			max_y.v = premax_y.v;</span><br><span class="line">		}</span><br><span class="line">		System.out.println((max_x.v - min_x.v) * (max_y.v - min_y.v));</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">node</span></span></span><br><span class="line"><span class="class"></span>{</span><br><span class="line">	<span class="keyword">int</span> v, key;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">node</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">		<span class="keyword">this</span>.v = v;</span><br><span class="line">		<span class="keyword">this</span>.key = key;</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-java"><code class="language-lang-java">import java.util.*;
+
+
+public class Main {
+    static int N = 100010;
+    static int n, x, y;
+    static node min_x, premin_x;
+    static node max_x, premax_x;
+    static node min_y, premin_y;
+    static node max_y, premax_y;
+    public static void minx(int x, int key)
+    {
+        if(x < min_x.v)
+        {
+            premin_x.key = min_x.key;
+            premin_x.v = min_x.v;
+            min_x.key = key;
+            min_x.v = x;
+        }
+        else if(x < premin_x.v)
+        {
+            premin_x.key = key;
+            premin_x.v = x;
+        }
+    }
+    public static void maxx(int x, int key)
+    {
+        if(x > max_x.v)
+        {
+            premax_x.key = max_x.key;
+            premax_x.v = max_x.v;
+            max_x.key = key;
+            max_x.v = x;
+        }
+        else if(x > premax_x.v)
+        {
+            premax_x.key = key;
+            premax_x.v = x;
+        }
+    }
+    public static void miny(int y, int key)
+    {
+        if(y < min_y.v)
+        {
+            premin_y.key = min_y.key;
+            premin_y.v = min_y.v;
+            min_y.key = key;
+            min_y.v = y;
+        }
+        else if(y < premin_y.v)
+        {
+            premin_y.key = key;
+            premin_y.v = y;
+        }
+    }
+    public static void maxy(int y, int key)
+    {
+        if(y > max_y.v)
+        {
+            premax_y.key = max_y.key;
+            premax_y.v = max_y.v;
+            max_y.key = key;
+            max_y.v = y;
+        }
+        else if(y > premax_y.v)
+        {
+            premax_y.key = key;
+            premax_y.v = y;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        min_x = new node(0, Integer.MAX_VALUE);
+        premin_x = new node(0, Integer.MAX_VALUE);
+        min_y = new node(0, Integer.MAX_VALUE);
+        premin_y = new node(0, Integer.MAX_VALUE);
+
+        max_x = new node(0, Integer.MIN_VALUE);
+        premax_x = new node(0, Integer.MIN_VALUE);
+        max_y = new node(0, Integer.MIN_VALUE);
+        premax_y = new node(0, Integer.MIN_VALUE);
+        for(int i = 1; i <= n; i ++)
+        {
+            x = inScanner.nextInt();
+            y = inScanner.nextInt();
+            minx(x, i);
+            miny(y, i);
+            maxx(x, i);
+            maxy(y, i);
+        }
+        inScanner.close();
+        int lx = premin_x.v - min_x.v;
+        int rx = max_x.v - premax_x.v;
+        int ly = premin_y.v - min_y.v;
+        int ry = max_y.v - premax_y.v;
+        if(lx >= rx && lx >= ly && lx >= ry)
+        {
+            if(min_x.key == min_y.key)
+                min_y.v = premin_y.v;
+            else if(min_x.key == max_y.key)
+                max_y.v = premax_y.v;
+            min_x.v = premin_x.v;
+        }
+        else if(rx >= lx && rx >= ly && rx >= ry)
+        {
+            if(max_x.key == min_y.key)
+                min_y.v = premin_y.v;
+            else if(max_x.key == max_y.key)
+                max_y.v = premax_y.v;
+            max_x.v = premax_x.v;
+        }
+        else if(ly >= lx && ly >= rx && ly >= ry)
+        {
+            if(min_y.key == min_x.key)
+                min_x.v = premin_x.v;
+            else if(min_y.key == max_x.key)
+                max_x.v = premax_x.v;
+            min_y.v = premin_y.v;
+        }
+        else
+        {
+            if(max_y.key == min_x.key)
+                min_x.v = premin_x.v;
+            else if(max_y.key == max_x.key)
+                max_x.v = premax_x.v;
+            max_y.v = premax_y.v;
+        }
+        System.out.println((max_x.v - min_x.v) * (max_y.v - min_y.v));
+    }
+}
+class node
+{
+    int v, key;
+    public node(int key, int v)
+    {
+        this.v = v;
+        this.key = key;
+    }
+}
+</code></pre>
 
                 
             </div>
@@ -561,7 +701,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="方块游戏">
+                        <img src="/medias/featureimages/69.jpg" class="responsive-img" alt="方块游戏">
                         
                         <span class="card-title">方块游戏</span>
                     </div>
@@ -610,7 +750,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="圆形牛棚">
+                        <img src="/medias/featureimages/43.jpg" class="responsive-img" alt="圆形牛棚">
                         
                         <span class="card-title">圆形牛棚</span>
                     </div>
@@ -810,7 +950,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/62.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -450,7 +450,34 @@
 <p>幸运的是，所有 ai 都是互不相同的，因此，不会存在多头奶牛在洗牌结束后移动到同一个位置的情况。</p>
 <p>约翰的每头奶牛都有一个属于自己的唯一 7 位整数 ID （不含前导 0）。</p>
 <p>给定你三轮“洗牌”过后的奶牛排列顺序，请你求出奶牛们的初始排列顺序。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n;</span><br><span class="line">	static TreeMap&lt;Integer, Integer&gt; m = new TreeMap&lt;Integer, Integer&gt;();</span><br><span class="line">	static int[] b = new int[1000];</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			m.put(inScanner.nextInt(), i);</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			int k = i;</span><br><span class="line">			int j = 3;</span><br><span class="line">			while(j --&gt; 0)</span><br><span class="line">				k = m.get(k);</span><br><span class="line">			b[k] = inScanner.nextInt();</span><br><span class="line">		}</span><br><span class="line">		</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			System.out.println(b[i]);</span><br><span class="line">		inScanner.close();</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-html"><code class="language-lang-html">import java.util.*;
+
+
+public class Main {
+    static int N = 100010;
+    static int n;
+    static TreeMap<Integer, Integer> m = new TreeMap<Integer, Integer>();
+    static int[] b = new int[1000];
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        for(int i = 1; i <= n; i ++)
+            m.put(inScanner.nextInt(), i);
+        for(int i = 1; i <= n; i ++)
+        {
+            int k = i;
+            int j = 3;
+            while(j --> 0)
+                k = m.get(k);
+            b[k] = inScanner.nextInt();
+        }
+
+        for(int i = 1; i <= n; i ++)
+            System.out.println(b[i]);
+        inScanner.close();
+    }
+}
+</code></pre>
 
                 
             </div>
@@ -568,7 +595,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="救生员">
+                        <img src="/medias/featureimages/42.jpg" class="responsive-img" alt="救生员">
                         
                         <span class="card-title">救生员</span>
                     </div>
@@ -617,7 +644,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="牛的基因组学">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="牛的基因组学">
                         
                         <span class="card-title">牛的基因组学</span>
                     </div>
@@ -817,7 +844,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

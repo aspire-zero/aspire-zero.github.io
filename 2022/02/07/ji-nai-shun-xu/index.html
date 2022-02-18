@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -449,7 +449,94 @@
 <p>输入数据保证在这些限制之下，Farmer John 能够建立一个符合要求的挤奶顺序。</p>
 <p>输出格式<br>输出奶牛 1 可以在挤奶顺序中出现的最早位置。</p>
 <p>数据范围<br>2≤N≤100,<br>1≤M,K&lt;N,<br>1≤mi,ci,pi≤N</p>
-<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n, m, k;</span><br><span class="line">	static int[] a = new int[110];</span><br><span class="line">	static int[] c = new int[110];</span><br><span class="line">	static int[] f = new int[110];</span><br><span class="line">	public static void work(int l, int r, int q)</span><br><span class="line">	{</span><br><span class="line">		while(r &gt;= l)</span><br><span class="line">		{</span><br><span class="line">			if(c[q] == -1)</span><br><span class="line">			{</span><br><span class="line">				c[q] = a[r];</span><br><span class="line">				r --;</span><br><span class="line">			}</span><br><span class="line">			q --;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		m = inScanner.nextInt();</span><br><span class="line">		k = inScanner.nextInt();</span><br><span class="line">		boolean t = false;</span><br><span class="line">		Arrays.fill(c, -1);</span><br><span class="line">		for(int i = 1; i &lt;= m; i ++)</span><br><span class="line">		{</span><br><span class="line">			a[i] = inScanner.nextInt();</span><br><span class="line">			if(a[i] == 1)</span><br><span class="line">				t = true;</span><br><span class="line">		}</span><br><span class="line">		for(int i = 1; i &lt;= k; i ++)</span><br><span class="line">		{</span><br><span class="line">			int ci, pi;</span><br><span class="line">			ci = inScanner.nextInt();</span><br><span class="line">			pi = inScanner.nextInt();</span><br><span class="line">			c[pi] = ci;</span><br><span class="line">			f[ci] = pi;</span><br><span class="line">		}</span><br><span class="line">		int pre = 0;</span><br><span class="line">		for(int i = 1; i &lt;= m; i ++)</span><br><span class="line">		{</span><br><span class="line">			if(f[a[i]] != 0)</span><br><span class="line">			{</span><br><span class="line">				work(pre + 1, i - 1, f[a[i]] - 1);</span><br><span class="line">				pre = i;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		if(t)</span><br><span class="line">		{</span><br><span class="line">			int j = f[a[pre]] + 1;</span><br><span class="line">			int i = pre + 1;</span><br><span class="line">			while(i &lt;= m &amp;&amp; j &lt;= n)</span><br><span class="line">			{</span><br><span class="line">				if(c[j] == -1)</span><br><span class="line">				{</span><br><span class="line">					c[j] = a[i];</span><br><span class="line">					i ++;</span><br><span class="line">				}</span><br><span class="line">				j ++;</span><br><span class="line">			}</span><br><span class="line">			for(i = 1; i &lt;= n; i ++)</span><br><span class="line">			{</span><br><span class="line">				if(c[i] == 1)</span><br><span class="line">				{</span><br><span class="line">					System.out.println(i);</span><br><span class="line">					break;</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		else</span><br><span class="line">		{</span><br><span class="line">			for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			{</span><br><span class="line">				if(c[i] == -1)</span><br><span class="line">				{</span><br><span class="line">					System.out.println(i);</span><br><span class="line">					break;</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class=" language-lang-html"><code class="language-lang-html">import java.util.*;
+
+
+public class Main {
+    static int N = 100010;
+    static int n, m, k;
+    static int[] a = new int[110];
+    static int[] c = new int[110];
+    static int[] f = new int[110];
+    public static void work(int l, int r, int q)
+    {
+        while(r >= l)
+        {
+            if(c[q] == -1)
+            {
+                c[q] = a[r];
+                r --;
+            }
+            q --;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        m = inScanner.nextInt();
+        k = inScanner.nextInt();
+        boolean t = false;
+        Arrays.fill(c, -1);
+        for(int i = 1; i <= m; i ++)
+        {
+            a[i] = inScanner.nextInt();
+            if(a[i] == 1)
+                t = true;
+        }
+        for(int i = 1; i <= k; i ++)
+        {
+            int ci, pi;
+            ci = inScanner.nextInt();
+            pi = inScanner.nextInt();
+            c[pi] = ci;
+            f[ci] = pi;
+        }
+        int pre = 0;
+        for(int i = 1; i <= m; i ++)
+        {
+            if(f[a[i]] != 0)
+            {
+                work(pre + 1, i - 1, f[a[i]] - 1);
+                pre = i;
+            }
+        }
+        inScanner.close();
+        if(t)
+        {
+            int j = f[a[pre]] + 1;
+            int i = pre + 1;
+            while(i <= m && j <= n)
+            {
+                if(c[j] == -1)
+                {
+                    c[j] = a[i];
+                    i ++;
+                }
+                j ++;
+            }
+            for(i = 1; i <= n; i ++)
+            {
+                if(c[i] == 1)
+                {
+                    System.out.println(i);
+                    break;
+                }
+            }
+        }
+        else
+        {
+            for(int i = 1; i <= n; i ++)
+            {
+                if(c[i] == -1)
+                {
+                    System.out.println(i);
+                    break;
+                }
+            }
+        }
+    }
+}
+</code></pre>
 
                 
             </div>
@@ -567,7 +654,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="桶列表">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="桶列表">
                         
                         <span class="card-title">桶列表</span>
                     </div>
@@ -616,7 +703,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="蹄球">
+                        <img src="/medias/featureimages/79.jpg" class="responsive-img" alt="蹄球">
                         
                         <span class="card-title">蹄球</span>
                     </div>
@@ -816,7 +903,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

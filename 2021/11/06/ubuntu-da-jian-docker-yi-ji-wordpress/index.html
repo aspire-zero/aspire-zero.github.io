@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/64.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -432,16 +432,25 @@
 <li><p>启动docker服务：<code>sudo service docker start</code></p>
 </li>
 <li><p>docker安装wordpress：</p>
-<figure class="highlight do"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull wordpress：latest</span><br></pre></td></tr></tbody></table></figure></li>
+<pre class=" language-lang-do"><code class="language-lang-do">sudo docker pull wordpress：latest
+</code></pre>
+</li>
 <li><p>docker安装mysql</p>
-<figure class="highlight do"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull mysql</span><br></pre></td></tr></tbody></table></figure>
+<pre class=" language-lang-do"><code class="language-lang-do">sudo docker pull mysql
+</code></pre>
 <p>配置mysql：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -d -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql mysql</span><br></pre></td></tr></tbody></table></figure>
+<pre class=" language-lang-doc"><code class="language-lang-doc">sudo docker run -d -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql mysql
+</code></pre>
 <p>-d： 后台运行，我们数据库肯定上需要一直在跑的嘛。<br>-p： 上映射端口，mysql容器相当于一台虚拟机，是不能直接从外网访问的，需要通过主机去访问，前面的上主机端口 : 后面上容器端口，现在上将3306映射到3306上，这样访问公网的3306就是容器的端口了，但一般可以改其他端口，不安全。<br>-v： 是相当于文件夹重定向吧，将主机的一个目录和容器目录同步，这样会方便修改日期的文件及配置。<br>-e： 环境变量，设置数据库密码，还有–name 容器的名称。</p>
 <p><code>mysql  -u root -p</code>进入mysql</p>
 </li>
 <li><p>运行wordpress</p>
-<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//有volume的</span></span><br><span class="line">sudo docker run --name wordpress -v /<span class="keyword">var</span>/www/html:<span class="regexp">/var/</span>www/html --link mysql:mysql -p <span class="number">5001</span>:<span class="number">80</span> -d wordpress</span><br><span class="line"><span class="comment">//没有数据卷的</span></span><br><span class="line">sudo docker run --name wordpress --link mysql:mysql -p <span class="number">5001</span>:<span class="number">80</span> -d wordpress</span><br></pre></td></tr></tbody></table></figure></li>
+<pre class=" language-lang-javascript"><code class="language-lang-javascript">//有volume的
+sudo docker run --name wordpress -v /var/www/html:/var/www/html --link mysql:mysql -p 5001:80 -d wordpress
+//没有数据卷的
+sudo docker run --name wordpress --link mysql:mysql -p 5001:80 -d wordpress
+</code></pre>
+</li>
 <li><p>输入服务器ip就进行构建。</p>
 <p>桥接模式直接输入虚拟机的ip，我的是<code>192.168.43.100</code></p>
 </li>
@@ -584,7 +593,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="笨拙的手指">
+                        <img src="/medias/featureimages/65.jpg" class="responsive-img" alt="笨拙的手指">
                         
                         <span class="card-title">笨拙的手指</span>
                     </div>
@@ -633,7 +642,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="P3599 Koishi Loves Construction">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="P3599 Koishi Loves Construction">
                         
                         <span class="card-title">P3599 Koishi Loves Construction</span>
                     </div>
@@ -821,7 +830,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/64.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -449,7 +449,34 @@
 <h5 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h5><p>输入的第一行包含 N，以下两行包含字符串 A 和 B。每个字符串均包含 N 个字符，字符均为 H 和 G 之一。</p>
 <h5 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h5><p>输出将 B 变为 A 需要使用机器的最小次数。</p>
 <h5 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h5><p>1≤N≤1000</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n, ans = 0;</span><br><span class="line">	static boolean f = false;</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		StringBuilder s = new StringBuilder(inScanner.next());</span><br><span class="line">		StringBuilder s1 = new StringBuilder(inScanner.next());</span><br><span class="line">		for(int i = 0; i &lt; n; i ++)</span><br><span class="line">		{</span><br><span class="line">			</span><br><span class="line">			if(!f &amp;&amp; s.charAt(i) != s1.charAt(i))</span><br><span class="line">			{</span><br><span class="line">				f = true;</span><br><span class="line">				ans ++;</span><br><span class="line">			}</span><br><span class="line">			if(s.charAt(i) == s1.charAt(i))</span><br><span class="line">				f = false;</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		System.out.printf("%d", ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-html"><code class="language-lang-html">import java.util.*;
+
+
+public class Main {
+    static int N = 100010;
+    static int n, ans = 0;
+    static boolean f = false;
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        StringBuilder s = new StringBuilder(inScanner.next());
+        StringBuilder s1 = new StringBuilder(inScanner.next());
+        for(int i = 0; i < n; i ++)
+        {
+
+            if(!f && s.charAt(i) != s1.charAt(i))
+            {
+                f = true;
+                ans ++;
+            }
+            if(s.charAt(i) == s1.charAt(i))
+                f = false;
+        }
+        inScanner.close();
+        System.out.printf("%d", ans);
+    }
+}
+</code></pre>
 
                 
             </div>
@@ -567,7 +594,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="社交距离II">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="社交距离II">
                         
                         <span class="card-title">社交距离II</span>
                     </div>
@@ -616,7 +643,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="拍照">
+                        <img src="/medias/featureimages/74.jpg" class="responsive-img" alt="拍照">
                         
                         <span class="card-title">拍照</span>
                     </div>
@@ -816,7 +843,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

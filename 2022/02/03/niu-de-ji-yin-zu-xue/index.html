@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -440,12 +440,63 @@
 <p>农夫约翰花了大价钱对他的奶牛的基因组进行了测序。</p>
 <p>每个基因组都是一个由四个字符 A,C,G,T 构成的长度为 M 的字符串。</p>
 <p>当他统计得到的奶牛的基因组序列时，可以得到一个如下所示的表：（此时，N=3）</p>
-<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">位置 :    1 2 3 4 5 6 7 ... M</span><br><span class="line"></span><br><span class="line">斑点牛 1: A A T C C C A ... T</span><br><span class="line">斑点牛 2: G A T T G C A ... A</span><br><span class="line">斑点牛 3: G G T C G C A ... A</span><br><span class="line"></span><br><span class="line">普通牛 1: A C T C C C A ... G</span><br><span class="line">普通牛 2: A C T C G C A ... T</span><br><span class="line">普通牛 3: A C T T C C A ... T</span><br></pre></td></tr></tbody></table></figure>
+<pre class=" language-lang-html"><code class="language-lang-html">位置 :    1 2 3 4 5 6 7 ... M
+
+斑点牛 1: A A T C C C A ... T
+斑点牛 2: G A T T G C A ... A
+斑点牛 3: G G T C G C A ... A
+
+普通牛 1: A C T C C C A ... G
+普通牛 2: A C T C G C A ... T
+普通牛 3: A C T T C C A ... T
+</code></pre>
 <p>通过仔细观察该表，他发现通过位置 2 的字符足以判断奶牛是否存在斑点。</p>
 <p>也就是说，仅通过查看这个位置上的字符，农夫约翰就可以判断他的哪些奶牛有斑点，哪些没有斑点。（在这里，A 和 G 表示有斑点，C 表示无斑点，T 无关紧要，因为没有任何一头牛的第二个位置上的字符是 T）</p>
 <p>位置 1 上的字符不足以判断奶牛是否存在斑点，因为 A 既可以表示有斑点也可以表示无斑点。</p>
 <p>给定约翰的奶牛的基因组序列列表，请你计算可以单独用来判断奶牛是否存在斑点的位置的数量。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n, m, ans = 0;</span><br><span class="line">	static String[] q = new String[110];</span><br><span class="line">	static TreeSet<span class="tag">&lt;<span class="name">Integer</span>&gt;</span>[] set = new TreeSet[110];</span><br><span class="line">	public static boolean check(int k)</span><br><span class="line">	{</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			int t = q[i].charAt(k) - 'A';</span><br><span class="line">			if(set[k].contains(t))</span><br><span class="line">				return false;</span><br><span class="line">		}</span><br><span class="line">		return true;</span><br><span class="line">	}</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		m = inScanner.nextInt();</span><br><span class="line">		String s;</span><br><span class="line">		for(int i = 0; i &lt; m; i ++)</span><br><span class="line">			set[i] = new TreeSet<span class="tag">&lt;<span class="name">Integer</span>&gt;</span>();</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			s = inScanner.next();</span><br><span class="line">			for(int j = 0; j &lt; m; j ++)</span><br><span class="line">				set[j].add(s.charAt(j) - 'A');</span><br><span class="line">		}</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			q[i] = inScanner.next();</span><br><span class="line">		for(int i = 0; i &lt; m; i ++)</span><br><span class="line">		{</span><br><span class="line">			if(check(i))</span><br><span class="line">				ans ++;</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-html"><code class="language-lang-html">import java.util.*;
+
+
+public class Main {
+    static int N = 100010;
+    static int n, m, ans = 0;
+    static String[] q = new String[110];
+    static TreeSet<Integer>[] set = new TreeSet[110];
+    public static boolean check(int k)
+    {
+        for(int i = 1; i <= n; i ++)
+        {
+            int t = q[i].charAt(k) - 'A';
+            if(set[k].contains(t))
+                return false;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        m = inScanner.nextInt();
+        String s;
+        for(int i = 0; i < m; i ++)
+            set[i] = new TreeSet<Integer>();
+        for(int i = 1; i <= n; i ++)
+        {
+            s = inScanner.next();
+            for(int j = 0; j < m; j ++)
+                set[j].add(s.charAt(j) - 'A');
+        }
+        for(int i = 1; i <= n; i ++)
+            q[i] = inScanner.next();
+        for(int i = 0; i < m; i ++)
+        {
+            if(check(i))
+                ans ++;
+        }
+        inScanner.close();
+        System.out.println(ans);
+    }
+}
+</code></pre>
 
                 
             </div>
@@ -563,7 +614,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="牛的洗牌">
+                        <img src="/medias/featureimages/62.jpg" class="responsive-img" alt="牛的洗牌">
                         
                         <span class="card-title">牛的洗牌</span>
                     </div>
@@ -612,7 +663,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="牛为什么过马路II">
+                        <img src="/medias/featureimages/29.jpg" class="responsive-img" alt="牛为什么过马路II">
                         
                         <span class="card-title">牛为什么过马路II</span>
                     </div>
@@ -812,7 +863,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

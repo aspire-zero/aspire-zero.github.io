@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/70.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -441,7 +441,42 @@
 <p>牛 XX 把球扔给她右边的牛 <code>Y</code>，然后牛 <code>Y</code> 把球扔给她右边的牛 <code>Z</code>。</p>
 <p>约翰指出，第二次投掷的距离不少于第一次投掷的距离，也不超过第一次投掷的距离的两倍。</p>
 <p>请计算共有多少组牛 <code>(X,Y,Z)</code> 可能是约翰所看到的。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">1010</span>];</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">			a[i] = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">		inScanner.close();</span><br><span class="line">		Arrays.sort(a, <span class="number">1</span>, n + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i + <span class="number">1</span> &lt; n; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>, l = j + <span class="number">1</span>, r = j + <span class="number">1</span>; j &lt; n; j ++)</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">int</span> t = a[j] - a[i];</span><br><span class="line">				<span class="keyword">while</span>(l &lt;= n &amp;&amp; t &gt; a[l] - a[j]) l ++;</span><br><span class="line">				<span class="keyword">while</span>(r &lt;= n &amp;&amp; a[r] - a[j] &lt;= <span class="number">2</span> * t) r ++;</span><br><span class="line">				ans += r - l;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">5</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">10</span></span><br><span class="line"><span class="comment">7</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-java"><code class="language-lang-java">import java.util.*;
+
+
+public class Main {
+    static int n;
+    static int[] a = new int[1010];
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        for(int i = 1; i <= n; i ++)
+            a[i] = inScanner.nextInt();
+        int ans = 0;
+        inScanner.close();
+        Arrays.sort(a, 1, n + 1);
+        for(int i = 1; i + 1 < n; i ++)
+        {
+            for(int j = i + 1, l = j + 1, r = j + 1; j < n; j ++)
+            {
+                int t = a[j] - a[i];
+                while(l <= n && t > a[l] - a[j]) l ++;
+                while(r <= n && a[r] - a[j] <= 2 * t) r ++;
+                ans += r - l;
+            }
+        }
+        System.out.println(ans);
+    }
+}
+/*
+5
+3
+1
+10
+7
+4
+*/
+</code></pre>
 
                 
             </div>
@@ -559,7 +594,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="镜子田地">
+                        <img src="/medias/featureimages/52.jpg" class="responsive-img" alt="镜子田地">
                         
                         <span class="card-title">镜子田地</span>
                     </div>
@@ -608,7 +643,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="闪烁">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="闪烁">
                         
                         <span class="card-title">闪烁</span>
                     </div>
@@ -808,7 +843,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

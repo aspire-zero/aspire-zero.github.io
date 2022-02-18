@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/62.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -441,14 +441,56 @@
 <p>每次放慢脚步，贝茜的速度都会降低：减速一次后，她以每秒 1/2 米的速度移动，减速两次后，则以每秒 1/3 米的速度移动，依此类推。</p>
 <p>你将被告知何时何地贝茜会减速。</p>
 <p>当减速信息格式为：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">T 17</span><br></pre></td></tr></tbody></table></figure>
-<p>意味着，贝茜在某个时间点减速，本例表示比赛开始第 17 秒贝茜减速。</p>
+<pre><code>T 17
+</code></pre><p>意味着，贝茜在某个时间点减速，本例表示比赛开始第 17 秒贝茜减速。</p>
 <p>当减速信息格式为：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D 10</span><br></pre></td></tr></tbody></table></figure>
-<p>意味着，贝茜在某个地点减速，本例表示在行进 10 米处减速。</p>
+<pre><code>D 10
+</code></pre><p>意味着，贝茜在某个地点减速，本例表示在行进 10 米处减速。</p>
 <p>给定 N 个减速信息，请计算贝茜滑完一千米需要多少秒。</p>
 <p>将你的答案四舍五入到最接近的整数（ 0.5 向上舍入为 1）。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">static</span> PriorityQueue&lt;Integer&gt; T = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">	<span class="keyword">static</span> PriorityQueue&lt;Integer&gt; D = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		<span class="keyword">while</span>(n -- &gt; <span class="number">0</span>)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">if</span>(<span class="string">"T"</span>.equals(inScanner.next()))</span><br><span class="line">				T.offer(inScanner.nextInt());</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				D.offer(inScanner.nextInt());</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">double</span> v = <span class="number">1</span>, time = <span class="number">0</span>, dis = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(!T.isEmpty() || !D.isEmpty())</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">if</span>(T.isEmpty() || (!D.isEmpty() &amp;&amp; time + (D.peek() - dis) * v &lt; T.peek()))</span><br><span class="line">			{</span><br><span class="line">				time += (D.peek() - dis) * v;</span><br><span class="line">				dis = D.poll();</span><br><span class="line">			}</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			{</span><br><span class="line">				dis += (T.peek() - time) / v;</span><br><span class="line">				time = T.poll();</span><br><span class="line">			}</span><br><span class="line">			v ++;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">int</span> ans = (<span class="keyword">int</span>)(time + (<span class="number">1000</span> - dis) * v + <span class="number">0.5</span>);</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">		inScanner.close();</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment">T 30</span></span><br><span class="line"><span class="comment">D 10</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-java"><code class="language-lang-java">import java.util.*;
+
+public class Main {
+    static int n;
+    static PriorityQueue<Integer> T = new PriorityQueue<>();
+    static PriorityQueue<Integer> D = new PriorityQueue<>();
+
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        while(n -- > 0)
+        {
+            if("T".equals(inScanner.next()))
+                T.offer(inScanner.nextInt());
+            else
+                D.offer(inScanner.nextInt());
+        }
+        double v = 1, time = 0, dis = 0;
+        while(!T.isEmpty() || !D.isEmpty())
+        {
+            if(T.isEmpty() || (!D.isEmpty() && time + (D.peek() - dis) * v < T.peek()))
+            {
+                time += (D.peek() - dis) * v;
+                dis = D.poll();
+            }
+            else
+            {
+                dis += (T.peek() - time) / v;
+                time = T.poll();
+            }
+            v ++;
+        }
+        int ans = (int)(time + (1000 - dis) * v + 0.5);
+        System.out.println(ans);
+        inScanner.close();
+    }
+}
+/*
+2
+T 30
+D 10
+*/
+</code></pre>
 
                 
             </div>
@@ -566,7 +608,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="马蹄铁">
+                        <img src="/medias/featureimages/73.jpg" class="responsive-img" alt="马蹄铁">
                         
                         <span class="card-title">马蹄铁</span>
                     </div>
@@ -615,7 +657,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="岛">
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="岛">
                         
                         <span class="card-title">岛</span>
                     </div>
@@ -815,7 +857,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/61.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -441,7 +441,64 @@
 <p>贝茜给了约翰一个表达式 <code>(B+E+S+S+I+E)(G+O+E+S)(M+O+O)</code>，其中包含七个变量 <code>B,E,S,I,G,O,M</code>（<code>O</code>是变量，不是零）。</p>
 <p>对于每个变量，她给约翰一个列表，表中包含该变量可采用的最多 <code>20</code> 个整数值。</p>
 <p>她要求约翰计算，共有多少种给变量赋值的方法可以使得表达式的计算结果为偶数。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">static</span> Map&lt;String, Integer&gt;[] m = <span class="keyword">new</span> Map[<span class="number">2</span>];</span><br><span class="line">	<span class="keyword">static</span> String q = <span class="string">"BESIGOM"</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> cnt = -<span class="number">1</span>, ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] num = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bfs</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>{</span><br><span class="line">		<span class="keyword">if</span>(cnt == <span class="number">6</span>)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">if</span>((num[<span class="number">0</span>] + num[<span class="number">3</span>]) * (num[<span class="number">4</span>] + num[<span class="number">5</span>] + num[<span class="number">1</span>] + num[<span class="number">2</span>]) * num[<span class="number">6</span>] % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">int</span> M = m[num[<span class="number">6</span>]].getOrDefault(<span class="string">"M"</span>, <span class="number">0</span>);</span><br><span class="line">				<span class="keyword">int</span> O = m[num[<span class="number">5</span>]].getOrDefault(<span class="string">"O"</span>, <span class="number">0</span>);</span><br><span class="line">				<span class="keyword">int</span> G = m[num[<span class="number">4</span>]].getOrDefault(<span class="string">"G"</span>, <span class="number">0</span>);</span><br><span class="line">				<span class="keyword">int</span> I = m[num[<span class="number">3</span>]].getOrDefault(<span class="string">"I"</span>, <span class="number">0</span>);</span><br><span class="line">				<span class="keyword">int</span> S = m[num[<span class="number">2</span>]].getOrDefault(<span class="string">"S"</span>, <span class="number">0</span>);</span><br><span class="line">				<span class="keyword">int</span> E = m[num[<span class="number">1</span>]].getOrDefault(<span class="string">"E"</span>, <span class="number">0</span>);</span><br><span class="line">				<span class="keyword">int</span> B = m[num[<span class="number">0</span>]].getOrDefault(<span class="string">"B"</span>, <span class="number">0</span>);</span><br><span class="line">				<span class="keyword">int</span> sum = M * O * G * I * S * E * B;</span><br><span class="line">				ans += sum;</span><br><span class="line">			}</span><br><span class="line"><span class="comment">//			for(int i = 0; i &lt; 7; i ++)</span></span><br><span class="line"><span class="comment">//				System.out.print(num[i]);</span></span><br><span class="line"><span class="comment">//			System.out.println();</span></span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		}</span><br><span class="line">		cnt ++;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1</span>; i ++)</span><br><span class="line">		{</span><br><span class="line">			num[cnt] = i;</span><br><span class="line">			bfs();</span><br><span class="line">		}</span><br><span class="line">		cnt --;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner inScanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		m[<span class="number">0</span>] = <span class="keyword">new</span> TreeMap&lt;String, Integer&gt;();</span><br><span class="line">		m[<span class="number">1</span>] = <span class="keyword">new</span> TreeMap&lt;String, Integer&gt;();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			String s = inScanner.next();</span><br><span class="line">			<span class="keyword">int</span> v = inScanner.nextInt();</span><br><span class="line">			<span class="keyword">int</span> t = Math.abs(v) % <span class="number">2</span>;</span><br><span class="line">			m[t].put(s, m[t].getOrDefault(s, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">		}</span><br><span class="line">		inScanner.close();</span><br><span class="line">		bfs();</span><br><span class="line">		System.out.print(ans);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-java"><code class="language-lang-java">import java.util.*;
+
+
+public class Main {
+    static int N = 100010;
+    static int n;
+    static Map<String, Integer>[] m = new Map[2];
+    static String q = "BESIGOM";
+    static int cnt = -1, ans = 0;
+    static int[] num = new int[10];
+    public static void bfs()
+    {
+        if(cnt == 6)
+        {
+            if((num[0] + num[3]) * (num[4] + num[5] + num[1] + num[2]) * num[6] % 2 == 0)
+            {
+                int M = m[num[6]].getOrDefault("M", 0);
+                int O = m[num[5]].getOrDefault("O", 0);
+                int G = m[num[4]].getOrDefault("G", 0);
+                int I = m[num[3]].getOrDefault("I", 0);
+                int S = m[num[2]].getOrDefault("S", 0);
+                int E = m[num[1]].getOrDefault("E", 0);
+                int B = m[num[0]].getOrDefault("B", 0);
+                int sum = M * O * G * I * S * E * B;
+                ans += sum;
+            }
+//            for(int i = 0; i < 7; i ++)
+//                System.out.print(num[i]);
+//            System.out.println();
+            return;
+        }
+        cnt ++;
+        for(int i = 0; i <= 1; i ++)
+        {
+            num[cnt] = i;
+            bfs();
+        }
+        cnt --;
+        return;
+    }
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        m[0] = new TreeMap<String, Integer>();
+        m[1] = new TreeMap<String, Integer>();
+        for(int i = 1; i <= n; i ++)
+        {
+            String s = inScanner.next();
+            int v = inScanner.nextInt();
+            int t = Math.abs(v) % 2;
+            m[t].put(s, m[t].getOrDefault(s, 0) + 1);
+        }
+        inScanner.close();
+        bfs();
+        System.out.print(ans);
+    }
+}
+</code></pre>
 
                 
             </div>
@@ -559,7 +616,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="愤怒的奶牛">
+                        <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="愤怒的奶牛">
                         
                         <span class="card-title">愤怒的奶牛</span>
                     </div>
@@ -608,7 +665,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="COW">
+                        <img src="/medias/featureimages/43.jpg" class="responsive-img" alt="COW">
                         
                         <span class="card-title">COW</span>
                     </div>
@@ -808,7 +865,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

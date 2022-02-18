@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/79.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -443,7 +443,38 @@
 <p>为了使所有奶牛都有机会练习到传球，Farmer John 想要确保每头奶牛都持球至少一次。</p>
 <p>帮助他求出为了达到这一目的他开始时至少要传出的球的数量。</p>
 <p>假设他在开始的时候能将球传给最适当的一组奶牛。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Main {</span><br><span class="line">	static int N = 100010;</span><br><span class="line">	static int n, ans = 0;</span><br><span class="line">	static int[] a = new int[110];</span><br><span class="line">	static int[] b = new int[110];</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		Scanner inScanner = new Scanner(System.in);</span><br><span class="line">		n = inScanner.nextInt();</span><br><span class="line">		for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">			a[i] = inScanner.nextInt();</span><br><span class="line">		Arrays.sort(a, 1, n + 1);</span><br><span class="line">		for(int i = 1; i &lt; n; i ++)</span><br><span class="line">			a[i] = a[i + 1] - a[i];</span><br><span class="line">		for(int i = 2; i &lt; n; i ++)</span><br><span class="line">			b[i] = a[i] &gt;= a[i - 1] ? 1 : -1;</span><br><span class="line">		b[1] = -1;</span><br><span class="line">		b[n] = 1;</span><br><span class="line">		for(int i = 1; i &lt; n; i ++)</span><br><span class="line">			if(b[i] &lt; 0 &amp;&amp; b[i + 1] &gt; 0)</span><br><span class="line">			{</span><br><span class="line">				ans ++;</span><br><span class="line">				if(b[i - 1] &lt; 0 &amp;&amp; b [i + 2] &gt; 0)</span><br><span class="line">					ans ++;</span><br><span class="line">			}</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">		inScanner.close();</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-html"><code class="language-lang-html">import java.util.*;
+
+
+public class Main {
+    static int N = 100010;
+    static int n, ans = 0;
+    static int[] a = new int[110];
+    static int[] b = new int[110];
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        for(int i = 1; i <= n; i ++)
+            a[i] = inScanner.nextInt();
+        Arrays.sort(a, 1, n + 1);
+        for(int i = 1; i < n; i ++)
+            a[i] = a[i + 1] - a[i];
+        for(int i = 2; i < n; i ++)
+            b[i] = a[i] >= a[i - 1] ? 1 : -1;
+        b[1] = -1;
+        b[n] = 1;
+        for(int i = 1; i < n; i ++)
+            if(b[i] < 0 && b[i + 1] > 0)
+            {
+                ans ++;
+                if(b[i - 1] < 0 && b [i + 2] > 0)
+                    ans ++;
+            }
+        System.out.println(ans);
+        inScanner.close();
+    }
+}
+</code></pre>
 
                 
             </div>
@@ -561,7 +592,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="挤奶顺序">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="挤奶顺序">
                         
                         <span class="card-title">挤奶顺序</span>
                     </div>
@@ -610,7 +641,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="救生员">
+                        <img src="/medias/featureimages/42.jpg" class="responsive-img" alt="救生员">
                         
                         <span class="card-title">救生员</span>
                     </div>
@@ -810,7 +841,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     

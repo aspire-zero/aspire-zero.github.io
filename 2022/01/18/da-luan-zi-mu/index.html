@@ -262,7 +262,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/*.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/52.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -443,7 +443,68 @@
 <h5 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h5><p>第一行包含整数 N。</p>
 <p>接下来 N 行，按照修改过后列表的顺序，给出了修改过后的奶牛的名字。</p>
 <h5 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h5><p>共 N 行，第 i 行输出给定的第 i 个字符串在原始列表中可能的最低和最高位置。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		n = in.nextInt();</span><br><span class="line">		String[] s = <span class="keyword">new</span> String[<span class="number">50010</span>];</span><br><span class="line">		String[] a = <span class="keyword">new</span> String[<span class="number">50010</span>];</span><br><span class="line">		String[] b = <span class="keyword">new</span> String[<span class="number">50010</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			s[i] = in.next();</span><br><span class="line">			<span class="keyword">char</span>[] q = s[i].toCharArray();</span><br><span class="line">			Arrays.sort(q);</span><br><span class="line">			a[i] = String.valueOf(q);</span><br><span class="line">			StringBuilder t = <span class="keyword">new</span> StringBuilder(a[i]).reverse();</span><br><span class="line">			b[i] = String.valueOf(t);</span><br><span class="line">		}</span><br><span class="line">		in.close();</span><br><span class="line">		Arrays.sort(a, <span class="number">1</span>, n + <span class="number">1</span>);</span><br><span class="line">		Arrays.sort(b, <span class="number">1</span>, n + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">char</span>[] tt = s[i].toCharArray();</span><br><span class="line">			Arrays.sort(tt);</span><br><span class="line">			String t = String.valueOf(tt);</span><br><span class="line">			<span class="keyword">int</span> l = <span class="number">1</span>, r = n;</span><br><span class="line">			<span class="keyword">while</span>(l &lt; r)</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span>(b[mid].compareTo(t) &gt;= <span class="number">0</span>)</span><br><span class="line">					r = mid;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					l = mid + <span class="number">1</span>;</span><br><span class="line">			}</span><br><span class="line">			System.out.print(l + <span class="string">" "</span>);</span><br><span class="line">			t = String.valueOf(<span class="keyword">new</span> StringBuilder(t).reverse());</span><br><span class="line">			l = <span class="number">1</span>;</span><br><span class="line">			r = n + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span>(l &lt; r)</span><br><span class="line">			{</span><br><span class="line">				<span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span>(a[mid].compareTo(t) &gt; <span class="number">0</span>)</span><br><span class="line">					r = mid;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					l = mid + <span class="number">1</span>;</span><br><span class="line">			}</span><br><span class="line">			System.out.println(l - <span class="number">1</span>);</span><br><span class="line">			</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">essieb</span></span><br><span class="line"><span class="comment">a</span></span><br><span class="line"><span class="comment">xzy</span></span><br><span class="line"><span class="comment">elsie</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-java"><code class="language-lang-java">import java.util.*;
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n;
+        n = in.nextInt();
+        String[] s = new String[50010];
+        String[] a = new String[50010];
+        String[] b = new String[50010];
+        for(int i = 1; i <= n; i ++)
+        {
+            s[i] = in.next();
+            char[] q = s[i].toCharArray();
+            Arrays.sort(q);
+            a[i] = String.valueOf(q);
+            StringBuilder t = new StringBuilder(a[i]).reverse();
+            b[i] = String.valueOf(t);
+        }
+        in.close();
+        Arrays.sort(a, 1, n + 1);
+        Arrays.sort(b, 1, n + 1);
+        for(int i = 1; i <= n; i ++)
+        {
+            char[] tt = s[i].toCharArray();
+            Arrays.sort(tt);
+            String t = String.valueOf(tt);
+            int l = 1, r = n;
+            while(l < r)
+            {
+                int mid = (l + r) >> 1;
+                if(b[mid].compareTo(t) >= 0)
+                    r = mid;
+                else
+                    l = mid + 1;
+            }
+            System.out.print(l + " ");
+            t = String.valueOf(new StringBuilder(t).reverse());
+            l = 1;
+            r = n + 1;
+            while(l < r)
+            {
+                int mid = (l + r) >> 1;
+                if(a[mid].compareTo(t) > 0)
+                    r = mid;
+                else
+                    l = mid + 1;
+            }
+            System.out.println(l - 1);
+
+        }
+    }
+}
+/*
+4
+essieb
+a
+xzy
+elsie
+ */
+</code></pre>
 
                 
             </div>
@@ -561,7 +622,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="奶牛过马路">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="奶牛过马路">
                         
                         <span class="card-title">奶牛过马路</span>
                     </div>
@@ -610,7 +671,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/*.jpg" class="responsive-img" alt="马蹄铁">
+                        <img src="/medias/featureimages/73.jpg" class="responsive-img" alt="马蹄铁">
                         
                         <span class="card-title">马蹄铁</span>
                     </div>
@@ -810,7 +871,7 @@
 </main>
 
 
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     
