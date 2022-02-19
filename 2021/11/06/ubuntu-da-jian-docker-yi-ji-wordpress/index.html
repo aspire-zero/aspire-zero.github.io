@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Ubuntu搭建docker以及wordpress | 你的姜小白</title>
+    <title>Ubuntu搭建docker以及wordpress | 姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -49,9 +49,25 @@
 </style>
 
 
-
+<head>
+    <script type="text/javascript">
+        var OriginTitile = document.title,
+            st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "冷漠我了💔~嫌弃我了💔~", clearTimeout(st)) : (document.title =
+                "(๑•̀ㅂ•́) ✧被你发现了～", st = setTimeout(function () {
+                    document.title = OriginTitile
+                }, 3e3))
+        })
+    </script>
+</head>
 <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript">
+        WIDGET = {FID: '1tFpFZ5Mtj'}
+    </script>
+    <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+    <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -59,7 +75,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">你的姜小白</span>
+                    <span class="logo-span">姜小白</span>
                 </a>
             </div>
             
@@ -158,7 +174,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">你的姜小白</div>
+        <div class="logo-name">姜小白</div>
         <div class="logo-desc">
             
             分享生活，分享知识
@@ -433,20 +449,20 @@
 <li><p>启动docker服务：<code>sudo service docker start</code></p>
 </li>
 <li><p>docker安装wordpress：</p>
-<pre class=" language-lang-do"><code class="language-lang-do">sudo docker pull wordpress：latest
+<pre><code class="lang-do">sudo docker pull wordpress：latest
 </code></pre>
 </li>
 <li><p>docker安装mysql</p>
-<pre class=" language-lang-do"><code class="language-lang-do">sudo docker pull mysql
+<pre><code class="lang-do">sudo docker pull mysql
 </code></pre>
 <p>配置mysql：</p>
-<pre class=" language-lang-doc"><code class="language-lang-doc">sudo docker run -d -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql mysql
+<pre><code class="lang-doc">sudo docker run -d -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql mysql
 </code></pre>
 <p>-d： 后台运行，我们数据库肯定上需要一直在跑的嘛。<br>-p： 上映射端口，mysql容器相当于一台虚拟机，是不能直接从外网访问的，需要通过主机去访问，前面的上主机端口 : 后面上容器端口，现在上将3306映射到3306上，这样访问公网的3306就是容器的端口了，但一般可以改其他端口，不安全。<br>-v： 是相当于文件夹重定向吧，将主机的一个目录和容器目录同步，这样会方便修改日期的文件及配置。<br>-e： 环境变量，设置数据库密码，还有–name 容器的名称。</p>
 <p><code>mysql  -u root -p</code>进入mysql</p>
 </li>
 <li><p>运行wordpress</p>
-<pre class=" language-lang-javascript"><code class="language-lang-javascript">//有volume的
+<pre><code class="lang-javascript">//有volume的
 sudo docker run --name wordpress -v /var/www/html:/var/www/html --link mysql:mysql -p 5001:80 -d wordpress
 //没有数据卷的
 sudo docker run --name wordpress --link mysql:mysql -p 5001:80 -d wordpress
@@ -493,7 +509,7 @@ sudo docker run --name wordpress --link mysql:mysql -p 5001:80 -d wordpress
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">你的姜小白</a>
+                    <a href="/about" rel="external nofollow noreferrer">姜小白</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -516,7 +532,7 @@ sudo docker run --name wordpress --link mysql:mysql -p 5001:80 -d wordpress
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">你的姜小白</a>
+                    <a href="/about" target="_blank">姜小白</a>
                     !
                 </span>
             </div>
@@ -688,7 +704,7 @@ sudo docker run --name wordpress --link mysql:mysql -p 5001:80 -d wordpress
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            你的姜小白
+                            姜小白
                             
                         </span>
                     </div>
@@ -730,8 +746,8 @@ sudo docker run --name wordpress --link mysql:mysql -p 5001:80 -d wordpress
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: 你的姜小白<br />'
-            + '文章作者: 你的姜小白<br />'
+            + '来源: 姜小白<br />'
+            + '文章作者: 姜小白<br />'
             + '文章链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
@@ -858,7 +874,6 @@ sudo docker run --name wordpress --link mysql:mysql -p 5001:80 -d wordpress
 </main>
 
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     
@@ -869,7 +884,7 @@ sudo docker run --name wordpress --link mysql:mysql -p 5001:80 -d wordpress
                 <span id="year">2020-2022</span>
             
             <span id="year">2020</span>
-            <a href="/about" target="_blank">你的姜小白</a>
+            <a href="/about" target="_blank">姜小白</a>
             |&nbsp;技术支持&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
@@ -1088,9 +1103,9 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 
 </html>

@@ -3,7 +3,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="公平摄影, Hexo,HTML,CSS">
+    <meta name="keywords" content="Gitalk出现403错误, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>公平摄影 | 姜小白</title>
+    <title>Gitalk出现403错误 | 姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -279,12 +279,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/73.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">公平摄影</h1>
+                    <h1 class="description center-align post-title">Gitalk出现403错误</h1>
                 </div>
             </div>
         </div>
@@ -400,23 +400,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/Gitalk/">
+                                <span class="chip bg-color">Gitalk</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Java/" class="post-category">
-                                Java
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -425,7 +416,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-22
+                    2022-02-18
                 </div>
                 
 
@@ -451,69 +442,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1915/">1913. 公平摄影 - AcWing题库</a></p>
-<p>农夫约翰的 <code>N</code> 头奶牛站在一维长围栏的不同位置。</p>
-<p>第 <code>i</code> 头牛位于位置 <code>xi</code>，其所属品种为 <code>bi</code>（根西岛牛或荷斯坦牛）。</p>
-<p>所有奶牛的位置各不相同。</p>
-<p>约翰想给一段连续区间内的奶牛拍摄一张照片，用来在乡村集市上展览。</p>
-<p>但是我们希望他所有品种的奶牛都能在照片中得到公平的展示。</p>
-<p>因此，他希望确保无论照片中出现哪些品种的奶牛，每种品种的奶牛在照片中的数量都必须相等。</p>
-<p>例如，一张照片中只包含荷斯坦牛是可以的，包含荷斯坦牛和根西岛牛各 <code>27</code> 头也没问题，但是包含 <code>10</code> 头荷斯坦牛和 <code>9</code> 头根西岛牛则不可以。</p>
-<p>请确定，约翰可以拍下的满足以上条件的照片的最大尺寸。</p>
-<p>照片的尺寸是指照片中奶牛最大和最小位置之间的差。</p>
-<p>约翰最终可能只拍下一头奶牛，这种情况下，照片尺寸为 <code>0</code>。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;
-
-
-public class Main {
-    static int N = 100010;
-    static int n;
-    static node[] q = new node[N];
-    static TreeMap&lt;Integer, Integer&gt; m = new TreeMap&lt;&gt;();
-    public static void main(String[] args) {
-        Scanner inScanner = new Scanner(System.in);
-        n = inScanner.nextInt();
-        for(int i = 1; i &lt;= n; i ++)
-        {
-            int x = inScanner.nextInt();
-            String s;
-            s = inScanner.next();
-            if(s.equals("G"))
-                q[i] = new node(x, 1);
-            else
-                q[i] = new node(x, -1);
-        }
-        Arrays.sort(q, 1, n + 1);
-        int ans = 0, sum = 0, pre = 0;
-        for(int i = 1; i &lt;= n; i ++)
-        {
-            if(!m.containsKey(sum))
-                m.put(sum, q[i].x);
-            sum += q[i].y;
-            if(m.containsKey(sum))
-                ans = Math.max(ans, q[i].x - m.get(sum));
-            if(i == 1 || q[i].y != q[i - 1].y)  
-                pre = q[i].x;
-            ans = Math.max(ans, q[i].x - pre);
-        }
-        System.out.println(ans);
-    }
-}
-class node implements Comparable&lt;node&gt;
-{
-    int x;
-    int y;
-    public node(int x, int y)
-    {
-        this.x = x;
-        this.y = y;
-    }
-    @Override
-    public int compareTo(node o) {
-        return x - o.x;
-    }
-}
-</code></pre>
+                <h1 id="Gitalk-403报错"><a href="#Gitalk-403报错" class="headerlink" title="Gitalk 403报错"></a>Gitalk 403报错</h1><p>自己的Gitalk配置完登录显示显示403报错，上网查看相关资料，如果是本地服务器配置可以进行nginx反向代理解决，但问题我自己的博客是直接部署到github上面，发现是是因为cors-anywhere.herokuapp.com，网站受限了。</p>
+<p><img src="/2022/02/18/gitalk-chu-xian-403-cuo-wu/image-20220218214727609.png" alt="403错误"></p>
+<p>解决方式：<br><a target="_blank" rel="noopener" href="https://cors-anywhere.herokuapp.com/corsdemo点开该网站，进行权限受理。">https://cors-anywhere.herokuapp.com/corsdemo点开该网站，进行权限受理。</a></p>
+<p><img src="/2022/02/18/gitalk-chu-xian-403-cuo-wu/0.png" alt="授权"></p>
+<p>$y = f^2$</p>
 
                 
             </div>
@@ -540,7 +473,7 @@ class node implements Comparable&lt;node&gt;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/01/22/gong-ping-she-ying/">http://aspire-zero.github.io/2022/01/22/gong-ping-she-ying/</a>
+                    <a href="http://aspire-zero.github.io/2022/02/18/gitalk-chu-xian-403-cuo-wu/">http://aspire-zero.github.io/2022/02/18/gitalk-chu-xian-403-cuo-wu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -578,8 +511,8 @@ class node implements Comparable&lt;node&gt;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/Gitalk/">
+                                    <span class="chip bg-color">Gitalk</span>
                                 </a>
                             
                         </div>
@@ -624,7 +557,7 @@ class node implements Comparable&lt;node&gt;
         repo: 'aspire-zero.github.io',
         owner: 'aspire-zero',
         admin: ["aspire-zero"],
-        id: '2022-01-22T11-53-36',
+        id: '2022-02-18T21-42-52',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -650,17 +583,18 @@ class node implements Comparable&lt;node&gt;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/24/nai-niu-man-pao/">
+                <a href="/2022/02/18/gitalk-chu-xian-403-cuo-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/52.jpg" class="responsive-img" alt="奶牛慢跑">
+                        <img src="/medias/featureimages/73.jpg" class="responsive-img" alt="Gitalk出现403错误">
                         
-                        <span class="card-title">奶牛慢跑</span>
+                        <span class="card-title">Gitalk出现403错误</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -670,26 +604,23 @@ class node implements Comparable&lt;node&gt;
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-18
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            姜小白
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Gitalk/">
+                        <span class="chip bg-color">Gitalk</span>
                     </a>
                     
                 </div>
@@ -703,13 +634,13 @@ class node implements Comparable&lt;node&gt;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/22/lan-duo-de-niu/">
+                <a href="/2022/02/17/ju-hua-lian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/53.jpg" class="responsive-img" alt="懒惰的牛">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="菊花链">
                         
-                        <span class="card-title">懒惰的牛</span>
+                        <span class="card-title">菊花链</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -720,7 +651,7 @@ class node implements Comparable&lt;node&gt;
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-17
                             </span>
                         <span class="publish-author">
                             
@@ -906,6 +837,13 @@ class node implements Comparable&lt;node&gt;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
     <footer class="page-footer bg-color">

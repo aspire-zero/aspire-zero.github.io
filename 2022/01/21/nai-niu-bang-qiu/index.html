@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>奶牛棒球 | 你的姜小白</title>
+    <title>奶牛棒球 | 姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -49,9 +49,25 @@
 </style>
 
 
-
+<head>
+    <script type="text/javascript">
+        var OriginTitile = document.title,
+            st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "冷漠我了💔~嫌弃我了💔~", clearTimeout(st)) : (document.title =
+                "(๑•̀ㅂ•́) ✧被你发现了～", st = setTimeout(function () {
+                    document.title = OriginTitile
+                }, 3e3))
+        })
+    </script>
+</head>
 <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript">
+        WIDGET = {FID: '1tFpFZ5Mtj'}
+    </script>
+    <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+    <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -59,7 +75,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">你的姜小白</span>
+                    <span class="logo-span">姜小白</span>
                 </a>
             </div>
             
@@ -158,7 +174,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">你的姜小白</div>
+        <div class="logo-name">姜小白</div>
         <div class="logo-desc">
             
             分享生活，分享知识
@@ -442,7 +458,7 @@
 <p>牛 XX 把球扔给她右边的牛 <code>Y</code>，然后牛 <code>Y</code> 把球扔给她右边的牛 <code>Z</code>。</p>
 <p>约翰指出，第二次投掷的距离不少于第一次投掷的距离，也不超过第一次投掷的距离的两倍。</p>
 <p>请计算共有多少组牛 <code>(X,Y,Z)</code> 可能是约翰所看到的。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-java"><code class="language-lang-java">import java.util.*;
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;
 
 
 public class Main {
@@ -451,18 +467,18 @@ public class Main {
     public static void main(String[] args) {
         Scanner inScanner = new Scanner(System.in);
         n = inScanner.nextInt();
-        for(int i = 1; i <= n; i ++)
+        for(int i = 1; i &lt;= n; i ++)
             a[i] = inScanner.nextInt();
         int ans = 0;
         inScanner.close();
         Arrays.sort(a, 1, n + 1);
-        for(int i = 1; i + 1 < n; i ++)
+        for(int i = 1; i + 1 &lt; n; i ++)
         {
-            for(int j = i + 1, l = j + 1, r = j + 1; j < n; j ++)
+            for(int j = i + 1, l = j + 1, r = j + 1; j &lt; n; j ++)
             {
                 int t = a[j] - a[i];
-                while(l <= n && t > a[l] - a[j]) l ++;
-                while(r <= n && a[r] - a[j] <= 2 * t) r ++;
+                while(l &lt;= n &amp;&amp; t &gt; a[l] - a[j]) l ++;
+                while(r &lt;= n &amp;&amp; a[r] - a[j] &lt;= 2 * t) r ++;
                 ans += r - l;
             }
         }
@@ -494,7 +510,7 @@ public class Main {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">你的姜小白</a>
+                    <a href="/about" rel="external nofollow noreferrer">姜小白</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -517,7 +533,7 @@ public class Main {
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">你的姜小白</a>
+                    <a href="/about" target="_blank">姜小白</a>
                     !
                 </span>
             </div>
@@ -743,8 +759,8 @@ public class Main {
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: 你的姜小白<br />'
-            + '文章作者: 你的姜小白<br />'
+            + '来源: 姜小白<br />'
+            + '文章作者: 姜小白<br />'
             + '文章链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
@@ -871,7 +887,6 @@ public class Main {
 </main>
 
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     
@@ -882,7 +897,7 @@ public class Main {
                 <span id="year">2020-2022</span>
             
             <span id="year">2020</span>
-            <a href="/about" target="_blank">你的姜小白</a>
+            <a href="/about" target="_blank">姜小白</a>
             |&nbsp;技术支持&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
@@ -1101,9 +1116,9 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 
 </html>

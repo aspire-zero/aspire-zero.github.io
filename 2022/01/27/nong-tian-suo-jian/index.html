@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>农田缩减 | 你的姜小白</title>
+    <title>农田缩减 | 姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -49,9 +49,25 @@
 </style>
 
 
-
+<head>
+    <script type="text/javascript">
+        var OriginTitile = document.title,
+            st;
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "冷漠我了💔~嫌弃我了💔~", clearTimeout(st)) : (document.title =
+                "(๑•̀ㅂ•́) ✧被你发现了～", st = setTimeout(function () {
+                    document.title = OriginTitile
+                }, 3e3))
+        })
+    </script>
+</head>
 <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript">
+        WIDGET = {FID: '1tFpFZ5Mtj'}
+    </script>
+    <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+    <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -59,7 +75,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">你的姜小白</span>
+                    <span class="logo-span">姜小白</span>
                 </a>
             </div>
             
@@ -158,7 +174,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">你的姜小白</div>
+        <div class="logo-name">姜小白</div>
         <div class="logo-desc">
             
             分享生活，分享知识
@@ -444,7 +460,7 @@
 <p>请帮助约翰计算，卖掉牛群中的一头奶牛以后，他可以用围栏围起来的最小面积（为剩下的奶牛建造尽可能小的围栏）。</p>
 <p>对于这个问题，请将奶牛视为点，将围栏视为四个线段的集合。</p>
 <p>注意，答案可以是零，例如，所有剩余的奶牛最终都站在同一条垂直或水平线上。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class=" language-lang-java"><code class="language-lang-java">import java.util.*;
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;
 
 
 public class Main {
@@ -456,14 +472,14 @@ public class Main {
     static node max_y, premax_y;
     public static void minx(int x, int key)
     {
-        if(x < min_x.v)
+        if(x &lt; min_x.v)
         {
             premin_x.key = min_x.key;
             premin_x.v = min_x.v;
             min_x.key = key;
             min_x.v = x;
         }
-        else if(x < premin_x.v)
+        else if(x &lt; premin_x.v)
         {
             premin_x.key = key;
             premin_x.v = x;
@@ -471,14 +487,14 @@ public class Main {
     }
     public static void maxx(int x, int key)
     {
-        if(x > max_x.v)
+        if(x &gt; max_x.v)
         {
             premax_x.key = max_x.key;
             premax_x.v = max_x.v;
             max_x.key = key;
             max_x.v = x;
         }
-        else if(x > premax_x.v)
+        else if(x &gt; premax_x.v)
         {
             premax_x.key = key;
             premax_x.v = x;
@@ -486,14 +502,14 @@ public class Main {
     }
     public static void miny(int y, int key)
     {
-        if(y < min_y.v)
+        if(y &lt; min_y.v)
         {
             premin_y.key = min_y.key;
             premin_y.v = min_y.v;
             min_y.key = key;
             min_y.v = y;
         }
-        else if(y < premin_y.v)
+        else if(y &lt; premin_y.v)
         {
             premin_y.key = key;
             premin_y.v = y;
@@ -501,14 +517,14 @@ public class Main {
     }
     public static void maxy(int y, int key)
     {
-        if(y > max_y.v)
+        if(y &gt; max_y.v)
         {
             premax_y.key = max_y.key;
             premax_y.v = max_y.v;
             max_y.key = key;
             max_y.v = y;
         }
-        else if(y > premax_y.v)
+        else if(y &gt; premax_y.v)
         {
             premax_y.key = key;
             premax_y.v = y;
@@ -526,7 +542,7 @@ public class Main {
         premax_x = new node(0, Integer.MIN_VALUE);
         max_y = new node(0, Integer.MIN_VALUE);
         premax_y = new node(0, Integer.MIN_VALUE);
-        for(int i = 1; i <= n; i ++)
+        for(int i = 1; i &lt;= n; i ++)
         {
             x = inScanner.nextInt();
             y = inScanner.nextInt();
@@ -540,7 +556,7 @@ public class Main {
         int rx = max_x.v - premax_x.v;
         int ly = premin_y.v - min_y.v;
         int ry = max_y.v - premax_y.v;
-        if(lx >= rx && lx >= ly && lx >= ry)
+        if(lx &gt;= rx &amp;&amp; lx &gt;= ly &amp;&amp; lx &gt;= ry)
         {
             if(min_x.key == min_y.key)
                 min_y.v = premin_y.v;
@@ -548,7 +564,7 @@ public class Main {
                 max_y.v = premax_y.v;
             min_x.v = premin_x.v;
         }
-        else if(rx >= lx && rx >= ly && rx >= ry)
+        else if(rx &gt;= lx &amp;&amp; rx &gt;= ly &amp;&amp; rx &gt;= ry)
         {
             if(max_x.key == min_y.key)
                 min_y.v = premin_y.v;
@@ -556,7 +572,7 @@ public class Main {
                 max_y.v = premax_y.v;
             max_x.v = premax_x.v;
         }
-        else if(ly >= lx && ly >= rx && ly >= ry)
+        else if(ly &gt;= lx &amp;&amp; ly &gt;= rx &amp;&amp; ly &gt;= ry)
         {
             if(min_y.key == min_x.key)
                 min_x.v = premin_x.v;
@@ -601,7 +617,7 @@ class node
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">你的姜小白</a>
+                    <a href="/about" rel="external nofollow noreferrer">姜小白</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -624,7 +640,7 @@ class node
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">你的姜小白</a>
+                    <a href="/about" target="_blank">姜小白</a>
                     !
                 </span>
             </div>
@@ -850,8 +866,8 @@ class node
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: 你的姜小白<br />'
-            + '文章作者: 你的姜小白<br />'
+            + '来源: 姜小白<br />'
+            + '文章作者: 姜小白<br />'
             + '文章链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
@@ -978,7 +994,6 @@ class node
 </main>
 
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
     <footer class="page-footer bg-color">
     
@@ -989,7 +1004,7 @@ class node
                 <span id="year">2020-2022</span>
             
             <span id="year">2020</span>
-            <a href="/about" target="_blank">你的姜小白</a>
+            <a href="/about" target="_blank">姜小白</a>
             |&nbsp;技术支持&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
@@ -1208,9 +1223,9 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 
 </html>
