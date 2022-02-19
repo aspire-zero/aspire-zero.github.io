@@ -8,7 +8,7 @@
       <link href="2022/02/18/gitalk-chu-xian-403-cuo-wu/"/>
       <url>2022/02/18/gitalk-chu-xian-403-cuo-wu/</url>
       
-        <content type="html"><![CDATA[<h1 id="Gitalk-403报错"><a href="#Gitalk-403报错" class="headerlink" title="Gitalk 403报错"></a>Gitalk 403报错</h1><p>自己的Gitalk配置完登录显示显示403报错，上网查看相关资料，如果是本地服务器配置可以进行nginx反向代理解决，但问题我自己的博客是直接部署到github上面，发现是是因为cors-anywhere.herokuapp.com，网站受限了。</p><p><img src="/2022/02/18/gitalk-chu-xian-403-cuo-wu/image-20220218214727609.png" alt="403错误"></p><p>解决方式：<br><a href="https://cors-anywhere.herokuapp.com/corsdemo点开该网站，进行权限受理。">https://cors-anywhere.herokuapp.com/corsdemo点开该网站，进行权限受理。</a></p><p><img src="/2022/02/18/gitalk-chu-xian-403-cuo-wu/0.png" alt="授权"></p><p>$y = f^2$</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Gitalk-403报错"><a href="#Gitalk-403报错" class="headerlink" title="Gitalk 403报错"></a>Gitalk 403报错</h1><p>自己的Gitalk配置完登录显示显示403报错，上网查看相关资料，如果是本地服务器配置可以进行nginx反向代理解决，但问题我自己的博客是直接部署到github上面，发现是是因为cors-anywhere.herokuapp.com，网站受限了。</p><p><img src="/2022/02/18/gitalk-chu-xian-403-cuo-wu/image-20220218214727609.png" alt="403错误"></p><p>解决方式：<br><a href="https://cors-anywhere.herokuapp.com/corsdemo点开该网站，进行权限受理。">https://cors-anywhere.herokuapp.com/corsdemo点开该网站，进行权限受理。</a></p><p><img src="/2022/02/18/gitalk-chu-xian-403-cuo-wu/0.png" alt="授权"></p>]]></content>
       
       
       
