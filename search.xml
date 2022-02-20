@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Java</title>
+      <link href="2022/02/20/java/"/>
+      <url>2022/02/20/java/</url>
+      
+        <content type="html"><![CDATA[<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><pre><code class="lang-java">Scanner cin1 = new Scanner(System.in ) ;Scanner cin2 = new Scanner(new BufferedInputstream(System.in ) ) ;</code></pre><h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p><a href="https://aspire-zero.github.io/2022/02/15/feng-kuang-de-ke-xue-jia/">疯狂的科学家 | 姜小白 (aspire-zero.github.io)</a></p><h4 id="排序问题"><a href="#排序问题" class="headerlink" title="排序问题"></a>排序问题</h4><p>1、Arrays.sort()<br>（1）数字排序         </p><pre><code class="lang-java">int[] num =newint[]{4,2,3,5,-8,5,2,3};      Arrays.sort(num);for(int i = 0; i &lt; 8;i++)    System.out.print(num[i]+”,”);</code></pre><p>输出结果：-8,2,2,3,3,4,5,5,</p><p>（2）字符串排序（先大写后小写原则）        </p><pre><code class="lang-java">String[] s = new String[]{"Z","a","A","z"};Arrays.sort(s);for(int i = 0; i &lt; 4;i++)    System.out.print(s[i] +",");输出结果：A,Z,a,z,</code></pre><p>（3）严格按照字母表排序（即忽略大小写）      </p><pre><code class="lang-java">String[] s = new String[]{"Z","a","A","z"};     Arrays.sort(s,String.CASE_INSENSITIVE_ORDER);for(int i = 0; i &lt; 4;i++)    System.out.print(s[i] +",");</code></pre><h4 id="Java中有两个类BigDecimal（表示浮点数）和BigInteger（表示整数）"><a href="#Java中有两个类BigDecimal（表示浮点数）和BigInteger（表示整数）" class="headerlink" title="Java中有两个类BigDecimal（表示浮点数）和BigInteger（表示整数）"></a>Java中有两个类BigDecimal（表示浮点数）和BigInteger（表示整数）</h4><p>使用这两个类的时候需要加上import java.math.*;</p><p>Ⅰ基本函数：</p><pre><code class="lang-java">（1）valueOf(parament); 将参数转换为指定类型例如：int a = 3;BigInteger b = BigInteger.valueOf(a);即b = 3String s = “1234”;BigInteger b = BigInteger.valueOf(s);即b = 1234（2）add(); //大数加法例如：BigInteger a = new BigInteger(“11”);BigInteger b = new BigInteger(“22”);a.add(b);即a = 33（3）substract(); //减法（4）multiply(); //乘法（5）pided(); //相除取整（6）remainder(); //取余（7）pow(); //a.pow(b) = a ^ b（8）gcd(); //最大公约数（9）abs(); //绝对值（10）negate(); //取反数（11）mod(); //a.mod(b) = a % b = a.remainder(b)（12）max(); min();（13）public int compareTo(); //比较（14）boolean equals(); //比较是否相等（15）BigIntergerde 构造函数一般用到以下两种：BigInteger(String val);将指定字符串转换为十进制表示形式；BigInteger(String val,int radix);将指定基数的 BigInteger 的字符串表示形式转换为 BigInteger例如：BigInteger b = new BigInteger("1010",2);System.out.println(b);输出：10Ⅱ.基本常量：A=BigInteger.ONE //=1B=BigInteger.TEN //=10C=BigInteger.ZERO //=0</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Gitalk出现403错误</title>
       <link href="2022/02/18/gitalk-chu-xian-403-cuo-wu/"/>
       <url>2022/02/18/gitalk-chu-xian-403-cuo-wu/</url>
@@ -52,7 +77,7 @@
       <link href="2022/02/16/she-jiao-ju-chi-ii/"/>
       <url>2022/02/16/she-jiao-ju-chi-ii/</url>
       
-        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a href="https://www.acwing.com/problem/content/1662/">1660. 社交距离 II - AcWing题库</a></p><p>由于高传染性的牛传染病 COWVID-19 的爆发，Farmer John 非常担忧他的奶牛们的健康。</p><p>尽管他尽了最大努力使他的 N 头奶牛们践行“社交距离”，还是有许多奶牛不幸染上了疾病。</p><p>编号为 1…N 的奶牛们分别位于一条长直道路上的不同位置（相当于一维数轴），奶牛 i 位于位置 xi。</p><p>Farmer John 知道存在一个半径 R，任何与一头被感染的奶牛距离不超过 R 单位的奶牛也会被感染（然后会传染给与其距离 R 单位内的奶牛，以此类推）。</p><p>不幸的是，Farmer John 并不确切知道 R 的值。</p><p>他只知道他的哪些奶牛被感染了。</p><p>给定这个数据，求出起初感染疾病的奶牛的最小数量。</p><h5 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h5><p>输入的第一行包含 N。</p><p>以下 N 行每行用两个整数 x 和 s 描述一头奶牛，其中 x 为位置，s 为 0 表示健康的奶牛，1 表示染病的奶牛，并且所有可能因传播而染病的奶牛均已染病。</p><h5 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h5><p>输出在疾病开始传播之前已经得病的奶牛的最小数量。</p><h5 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h5><p>1≤N≤1000,<br>0≤x≤10^6</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-html">import java.util.*;public class Main {    static int N = 100010;    static int n, ans = 0, l = 1000010;    static node[] a = new node[1010];    public static void main(String[] args) {        Scanner inScanner = new Scanner(System.in);        n = inScanner.nextInt();        for(int i = 1; i &lt;= n; i ++)            a[i] = new node(inScanner.nextInt(), inScanner.nextInt());        inScanner.close();        Arrays.sort(a, 1, n + 1);        for(int i = 2; i &lt;= n; i ++)            if((a[i].v ^ a[i - 1].v) == 1)            {                int t = a[i].x - a[i - 1].x;                l = t &lt; l ? t : l;            }        if(a[1].v == 1)            ans ++;        for(int i = 2; i &lt;= n; i ++)        {            if(a[i].v == 1 &amp;&amp; a[i - 1].v == 0)                ans ++;            else if(a[i].v + a[i - 1].v == 2)             {                if(a[i].x - a[i - 1].x &gt;= l)                    ans ++;            }        }        System.out.printf("%d", ans);    }}class node implements Comparable&lt;node&gt;{    int x, v;    public node(int x, int v)    {        this.x = x;        this.v = v;    }    public int compareTo(node o)    {        return x - o.x;    }}</code></pre>]]></content>
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a href="https://www.acwing.com/problem/content/1662/">1660. 社交距离 II - AcWing题库</a></p><p>由于高传染性的牛传染病 COWVID-19 的爆发，Farmer John 非常担忧他的奶牛们的健康。</p><p>尽管他尽了最大努力使他的 N 头奶牛们践行“社交距离”，还是有许多奶牛不幸染上了疾病。</p><p>编号为 1…N 的奶牛们分别位于一条长直道路上的不同位置（相当于一维数轴），奶牛 i 位于位置 xi。</p><p>Farmer John 知道存在一个半径 R，任何与一头被感染的奶牛距离不超过 R 单位的奶牛也会被感染（然后会传染给与其距离 R 单位内的奶牛，以此类推）。</p><p>不幸的是，Farmer John 并不确切知道 R 的值。</p><p>他只知道他的哪些奶牛被感染了。</p><p>给定这个数据，求出起初感染疾病的奶牛的最小数量。</p><h5 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h5><p>输入的第一行包含 N。</p><p>以下 N 行每行用两个整数 x 和 s 描述一头奶牛，其中 x 为位置，s 为 0 表示健康的奶牛，1 表示染病的奶牛，并且所有可能因传播而染病的奶牛均已染病。</p><h5 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h5><p>输出在疾病开始传播之前已经得病的奶牛的最小数量。</p><h5 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h5><p>1≤N≤1000,<br>0≤x≤10^6</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;public class Main {    static int N = 100010;    static int n, ans = 0, l = 1000010;    static node[] a = new node[1010];    public static void main(String[] args) {        Scanner inScanner = new Scanner(System.in);        n = inScanner.nextInt();        for(int i = 1; i &lt;= n; i ++)            a[i] = new node(inScanner.nextInt(), inScanner.nextInt());        inScanner.close();        Arrays.sort(a, 1, n + 1);        for(int i = 2; i &lt;= n; i ++)            if((a[i].v ^ a[i - 1].v) == 1)            {                int t = a[i].x - a[i - 1].x;                l = t &lt; l ? t : l;            }        if(a[1].v == 1)            ans ++;        for(int i = 2; i &lt;= n; i ++)        {            if(a[i].v == 1 &amp;&amp; a[i - 1].v == 0)                ans ++;            else if(a[i].v + a[i - 1].v == 2)             {                if(a[i].x - a[i - 1].x &gt;= l)                    ans ++;            }        }        System.out.printf("%d", ans);    }}class node implements Comparable&lt;node&gt;{    int x, v;    public node(int x, int v)    {        this.x = x;        this.v = v;    }    public int compareTo(node o)    {        return x - o.x;    }}</code></pre>]]></content>
       
       
       <categories>
