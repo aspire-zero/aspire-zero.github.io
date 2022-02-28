@@ -3,7 +3,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="砝码称重, Hexo,HTML,CSS">
+    <meta name="keywords" content="杨辉三角形, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>砝码称重 | 姜小白</title>
+    <title>杨辉三角形 | 姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/72.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">砝码称重</h1>
+                    <h1 class="description center-align post-title">杨辉三角形</h1>
                 </div>
             </div>
         </div>
@@ -477,56 +477,71 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/3420/">3417. 砝码称重 - AcWing题库</a></p>
-<p>你有一架天平和 $N$ 个砝码，这 4N$ 个砝码重量依次是 $W_1,W_2,⋅⋅⋅,W_N$。</p>
-<p>请你计算一共可以称出多少种不同的正整数重量？</p>
-<p>注意砝码可以放在天平两边。</p>
-<h5 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h5><p>输入的第一行包含一个整数 $N$。</p>
-<p>第二行包含 $N$ 个整数$W_1,W_2,W_3,⋅⋅⋅,W_N$。</p>
-<h5 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h5><p>输出一个整数代表答案。</p>
-<h5 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h5><p>对于 50% 的评测用例，$1≤N≤15$。<br>对于所有评测用例，$1≤N≤100$，$N$ 个砝码总重不超过 $10^5$。</p>
-<h5 id="样例："><a href="#样例：" class="headerlink" title="样例："></a>样例：</h5><pre><code class="lang-html">3
-1 4 6
-输出
-10
-</code></pre>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>这道题目仔细想想是一个dp问题，可以简单的推断出每个砝码都有选和不选两种状态，一般涉及这种问题的多半需要动态规划，寻找转移方程。</p>
-<p>设$f[i,j]$代表前$i$个砝码是否能称出$j$,$0$代表不能，$1$代表能.</p>
-<p>然后就是寻找相互的转移方程，可以分成两个途径，选第$i$个或者不选</p>
-<p>选第$i$个：那么前$i-1$个就能称出$j+a[i]$或者$|j-a[i]|$（$j-a[i]$可能为负数，直接取绝对值）才能称出$j$</p>
-<p>不选第$i$个：前$i - 1$个就能称出$j$</p>
-<p>所以转移方程就可以是</p>
-<p>$f[i,j]=f[i-1,j] \cup f[i-1,j+a[i]] \cup f[i-1, |j-a[i]| ]$</p>
-<p>然后最后遍历一下$f<a href="0<i<=10^5">n,i</a>$，记录一下能称出的次数就解决了。</p>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><img src="/2022/02/28/yang-hui-san-jiao-xing/0.png" alt></p>
+<p>思路：</p>
+<p>首先都知道杨辉三角形就是组合数，每一个数都可以被表示出来</p>
+<p><img src="/2022/02/28/yang-hui-san-jiao-xing/1.png" alt="img"></p>
+<p>如图所示，杨辉三角是左右对称的，所以只用看一半即可</p>
+<p><img src="/2022/02/28/yang-hui-san-jiao-xing/2.png" alt></p>
+<p>这里我们从右斜着看每一行，也就是</p>
+<p><img src="/2022/02/28/yang-hui-san-jiao-xing/3.png" alt></p>
+<p>我们可以很明显的从图中发现除了第一行外，每一行都是单调递增的，又因为杨辉三角就是组合数，所以每一行的最小值表示为，$k$是当前行第几个数，如下图所示</p>
+<p><img src="/2022/02/28/yang-hui-san-jiao-xing/3.png" alt></p>
+<p>因为是斜着的每一行是单调递增的，所以我们可以用二分来找到目标值$n$，又因为每一斜行也是单调递增的，所以我们从最里面开始往外找</p>
+<p>   上边界就是$l=2k$</p>
+<p>   下边界就是$r=n$</p>
+<p>我们都知道组合数越靠近中间越大，所以由n的范围是$10^9$可以通过计算机算出$C<em>{34}^{17}&gt;10^9, C</em>{32}^{16}&lt;10^9$</p>
+<p>所以我们可以枚举每一斜行的开头元素(最小元素)$k$,从$16$开始枚举</p>
+<p>二分的原理就是如果$C_{mid}^k&gt;=n$,取左区间，否则取右区间。。</p>
+<p>当我们找到了这个数的时候即$C_k^r == n$</p>
+<p>我们通过规律可以发现r为前面共有多少行</p>
+<p>第一行$1$个数</p>
+<p>第二行$2$个数</p>
+<p>第三行$3$个数</p>
+<p>…</p>
+<p>第$n$行$n$个数</p>
+<p>也就是说前面共有$r<em>(r + 1) / 2$，$k$为这一行第几个(下标都是从0开始),所以最终的个数是$r </em> (r + 1) / 2 + k + 1$</p>
 <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;
 
-public class Main
-{
-    static int n, sum = 0, ans = 0;
-    final static int N = 200010;
-    static int[] a = new int[110];
-    static boolean[][] dp = new boolean[110][N];
+
+public class Main {
+    static int n;
+    public static long C(int m, int k)
+    {
+        long sum = 1;
+        for(int i = m, j = 1; j &lt;= k; i --, j ++)
+        {
+            sum = sum * i / j;
+            if(sum &gt; n)
+                return sum;
+        }
+        return sum;
+    }
+    public static boolean check(int k)
+    {
+        int l = 2 *k, r = Math.max(l, n);
+        while(l &lt; r)
+        {
+            int mid = l + r &gt;&gt; 1;
+            if(C(mid, k) &gt;= n)
+                r = mid;
+            else
+                l = mid + 1;
+        }
+        if(C(r, k) != n)
+            return false;
+        long ans = r;
+        System.out.println(ans * (ans + 1) / 2 + k + 1);
+        return true;
+    }
     public static void main(String[] args) {
-        Scanner inScanner = new Scanner(System.in);
-        n = inScanner.nextInt();
-        for(int i = 1; i &lt;= n; i ++)
-        {
-            a[i] = inScanner.nextInt();
-            sum += a[i];
-        }
-        dp[0][0] = true;
-        for(int i = 1; i &lt;= n; i ++)
-        {
-            for(int j = 0; j &lt;= sum; j ++)
-            {
-                dp[i][j] = dp[i - 1][j] || dp[i - 1][j + a[i]] || dp[i - 1][Math.abs(j - a[i])];
-            }
-        }
-        for(int i = 1; i &lt;= sum; i ++)
-            if(dp[n][i])
-                ans ++;
-        inScanner.close();
-        System.out.println(ans);
+        Scanner in = new Scanner(System.in);
+        n = in.nextInt();
+        in.close();
+        for(int i = 16; i &gt;= 0; i --)
+            if(check(i))
+                break;
+
     }
 }
 </code></pre>
@@ -556,7 +571,7 @@ public class Main
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/02/28/fa-ma-cheng-chong/">http://aspire-zero.github.io/2022/02/28/fa-ma-cheng-chong/</a>
+                    <a href="http://aspire-zero.github.io/2022/02/28/yang-hui-san-jiao-xing/">http://aspire-zero.github.io/2022/02/28/yang-hui-san-jiao-xing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -644,7 +659,7 @@ public class Main
         repo: 'aspire-zero.github.io',
         owner: 'aspire-zero',
         admin: ["aspire-zero"],
-        id: '2022-02-28T15-43-42',
+        id: '2022-02-28T17-24-01',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -670,17 +685,18 @@ public class Main
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/02/28/shuang-xiang-pai-xu/">
+                <a href="/2022/02/28/yang-hui-san-jiao-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/50.jpg" class="responsive-img" alt="双向排序">
+                        <img src="/medias/featureimages/72.jpg" class="responsive-img" alt="杨辉三角形">
                         
-                        <span class="card-title">双向排序</span>
+                        <span class="card-title">杨辉三角形</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -690,9 +706,9 @@ public class Main
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -705,6 +721,7 @@ public class Main
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -727,13 +744,13 @@ public class Main
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/20/jiang-xiang/">
+                <a href="/2022/02/28/shuang-xiang-pai-xu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="奖项">
+                        <img src="/medias/featureimages/50.jpg" class="responsive-img" alt="双向排序">
                         
-                        <span class="card-title">奖项</span>
+                        <span class="card-title">双向排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -744,14 +761,14 @@ public class Main
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%A5%96%E9%A1%B9/" class="post-category">
-                                    奖项
+                            <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="post-category">
+                                    蓝桥杯
                                 </a>
                             
                             
@@ -761,8 +778,12 @@ public class Main
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%A5%96%E9%A1%B9/">
-                        <span class="chip bg-color">奖项</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
