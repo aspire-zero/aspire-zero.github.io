@@ -3,7 +3,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="奖项, Hexo,HTML,CSS">
+    <meta name="keywords" content="砝码称重, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>奖项 | 姜小白</title>
+    <title>砝码称重 | 姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">奖项</h1>
+                    <h1 class="description center-align post-title">砝码称重</h1>
                 </div>
             </div>
         </div>
@@ -422,8 +422,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%A5%96%E9%A1%B9/">
-                                <span class="chip bg-color">奖项</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -434,8 +438,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%A5%96%E9%A1%B9/" class="post-category">
-                                奖项
+                            <a href="/categories/%E2%80%9C%E8%93%9D%E6%A1%A5%E6%9D%AF%E2%80%9D/" class="post-category">
+                                “蓝桥杯”
                             </a>
                         
                     </div>
@@ -447,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-20
+                    2022-02-28
                 </div>
                 
 
@@ -473,12 +477,59 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li>2006年《时尚周刊》年度风云人物</li>
-<li>《感动中国》2008年度人物特别奖</li>
-<li>联合国2019年度“地球卫士奖”</li>
-<li>北京冬奥会2022年奥林匹克杯</li>
-</ul>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/3420/">3417. 砝码称重 - AcWing题库</a></p>
+<p>你有一架天平和 $N$ 个砝码，这 4N$ 个砝码重量依次是 $W_1,W_2,⋅⋅⋅,W_N$。</p>
+<p>请你计算一共可以称出多少种不同的正整数重量？</p>
+<p>注意砝码可以放在天平两边。</p>
+<h5 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h5><p>输入的第一行包含一个整数 $N$。</p>
+<p>第二行包含 $N$ 个整数$W_1,W_2,W_3,⋅⋅⋅,W_N$。</p>
+<h5 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h5><p>输出一个整数代表答案。</p>
+<h5 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h5><p>对于 50% 的评测用例，$1≤N≤15$。<br>对于所有评测用例，$1≤N≤100$，$N$ 个砝码总重不超过 $10^5$。</p>
+<h5 id="样例："><a href="#样例：" class="headerlink" title="样例："></a>样例：</h5><pre><code class="lang-html">3
+1 4 6
+输出
+10
+</code></pre>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>这道题目仔细想想是一个dp问题，可以简单的推断出每个砝码都有选和不选两种状态，一般涉及这种问题的多半需要动态规划，寻找转移方程。</p>
+<p>设$f[i,j]$代表前$i$个砝码是否能称出$j$,$0$代表不能，$1$代表能.</p>
+<p>然后就是寻找相互的转移方程，可以分成两个途径，选第$i$个或者不选</p>
+<p>选第$i$个：那么前$i-1$个就能称出$j+a[i]$或者$|j-a[i]|$（$j-a[i]$可能为负数，直接取绝对值）才能称出$j$</p>
+<p>不选第$i$个：前$i - 1$个就能称出$j$</p>
+<p>所以转移方程就可以是</p>
+<p>$f[i,j]=f[i-1,j] \cup f[i-1,j+a[i]] \cup f[i-1, |j-a[i]| ]$</p>
+<p>然后最后遍历一下$f<a href="0<i<=10^5">n,i</a>$，记录一下能称出的次数就解决了。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;
+
+public class Main
+{
+    static int n, sum = 0, ans = 0;
+    final static int N = 200010;
+    static int[] a = new int[110];
+    static boolean[][] dp = new boolean[110][N];
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        for(int i = 1; i &lt;= n; i ++)
+        {
+            a[i] = inScanner.nextInt();
+            sum += a[i];
+        }
+        dp[0][0] = true;
+        for(int i = 1; i &lt;= n; i ++)
+        {
+            for(int j = 0; j &lt;= sum; j ++)
+            {
+                dp[i][j] = dp[i - 1][j] || dp[i - 1][j + a[i]] || dp[i - 1][Math.abs(j - a[i])];
+            }
+        }
+        for(int i = 1; i &lt;= sum; i ++)
+            if(dp[n][i])
+                ans ++;
+        inScanner.close();
+        System.out.println(ans);
+    }
+}
+</code></pre>
 
                 
             </div>
@@ -505,7 +556,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/02/20/jiang-xiang/">http://aspire-zero.github.io/2022/02/20/jiang-xiang/</a>
+                    <a href="http://aspire-zero.github.io/2022/02/28/fa-ma-cheng-chong/">http://aspire-zero.github.io/2022/02/28/fa-ma-cheng-chong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -543,8 +594,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%A5%96%E9%A1%B9/">
-                                    <span class="chip bg-color">奖项</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -589,7 +644,7 @@
         repo: 'aspire-zero.github.io',
         owner: 'aspire-zero',
         admin: ["aspire-zero"],
-        id: '2022-02-20T18-31-43',
+        id: '2022-02-28T15-43-42',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -615,9 +670,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/02/28/fa-ma-cheng-chong/">
                     <div class="card-image">
@@ -635,9 +691,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -650,6 +706,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -672,13 +729,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/20/java/">
+                <a href="/2022/02/20/jiang-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/66.jpg" class="responsive-img" alt="Java">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="奖项">
                         
-                        <span class="card-title">Java</span>
+                        <span class="card-title">奖项</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -695,8 +752,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E5%A5%96%E9%A1%B9/" class="post-category">
+                                    奖项
                                 </a>
                             
                             
@@ -706,8 +763,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E5%A5%96%E9%A1%B9/">
+                        <span class="chip bg-color">奖项</span>
                     </a>
                     
                 </div>
@@ -875,6 +932,13 @@
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
     <footer class="page-footer bg-color">
