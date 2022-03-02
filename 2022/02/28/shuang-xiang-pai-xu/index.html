@@ -498,18 +498,99 @@
 <p>假设蓝色序列为原序列</p>
 <p><img src="/2022/02/28/shuang-xiang-pai-xu/0.png" alt="原序列"></p>
 <h6 id="优化一"><a href="#优化一" class="headerlink" title="优化一"></a>优化一</h6><p>如果是多个前缀序列连续或者多个后缀序列连续，可以进行合并。</p>
-<p><img src="/2022/02/28/shuang-xiang-pai-xu/1.png" alt></p>
+<p><img src="/2022/02/28/shuang-xiang-pai-xu/1.png" alt=""></p>
 <p>可以选择其中最长的一个前缀序列然后进行操作，同样后缀序列也是如此。</p>
 <h6 id="优化二："><a href="#优化二：" class="headerlink" title="优化二："></a>优化二：</h6><p>前缀序列a，后缀序列b，前缀序列c</p>
 <p>前缀序列c的长度$&lt;$前缀序列a的长度</p>
-<p><img src="/2022/02/28/shuang-xiang-pai-xu/2.png" alt></p>
+<p><img src="/2022/02/28/shuang-xiang-pai-xu/2.png" alt=""></p>
 <p>如图所示，对于后缀序列b的A部分的序列是不需要操作的，而对于前缀序列c的C部分的序列也是不需要操作的。</p>
 <h6 id="优化三："><a href="#优化三：" class="headerlink" title="优化三："></a>优化三：</h6><p>前缀序列a，后缀序列b，前缀序列c</p>
 <p>前缀序列c的长度$&gt;=$前缀序列a的长度</p>
-<p><img src="/2022/02/28/shuang-xiang-pai-xu/3.png" alt></p>
+<p><img src="/2022/02/28/shuang-xiang-pai-xu/3.png" alt=""></p>
 <p>在图中很明显发现A部分不需要任何操作，那么A部分之外的序列，只需要最后一次的前缀操作，即c操作一次降序排序就行了。</p>
 <p>以上就是三个小优化，可以通过栈去模拟就行，然后不需要进行排序，进行填充就行。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p><code>java</code></p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;
+
+public class Main
+{
+    static int n, m;
+    static node[] a = new node[100010];
+    static int[] ans = new int[100010];
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextInt();
+        m = inScanner.nextInt();
+        int cnt = 0;
+        for(int i = 1; i &lt;= m; i ++)
+        {
+            int op = inScanner.nextInt();
+            int p = inScanner.nextInt();
+            if(op == 0)
+            {
+                while(cnt &gt; 0 &amp;&amp; a[cnt].x == 0)
+                    p = Math.max(p, a[cnt --].v);
+                while(cnt &gt;= 2 &amp;&amp; a[cnt - 1].v &lt;= p)
+                    cnt -= 2;
+                ++ cnt;
+                //a[++ cnt] = new node(op, p);
+            }
+            else if(cnt != 0)
+            {
+                while(cnt &gt; 0 &amp;&amp; a[cnt].x == 1)
+                    p = Math.min(p, a[cnt --].v);
+                while(cnt &gt;= 2 &amp;&amp; a[cnt - 1].v &gt;= p)
+                    cnt -= 2;
+                ++ cnt;
+                //a[++ cnt] = new node(op, p);
+            }
+            a[cnt] = new node(op, p);
+        }
+        int l = 1, r = n, k = n;
+        for(int i = 1; i &lt;= cnt; i ++)
+        {
+            if(a[i].x == 0)
+            {
+                while(r &gt; a[i].v &amp;&amp; l &lt;= r)
+                    ans[r --] = k --;
+            }
+            else
+            {
+                while(l &lt; a[i].v &amp;&amp; l &lt;= r)
+                    ans[l ++] = k --;
+            }
+            if(l &gt; r) 
+                break;
+        }
+        if(cnt % 2 == 1)
+        {
+            while(l &lt;= r)
+                ans[l ++] = k --;
+        }
+        else
+        {
+            while(l &lt;= r)
+                ans[r --] = k --;
+        }
+        inScanner.close();
+        for(int i = 1; i &lt;= n; i ++)
+            System.out.printf("%d ", ans[i]);
+    }
+    static class node {
+        int x, v;
+        public node(int x, int v)
+        {
+            this.x = x;
+            this.v = v;
+        }
+    }
+}
+/*
+3 3
+0 3
+1 2
+0 2
+*/
+</code></pre>
 
                 
             </div>
@@ -1209,9 +1290,9 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 
 </html>
