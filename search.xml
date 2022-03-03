@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>异或数列</title>
+      <link href="2022/03/03/yi-huo-shu-lie/"/>
+      <url>2022/03/03/yi-huo-shu-lie/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>Alice 和 Bob 正在玩一个异或数列的游戏。</p><p>初始时，Alice 和 Bob 分别有一个整数 a 和 b（初始时，a,b 均为 0），有一个给定的长度为 n 的公共数列 $X_1,X_2,⋅⋅⋅,X_n$。</p><p>Alice 和 Bob 轮流操作，Alice 先手，每步可以在以下两种选项中选一种：</p><p>选项 1：从数列中选一个 $X_i$ 给 Alice 的数异或上，或者说令 a 变为 $a⊕X_i$。（其中 $⊕$ 表示按位异或）<br>选项 2：从数列中选一个 $X_i$ 给 Bob 的数异或上，或者说令 b 变为 $b⊕X_i$。<br>每个数 $X_i$ 都只能用一次，当所有 $X_i$ 均被使用后（n 轮后）游戏结束。</p><p>游戏结束时，拥有的数比较大的一方获胜，如果双方数值相同，即为平手。</p><p>现在双方都足够聪明，都采用最优策略，请问谁能获胜？</p><h6 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h6><p>每个评测用例包含多组询问。询问之间彼此独立。</p><p>输入的第一行包含一个整数 $T$，表示询问数。</p><p>接下来 T 行每行包含一组询问。其中第 $i$ 行的第一个整数 $n<em>i$ 表示数列长度，随后 $n_i$ 个整数 $X_1,X_2,⋅⋅⋅,X</em>{ni}$ 表示数列中的每个数。</p><h6 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h6><p>输出 T 行，依次对应每组询问的答案。</p><p>每行包含一个整数 1、0 或 −1 分别表示 Alice 胜、平局或败。</p><h6 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h6><p>对于所有评测用例，$1≤T≤2×10^5$，$1≤∑X_i≤2×10^5$，$0≤X_i&lt;2^{20}$。</p><h6 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h6><p>4<br>1 1<br>1 0<br>2 2 1<br>7 992438 1006399 781139 985280 4729 872779 563580</p><h6 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h6><p>1<br>0<br>1<br>1</p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>这道题是典型的博弈，如果所有$X_i$的异或和为0，那么他们两者平局</p><p>如果异或和不为0，那么可以看作每个二进制位的异或和，那么只需要看哪个位的1的数量为奇数，且该位置靠高位，然后看这个位的1的数量为1，那么先手胜利</p><p>如果这个位1的数量大于1，且为奇数，那么可以分为两种情况：</p><p>​    1.总个数为奇数，那么0的个数就为偶数，必然是先手赢，首先取该位为1的数上的，然后变成1的数量偶数，0的数量偶数，看后手取哪部分，先手模仿即可胜利。</p><p>​    2.总个数为偶数的，那么0的个数就为奇数，如果先手取该位为0的数，那么后手模仿，后手胜利，如果先手取该位为1的数，那么就变成第一种情况，后手胜利。</p><p>具体看代码。</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;public class Main{    static int T;    static int[] q = new int[100];    public static void get_bit(int a)    {        int t = 0;        while(a &gt; 0)        {            if(a % 2 == 1)                q[t] ++;            a &gt;&gt;= 1;            t ++;        }        return;    }    public static void main(String[] args) {        Scanner inScanner = new Scanner(System.in);        T = inScanner.nextInt();        while(T --&gt; 0)        {            int n;            int sum = 0;            n = inScanner.nextInt();            Arrays.fill(q, 0);            for(int i = 1; i &lt;= n; i ++)            {                int a = inScanner.nextInt();                get_bit(a);                sum ^= a;            }            if(sum == 0)                System.out.println(0);            else            {                int cnt = -1;                int u = sum;                while(u &gt; 0)                {                    cnt ++;                    u &gt;&gt;= 1;                }                if(q[cnt] == 1 || (q[cnt] % 2 == 1 &amp;&amp; n % 2 == 1))                    System.out.println(1);                else                    System.out.println(-1);            }        }        inScanner.close();    }}/*3 30 31 20 2*/</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 蓝桥杯 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>括号序列</title>
       <link href="2022/03/02/gua-hao-xu-lie/"/>
       <url>2022/03/02/gua-hao-xu-lie/</url>
