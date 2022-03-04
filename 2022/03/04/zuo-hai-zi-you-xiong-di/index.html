@@ -3,7 +3,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="异或数列, Hexo,HTML,CSS">
+    <meta name="keywords" content="左孩子右兄弟, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>异或数列 | 姜小白</title>
+    <title>左孩子右兄弟 | 姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/75.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">异或数列</h1>
+                    <h1 class="description center-align post-title">左孩子右兄弟</h1>
                 </div>
             </div>
         </div>
@@ -451,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-03
+                    2022-03-04
                 </div>
                 
 
@@ -477,77 +477,65 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>Alice 和 Bob 正在玩一个异或数列的游戏。</p>
-<p>初始时，Alice 和 Bob 分别有一个整数 a 和 b（初始时，a,b 均为 0），有一个给定的长度为 n 的公共数列 $X_1,X_2,⋅⋅⋅,X_n$。</p>
-<p>Alice 和 Bob 轮流操作，Alice 先手，每步可以在以下两种选项中选一种：</p>
-<p>选项 1：从数列中选一个 $X_i$ 给 Alice 的数异或上，或者说令 a 变为 $a⊕X_i$。（其中 $⊕$ 表示按位异或）<br>选项 2：从数列中选一个 $X_i$ 给 Bob 的数异或上，或者说令 b 变为 $b⊕X_i$。<br>每个数 $X_i$ 都只能用一次，当所有 $X_i$ 均被使用后（n 轮后）游戏结束。</p>
-<p>游戏结束时，拥有的数比较大的一方获胜，如果双方数值相同，即为平手。</p>
-<p>现在双方都足够聪明，都采用最优策略，请问谁能获胜？</p>
-<h6 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h6><p>每个评测用例包含多组询问。询问之间彼此独立。</p>
-<p>输入的第一行包含一个整数 $T$，表示询问数。</p>
-<p>接下来 T 行每行包含一组询问。其中第 $i$ 行的第一个整数 $n<em>i$ 表示数列长度，随后 $n_i$ 个整数 $X_1,X_2,⋅⋅⋅,X</em>{ni}$ 表示数列中的每个数。</p>
-<h6 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h6><p>输出 T 行，依次对应每组询问的答案。</p>
-<p>每行包含一个整数 1、0 或 −1 分别表示 Alice 胜、平局或败。</p>
-<h6 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h6><p>对于所有评测用例，$1≤T≤2×10^5$，$1≤∑X_i≤2×10^5$，$0≤X_i&lt;2^{20}$。</p>
-<h6 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h6><p>4<br>1 1<br>1 0<br>2 2 1<br>7 992438 1006399 781139 985280 4729 872779 563580</p>
-<h6 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h6><p>1<br>0<br>1<br>1</p>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>这道题是典型的博弈，如果所有$X_i$的异或和为0，那么他们两者平局</p>
-<p>如果异或和不为0，那么可以看作每个二进制位的异或和，那么只需要看哪个位的1的数量为奇数，且该位置靠高位，然后看这个位的1的数量为1，那么先手胜利</p>
-<p>如果这个位1的数量大于1，且为奇数，那么可以分为两种情况：</p>
-<p>​    1.总个数为奇数，那么0的个数就为偶数，必然是先手赢，首先取该位为1的数上的，然后变成1的数量偶数，0的数量偶数，看后手取哪部分，先手模仿即可胜利。</p>
-<p>​    2.总个数为偶数的，那么0的个数就为奇数，如果先手取该位为0的数，那么后手模仿，后手胜利，如果先手取该位为1的数，那么就变成第一种情况，后手胜利。</p>
-<p>具体看代码。</p>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/3425/">3422. 左孩子右兄弟 - AcWing题库</a></p>
+<p>对于一棵多叉树，我们可以通过 “左孩子右兄弟” 表示法，将其转化成一棵二叉树。</p>
+<p>如果我们认为每个结点的子结点是无序的，那么得到的二叉树可能不唯一。</p>
+<p>换句话说，每个结点可以选任意子结点作为左孩子，并按任意顺序连接右兄弟。</p>
+<p>给定一棵包含 N 个结点的多叉树，结点从 1 至 N 编号，其中 1 号结点是根，每个结点的父结点的编号比自己的编号小。</p>
+<p>请你计算其通过 “左孩子右兄弟” 表示法转化成的二叉树，高度最高是多少。</p>
+<p>注：只有根结点这一个结点的树高度为 0。</p>
+<p>例如如下的多叉树：</p>
+<p><img src="/2022/03/04/zuo-hai-zi-you-xiong-di/0.png" alt=""></p>
+<p>可能有以下 3 种 (这里只列出 3 种，并不是全部) 不同的 “左孩子右兄弟”表示：</p>
+<p><img src="/2022/03/04/zuo-hai-zi-you-xiong-di/1.png" alt=""></p>
+<p>其中最后一种高度最高，为 4。</p>
+<h6 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h6><p>输入的第一行包含一个整数 N。</p>
+<p>以下 N−1 行，每行包含一个整数，依次表示 2 至 N 号结点的父结点编号。</p>
+<h6 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h6><p>输出一个整数表示答案。</p>
+<h6 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h6><p>对于 30% 的评测用例，$1≤N≤20$；<br>对于所有评测用例，$1≤N≤10^5$。</p>
+<h6 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h6><p>5<br>1<br>1<br>1<br>2</p>
+<h6 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h6><p>4</p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>这道题思路十分清晰，就是类似于一个递归，已知要把多叉树变成二叉树，显然每个节点只能保留一个子树，那么就变成了保留哪个子树之后二叉树的高度最高，因此可以得出：</p>
+<p>最终的高度=保留子树的高度+其兄弟节点的个数</p>
+<p>这显然可以用递归解决，记录每个节点的孩子以及孩子的数量。</p>
 <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;
 
 public class Main
 {
-    static int T;
-    static int[] q = new int[100];
-    public static void get_bit(int a)
+    final static int N = 100010;
+    static int[] E = new int[N];
+    static int[] nxt = new int[N];
+    static int[] head = new int[N];
+    static int[] sum = new int[N];
+    static int n, cnt = 0;
+    public static void add(int to, int from)
     {
-        int t = 0;
-        while(a &gt; 0)
+        E[++ cnt] = from;
+        nxt[cnt] = head[to];
+        head[to] = cnt;
+    }
+    public static int dfs(int root)
+    {
+        int ans = 0;
+        for(int i = head[root]; i != 0; i = nxt[i])
         {
-            if(a % 2 == 1)
-                q[t] ++;
-            a &gt;&gt;= 1;
-            t ++;
+            ans = Math.max(ans, dfs(E[i]) + sum[root]);
         }
-        return;
+        return ans;
     }
     public static void main(String[] args) {
         Scanner inScanner = new Scanner(System.in);
-        T = inScanner.nextInt();
-        while(T --&gt; 0)
+        n = inScanner.nextInt();
+        head[1] = 0;
+        nxt[1] = 0;
+        for(int i = 2; i &lt;= n; i ++)
         {
-            int n;
-            int sum = 0;
-            n = inScanner.nextInt();
-            Arrays.fill(q, 0);
-            for(int i = 1; i &lt;= n; i ++)
-            {
-                int a = inScanner.nextInt();
-                get_bit(a);
-                sum ^= a;
-            }
-            if(sum == 0)
-                System.out.println(0);
-            else
-            {
-                int cnt = -1;
-                int u = sum;
-                while(u &gt; 0)
-                {
-                    cnt ++;
-                    u &gt;&gt;= 1;
-                }
-                if(q[cnt] == 1 || (q[cnt] % 2 == 1 &amp;&amp; n % 2 == 1))
-                    System.out.println(1);
-                else
-                    System.out.println(-1);
-            }
+            int t = inScanner.nextInt();
+            add(t, i);
+            sum[t] ++;
         }
         inScanner.close();
+        System.out.println(dfs(1));
     }
 }
 /*
@@ -583,7 +571,7 @@ public class Main
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/03/03/yi-huo-shu-lie/">http://aspire-zero.github.io/2022/03/03/yi-huo-shu-lie/</a>
+                    <a href="http://aspire-zero.github.io/2022/03/04/zuo-hai-zi-you-xiong-di/">http://aspire-zero.github.io/2022/03/04/zuo-hai-zi-you-xiong-di/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -671,7 +659,7 @@ public class Main
         repo: 'aspire-zero.github.io',
         owner: 'aspire-zero',
         admin: ["aspire-zero"],
-        id: '2022-03-03T21-46-46',
+        id: '2022-03-04T08-39-05',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -697,9 +685,10 @@ public class Main
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/04/zuo-hai-zi-you-xiong-di/">
                     <div class="card-image">
@@ -717,9 +706,9 @@ public class Main
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -732,6 +721,7 @@ public class Main
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -754,13 +744,13 @@ public class Main
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/02/gua-hao-xu-lie/">
+                <a href="/2022/03/03/yi-huo-shu-lie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/51.jpg" class="responsive-img" alt="括号序列">
+                        <img src="/medias/featureimages/75.jpg" class="responsive-img" alt="异或数列">
                         
-                        <span class="card-title">括号序列</span>
+                        <span class="card-title">异或数列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -771,7 +761,7 @@ public class Main
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-03
                             </span>
                         <span class="publish-author">
                             
