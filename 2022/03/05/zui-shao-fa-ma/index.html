@@ -3,7 +3,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="救生员, Hexo,HTML,CSS">
+    <meta name="keywords" content="最少砝码, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>救生员 | 姜小白</title>
+    <title>最少砝码 | 姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/42.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/37.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">救生员</h1>
+                    <h1 class="description center-align post-title">最少砝码</h1>
                 </div>
             </div>
         </div>
@@ -426,6 +426,10 @@
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -434,8 +438,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
+                            <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="post-category">
+                                蓝桥杯
                             </a>
                         
                     </div>
@@ -447,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-04
+                    2022-03-05
                 </div>
                 
 
@@ -473,63 +477,64 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1752/">1750. 救生员 - AcWing题库</a></p>
-<p>农夫约翰为他的牛开设了一个游泳池，他认为这将帮助它们放松并产出更多的奶。</p>
-<p>为了确保安全，他雇佣了 N 头奶牛作为救生员，每头奶牛的工作班次都是一段连续的时间。</p>
-<p>为了简单起见，游泳池每天的开放时间从时刻 0 到时刻 1000。</p>
-<p>每个奶牛的工作班次都可以用两个整数来描述，它们分别表示该奶牛工作班次的开始时刻和结束时刻。</p>
-<p>例如，从时刻 t=4 开始工作并在时刻 t=7 结束工作的救生员，它的工作时间为三个时间单位（请注意，时间“段”两端的端点是时间轴上的“点”）。</p>
-<p>不幸的是，由于资金紧张问题，约翰不得不解雇一头奶牛。</p>
-<p>请问通过合理裁员，剩余救生员的工作班次仍然可以覆盖的最大时间有多长？</p>
-<p>一个时间间隔内如果存在至少一名救生员当值，那么这个时间间隔就认为是被覆盖的。</p>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/3427/">3424. 最少砝码 - AcWing题库</a></p>
+<p>你有一架天平。现在你要设计一套砝码，使得利用这些砝码可以称出任意小于等于 $N$ 的正整数重量。</p>
+<p>那么这套砝码最少需要包含多少个砝码？</p>
+<p>注意砝码可以放在天平两边。</p>
+<h6 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h6><p>输入包含一个正整数 $N$。</p>
+<h6 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h6><p>输出一个整数代表答案。</p>
+<h6 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h6><p>对于所有评测用例，$1≤N≤10^9$。</p>
+<h6 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h6><p><code>7</code></p>
+<h5 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h5><p><code>3</code></p>
+<h5 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h5><p>$3$ 个砝码重量是 $1、4、6$，可以称出 $1$ 至 $7$ 的所有重量。</p>
+<pre><code class="lang-html">1 = 1；
+2 = 6 − 4 (天平一边放 6，另一边放 4)；
+3 = 4 − 1；
+4 = 4；
+5 = 6 − 1；
+6 = 6；
+7 = 1 + 6；
+少于 3 个砝码不可能称出 1 至 7 的所有重量。
+</code></pre>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>假设$n$个砝码能够表示的范围为$[0,k]$</p>
+<p>如果第$n+1$个砝码的重量为$2k+1$</p>
+<p>那么$k+1$的重量可以表示为$(2k+1) - k$</p>
+<p>$k+2=(2k+1)-(k-1)$</p>
+<p>…….</p>
+<p>$3k=(2k+1)+(k-1)$</p>
+<p>$3k+1=(2k+1)+k$</p>
+<p>假设$f[i]$为共$i$个砝码能够表示的范围$k$</p>
+<p>所以$f[i+1]=3*f[i]+1$</p>
+<p>$f[1]=3^0=\frac{3^1-1}{2}$</p>
+<p>$f[2]=3^1+3^0=\frac{3^2-1}{2}$</p>
+<p>$f[3]=3^2+3^1+3^0=\frac{3^3-1}{2}$</p>
+<p>…</p>
+<p>$f[n]=\frac{3^n-1}{2}$</p>
+<p>假设输入的值为$m$</p>
+<p>那么$f[n]&gt;=m$</p>
+<p>即$\frac{3^n-1}{2}&gt;=m$</p>
+<p>化简得$3^n&gt;=2m+1$</p>
+<p>$n&gt;=log_3(2m+1)$</p>
+<p>得出：$n=\lceil log_3(2m+1) \rceil$</p>
 <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;
 
-public class Main {
-    static int N = 100010;
-    static int n, ans = 0;
-    static boolean[] f = new boolean[1010];
-    static node[] a = new node[110];
+public class Main
+{
+    static int n, cnt = 0;
     public static void main(String[] args) {
         Scanner inScanner = new Scanner(System.in);
         n = inScanner.nextInt();
-        for(int i = 0; i &lt; n; i ++)
-            a[i] = new node(inScanner.nextInt(), inScanner.nextInt());
-        for(int i = 0; i &lt; n; i ++)
-        {
-            Arrays.fill(f, false);
-            int sum = 0;
-            for(int j = 0; j &lt; n; j ++)
-            {
-                if(i != j)
-                {
-                    int l = a[j].l;
-                    int r = a[j].r;
-                    while(l &lt; r)
-                    {
-                        if(!f[l])
-                        {
-                            f[l] = true;
-                            sum ++;
-                        }
-                        l ++;
-                    }
-                }
-            }
-            ans = sum &gt; ans ? sum : ans;
-        }
-        System.out.println(ans);
+
         inScanner.close();
+        System.out.println((int)Math.ceil(Math.log(2*n+1)/Math.log(3)));
     }
 }
-class node
-{
-    int l, r;
-    public node(int l, int r)
-    {
-        this.l = l;
-        this.r = r;
-    }
-}
+/*
+3 3
+0 3
+1 2
+0 2
+*/
 </code></pre>
 
                 
@@ -557,7 +562,7 @@ class node
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/02/04/jiu-sheng-yuan/">http://aspire-zero.github.io/2022/02/04/jiu-sheng-yuan/</a>
+                    <a href="http://aspire-zero.github.io/2022/03/05/zui-shao-fa-ma/">http://aspire-zero.github.io/2022/03/05/zui-shao-fa-ma/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -597,6 +602,10 @@ class node
                             
                                 <a href="/tags/Java/">
                                     <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -641,7 +650,7 @@ class node
         repo: 'aspire-zero.github.io',
         owner: 'aspire-zero',
         admin: ["aspire-zero"],
-        id: '2022-02-04T11-48-19',
+        id: '2022-03-05T18-34-13',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -667,17 +676,18 @@ class node
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/02/05/ti-qiu/">
+                <a href="/2022/03/05/zui-shao-fa-ma/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/79.jpg" class="responsive-img" alt="蹄球">
+                        <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="最少砝码">
                         
-                        <span class="card-title">蹄球</span>
+                        <span class="card-title">最少砝码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -687,26 +697,31 @@ class node
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="post-category">
+                                    蓝桥杯
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/Java/">
                         <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -720,13 +735,13 @@ class node
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/03/niu-de-xi-pai/">
+                <a href="/2022/03/04/zuo-hai-zi-you-xiong-di/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/62.jpg" class="responsive-img" alt="牛的洗牌">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="左孩子右兄弟">
                         
-                        <span class="card-title">牛的洗牌</span>
+                        <span class="card-title">左孩子右兄弟</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -737,14 +752,14 @@ class node
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="post-category">
+                                    蓝桥杯
                                 </a>
                             
                             
@@ -756,6 +771,10 @@ class node
                     
                     <a href="/tags/Java/">
                         <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -923,6 +942,13 @@ class node
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
     <footer class="page-footer bg-color">
