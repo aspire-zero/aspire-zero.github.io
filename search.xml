@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>完全平方数</title>
+      <link href="2022/03/07/wan-quan-ping-fang-shu/"/>
+      <url>2022/03/07/wan-quan-ping-fang-shu/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a href="https://www.acwing.com/problem/content/description/3494/">3491. 完全平方数 - AcWing题库</a></p><p>一个整数 $a$ 是一个完全平方数，是指它是某一个整数的平方，即存在一个整数 $b$，使得 $a=b^2$。</p><p>给定一个正整数 $n$，请找到最小的正整数 $x$，使得它们的乘积是一个完全平方数。</p><h6 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h6><p>输入一行包含一个正整数 $n$。</p><h6 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h6><p>输出找到的最小的正整数 $x$。</p><h6 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h6><p>对于 30% 的评测用例，$1≤n≤1000$，答案不超过 $1000$。<br>对于 60% 的评测用例，$1≤n≤10^8$，答案不超过 $10^8$。<br>对于所有评测用例，$1≤n≤10^12$，答案不超过 $10^{12}$。</p><pre><code class="lang-tex">输入样例1：12输出样例1：3输入样例2：15输出样例2：15</code></pre><h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h4><p>就是枚举它能整除的平方数最后留下的就是最小数</p><p>例如$a=b<em>b</em>d(其中d不为平方数)$答案就是d，从而得出可以进行枚举，从$2$的平方数进行枚举。</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;public class Main{    static long n;    static int cnt = 0;    final static int N = 100000010;    static boolean[] is = new boolean[N];    static int[] vis = new int[6000010];    public static void isprime(int n)    {        for(int i = 2; i &lt;= n; i ++)        {            if(is[i] == false)                vis[cnt ++] = i;            for(int j = 0; j &lt; cnt &amp;&amp; i * vis[j] &lt;= n; j ++)            {                is[i * vis[j]] = true;                if(i % vis[j] == 0)                    break;            }        }        return;    }    public static void main(String[] args) {        Scanner inScanner = new Scanner(System.in);        n = inScanner.nextLong();        for(long i = 2; i * i &lt;= n; i ++)        {            while(n % (i * i) == 0)                n /= i * i;        }        inScanner.close();        System.out.println(n);    }}/*3 30 31 20 2*/</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 蓝桥杯 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 埃氏筛 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>最少砝码</title>
       <link href="2022/03/05/zui-shao-fa-ma/"/>
       <url>2022/03/05/zui-shao-fa-ma/</url>

@@ -3,7 +3,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="（一）一群小青蛙呱蹦呱蹦呱, Hexo,HTML,CSS">
+    <meta name="keywords" content="完全平方数, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>（一）一群小青蛙呱蹦呱蹦呱 | 姜小白</title>
+    <title>完全平方数 | 姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/38.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">（一）一群小青蛙呱蹦呱蹦呱</h1>
+                    <h1 class="description center-align post-title">完全平方数</h1>
                 </div>
             </div>
         </div>
@@ -422,14 +422,31 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BC%96%E7%A8%8B%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">编程算法</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B/">
+                                <span class="chip bg-color">埃氏筛</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="post-category">
+                                蓝桥杯
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -438,7 +455,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-01
+                    2022-03-07
                 </div>
                 
 
@@ -464,132 +481,66 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/9981/J">https://ac.nowcoder.com/acm/contest/9981/J</a><br>来源：牛客网</p>
-<p>有n个格子，每个格子里有一个数，1,2,3,4…n   </p>
-<p>   牛牛放出<strong>无穷</strong>只青蛙。   </p>
-<p>   第一只青蛙的路线是：1-&gt;2-&gt;4-&gt;8-&gt;16-&gt;….   </p>
-<p>   第二只青蛙的路线是：1-&gt;3-&gt;9-&gt;27-&gt;81-&gt;….   </p>
-<p>   第三只青蛙的路线是：1-&gt;5-&gt;25-&gt;125….   </p>
-<p>   第四只青蛙的路线是：1-&gt;7-&gt;49……..   </p>
-<p>   。。。。。。   </p>
-<p>   用数学语言描述，第 i只青蛙的路线是首项为1，公比为p(i)的等比数列，其中p(i)代表第个素数。   </p>
-<p>   当青蛙跳到一个格子上，如果这个格子上面有一个数，青蛙就会把这个数吃掉。   </p>
-<p>   牛牛想知道，所有<strong>没有被</strong>吃掉的数的lcm（最小公倍数 ，Least common multiple）是多少？   </p>
-<p>   由于这个lcm可能非常大，请输出它对10<sup>9</sup> + 7取模的值。</p>
-<h4 id="输入描述："><a href="#输入描述：" class="headerlink" title="输入描述："></a>输入描述：</h4><p>一个整数n</p>
-<p>1 &lt;= n &lt;= 1.6 * 10<sup>8</sup></p>
-<h4 id="输出描述："><a href="#输出描述：" class="headerlink" title="输出描述："></a>输出描述：</h4><p>如果所有数都被吃掉了，请输出一个字符串”empty”</p>
-<p>否则输出所有没有被吃掉的数的lcm，对模10<sup>9</sup> + 7</p>
-<h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h5><p><img src="/2021/03/01/yi-qun-xiao-qing-wa-gu-beng-gu-beng-gu/silu.png" style="zoom: 67%;"></p>
-<pre><code class="lang-cpp">#include&lt;bits/stdc++.h&gt;
-#include&lt;iostream&gt;
-#include&lt;queue&gt;
-#include&lt;sstream&gt;
-#include&lt;algorithm&gt;
-#include&lt;vector&gt;
-#include&lt;cmath&gt;
-#include&lt;map&gt;
-#include&lt;set&gt;
-#define inf 0x3f3f3f3f
-#include&lt;cstring&gt;
-#include&lt;cstdio&gt;
-#define  ll long long
-#define PI acos(-1)
-#define mset(s, _) memset(s, _, sizeof(s))
-//#define lo
-using namespace std;
-void coutx(double q, int x)
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/3494/">3491. 完全平方数 - AcWing题库</a></p>
+<p>一个整数 $a$ 是一个完全平方数，是指它是某一个整数的平方，即存在一个整数 $b$，使得 $a=b^2$。</p>
+<p>给定一个正整数 $n$，请找到最小的正整数 $x$，使得它们的乘积是一个完全平方数。</p>
+<h6 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h6><p>输入一行包含一个正整数 $n$。</p>
+<h6 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h6><p>输出找到的最小的正整数 $x$。</p>
+<h6 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h6><p>对于 30% 的评测用例，$1≤n≤1000$，答案不超过 $1000$。<br>对于 60% 的评测用例，$1≤n≤10^8$，答案不超过 $10^8$。<br>对于所有评测用例，$1≤n≤10^12$，答案不超过 $10^{12}$。</p>
+<pre><code class="lang-tex">输入样例1：
+12
+输出样例1：
+3
+输入样例2：
+15
+输出样例2：
+15
+</code></pre>
+<h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h4><p>就是枚举它能整除的平方数最后留下的就是最小数</p>
+<p>例如$a=b<em>b</em>d(其中d不为平方数)$答案就是d，从而得出可以进行枚举，从$2$的平方数进行枚举。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;
+
+public class Main
 {
-    //cout.setf(ios::fixed);
-    //cout.unsetf(ios::fixed);
-    cout &lt;&lt; fixed &lt;&lt; setprecision(x) &lt;&lt; q &lt;&lt; endl;
-    return ;
-}
-inline ll ksc(ll x, ll y, ll mod)//快速乘
-{
-    return ( x * y - (ll) ( (long double) x / mod*y )*mod + mod ) % mod;
-}
-ll gcd(ll a,ll b)
-{
-    return b==0?a:gcd(b,a%b);
-}
-ll lcm(ll a,ll b)
-{
-    return a/gcd(a,b)*b;
-}
-const int mod1 = 1e9 + 7;
-const int N = 8e7+7;
-bool isprime[N];
-ll vis[N];
-int sieve(int n)//线性筛
-{
-    int cnt = 0;
-    isprime[0] = isprime[1] = true;
-    for(int i = 2; i &lt;= n; i ++)
+    static long n;
+    static int cnt = 0;
+    final static int N = 100000010;
+    static boolean[] is = new boolean[N];
+    static int[] vis = new int[6000010];
+    public static void isprime(int n)
     {
-        if(!isprime[i])        vis[ ++ cnt] = i;
-        for(int j = 1; j &lt;= cnt &amp;&amp; i * vis[j] &lt;= n; j ++)
+        for(int i = 2; i &lt;= n; i ++)
         {
-            isprime[i * vis[j]] = 1;
-            if(i % vis[j] == 0)
-                break;
-        }    
+            if(is[i] == false)
+                vis[cnt ++] = i;
+            for(int j = 0; j &lt; cnt &amp;&amp; i * vis[j] &lt;= n; j ++)
+            {
+                is[i * vis[j]] = true;
+                if(i % vis[j] == 0)
+                    break;
+            }
+        }
+        return;
     }
-    return cnt;
+    public static void main(String[] args) {
+        Scanner inScanner = new Scanner(System.in);
+        n = inScanner.nextLong();
+        for(long i = 2; i * i &lt;= n; i ++)
+        {
+            while(n % (i * i) == 0)
+                n /= i * i;
+        }
+
+        inScanner.close();
+        System.out.println(n);
+    }
 }
-int log(int n, int m)
-{
-    ll res = 0;
-    ll t = 1;
-    while(t &lt;= m)
-    {
-        t *= n;
-        res ++;
-    }
-    return res - 1;
-}
-ll poww(ll a, ll b)//快速幂
-{
-    ll ans = 1;
-    while(b)
-    {
-        if(b &amp; 1) 
-            ans = ksc(ans, a, mod1) % mod1;
-        a = ksc(a, a, mod1) % mod1;
-        a %= mod1;
-        b &gt;&gt;= 1;
-        ans %= mod1;
-    }
-    return ans % mod1;
- } 
-int main()
-{
-    #ifdef lo
-     freopen("data.in","r",stdin);
-     freopen("data.out","w",stdout);
-    #endif
-    srand((unsigned int)time(0));
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-    int n, cnt;
-    ll ans;
-    cin &gt;&gt; n;
-    if(n &lt;= 5)
-    {
-        cout &lt;&lt; "empty";
-        return 0;
-    }
-    cnt = sieve(n / 2);
-    ans = poww(2, log(2, n / 3));
-    for(int i = 2; i &lt;= cnt; i ++)
-    {
-        ans = (ans % mod1) * poww(vis[i], log(vis[i], n / 2));
-        ans %= mod1;
-    }
-    cout &lt;&lt; ans % mod1;
-    return 0;
- }
+/*
+3 3
+0 3
+1 2
+0 2
+*/
 </code></pre>
 
                 
@@ -617,7 +568,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2021/03/01/yi-qun-xiao-qing-wa-gu-beng-gu-beng-gu/">http://aspire-zero.github.io/2021/03/01/yi-qun-xiao-qing-wa-gu-beng-gu-beng-gu/</a>
+                    <a href="http://aspire-zero.github.io/2022/03/07/wan-quan-ping-fang-shu/">http://aspire-zero.github.io/2022/03/07/wan-quan-ping-fang-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -655,8 +606,16 @@ int main()
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BC%96%E7%A8%8B%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">编程算法</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B/">
+                                    <span class="chip bg-color">埃氏筛</span>
                                 </a>
                             
                         </div>
@@ -701,7 +660,7 @@ int main()
         repo: 'aspire-zero.github.io',
         owner: 'aspire-zero',
         admin: ["aspire-zero"],
-        id: '2021-03-01T20-00-04',
+        id: '2022-03-07T18-23-42',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -727,17 +686,18 @@ int main()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/11/p3599-koishi-loves-construction/">
+                <a href="/2022/03/07/wan-quan-ping-fang-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="P3599 Koishi Loves Construction">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="完全平方数">
                         
-                        <span class="card-title">P3599 Koishi Loves Construction</span>
+                        <span class="card-title">完全平方数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -747,16 +707,37 @@ int main()
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-07
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            姜小白
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="post-category">
+                                    蓝桥杯
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B/">
+                        <span class="chip bg-color">埃氏筛</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -768,13 +749,13 @@ int main()
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/22/xi-huan/">
+                <a href="/2022/03/05/zui-shao-fa-ma/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="喜欢">
+                        <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="最少砝码">
                         
-                        <span class="card-title">喜欢</span>
+                        <span class="card-title">最少砝码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -785,14 +766,14 @@ int main()
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%96%9C%E6%AC%A2/" class="post-category">
-                                    喜欢
+                            <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="post-category">
+                                    蓝桥杯
                                 </a>
                             
                             
@@ -802,8 +783,12 @@ int main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%96%9C%E6%AC%A2/">
-                        <span class="chip bg-color">喜欢</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -971,6 +956,13 @@ int main()
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
     <footer class="page-footer bg-color">
