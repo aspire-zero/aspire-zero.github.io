@@ -3,7 +3,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="完全平方数, Hexo,HTML,CSS">
+    <meta name="keywords" content="放养但没有完全放养, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>完全平方数 | 姜小白</title>
+    <title>放养但没有完全放养 | 姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/38.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">完全平方数</h1>
+                    <h1 class="description center-align post-title">放养但没有完全放养</h1>
                 </div>
             </div>
         </div>
@@ -422,16 +422,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B/">
-                                <span class="chip bg-color">埃氏筛</span>
+                            <a href="/tags/JAVA-%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">-JAVA -算法</span>
                             </a>
                         
                     </div>
@@ -442,8 +434,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="post-category">
-                                蓝桥杯
+                            <a href="/categories/JAVA/" class="post-category">
+                                JAVA
                             </a>
                         
                     </div>
@@ -455,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-07
+                    2022-03-16
                 </div>
                 
 
@@ -481,66 +473,58 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/3494/">3491. 完全平方数 - AcWing题库</a></p>
-<p>一个整数 $a$ 是一个完全平方数，是指它是某一个整数的平方，即存在一个整数 $b$，使得 $a=b^2$。</p>
-<p>给定一个正整数 $n$，请找到最小的正整数 $x$，使得它们的乘积是一个完全平方数。</p>
-<h6 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h6><p>输入一行包含一个正整数 $n$。</p>
-<h6 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h6><p>输出找到的最小的正整数 $x$。</p>
-<h6 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h6><p>对于 30% 的评测用例，$1≤n≤1000$，答案不超过 $1000$。<br>对于 60% 的评测用例，$1≤n≤10^8$，答案不超过 $10^8$。<br>对于所有评测用例，$1≤n≤10^12$，答案不超过 $10^{12}$。</p>
-<pre><code class="lang-tex">输入样例1：
-12
-输出样例1：
-3
-输入样例2：
-15
-输出样例2：
-15
-</code></pre>
-<h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h4><p>就是枚举它能整除的平方数最后留下的就是最小数</p>
-<p>例如$a=b<em>b</em>d(其中d不为平方数)$答案就是d，从而得出可以进行枚举，从$2$的平方数进行枚举。</p>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/3361/">3358. 放养但没有完全放养 - AcWing题库</a></p>
+<p>一个鲜为人知的事实是，奶牛拥有自己的文字：「牛文」。</p>
+<p>牛文由 $26$ 个字母 <code>a</code> 到 <code>z</code> 组成，但是当奶牛说牛文时，可能与我们所熟悉的 <code>abcdefghijklmnopqrstuvwxyz</code> 不同，她会按某种特定的顺序排列字母。</p>
+<p>为了打发时间，奶牛 Bessie 在反复哼唱牛文字母歌，而 Farmer John 好奇她唱了多少遍。</p>
+<p>给定一个小写字母组成的字符串，为 Farmer John 听到 Bessie 唱的字母，计算 Bessie 至少唱了几遍完整的牛文字母歌，使得 Farmer John 能够听到给定的字符串。</p>
+<p>Farmer John 并不始终注意 Bessie 所唱的内容，所以他可能会漏听 Bessie 唱过的一些字母。</p>
+<p>给定的字符串仅包含他记得他所听到的字母。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入的第一行包含 $26$ 个小写字母，为<code>a</code>到<code>z</code>的牛文字母表顺序。</p>
+<p>下一行包含一个小写字母组成的字符串，为 Farmer John 听到 Bessie 唱的字母。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出 Bessie 所唱的完整的牛文字母歌的最小次数。</p>
+<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>字符串的长度不小于 $1$ 且不大于 $1000$。</p>
+<h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><pre><code>abcdefghijklmnopqrstuvwxyz
+mood
+</code></pre><h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><pre><code>3
+</code></pre><h4 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h4><p>在这个样例中，牛文字母表与日常的字母表的排列一致。</p>
+<p>Bessie 至少唱了三遍牛文字母歌。</p>
+<p>有可能 Bessie 只唱了三遍牛文字母歌，而 Farmer John 听到了以下被标记为大写的字母。</p>
+<pre><code>abcdefghijklMnOpqrstuvwxyz
+abcdefghijklmnOpqrstuvwxyz
+abcDefghijklmnopqrstuvwxyz
+</code></pre><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>这道理没什么可说的，就是进行遍历两个字符串就行了。</p>
 <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;
-
 public class Main
 {
-    static long n;
-    static int cnt = 0;
-    final static int N = 100000010;
-    static boolean[] is = new boolean[N];
-    static int[] vis = new int[6000010];
-    public static void isprime(int n)
+    static StringBuilder s;
+    static StringBuilder s1;
+    static int ans = 1;
+    public static void work()
     {
-        for(int i = 2; i &lt;= n; i ++)
+        int j = 0, i = 0;
+        while(j &lt; s1.length())
         {
-            if(is[i] == false)
-                vis[cnt ++] = i;
-            for(int j = 0; j &lt; cnt &amp;&amp; i * vis[j] &lt;= n; j ++)
+            if(s.charAt(i) == s1.charAt(j))
+                j ++;
+            i ++;
+            if(i == s.length())
             {
-                is[i * vis[j]] = true;
-                if(i % vis[j] == 0)
-                    break;
+                i = 0;
+                ans ++;
             }
         }
         return;
     }
     public static void main(String[] args) {
         Scanner inScanner = new Scanner(System.in);
-        n = inScanner.nextLong();
-        for(long i = 2; i * i &lt;= n; i ++)
-        {
-            while(n % (i * i) == 0)
-                n /= i * i;
-        }
-
+        s = new StringBuilder(inScanner.next());
+        s1 = new StringBuilder(inScanner.next());
         inScanner.close();
-        System.out.println(n);
+        work();
+        System.out.println(ans);
     }
 }
-/*
-3 3
-0 3
-1 2
-0 2
-*/
 </code></pre>
 
                 
@@ -568,7 +552,7 @@ public class Main
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/03/07/wan-quan-ping-fang-shu/">http://aspire-zero.github.io/2022/03/07/wan-quan-ping-fang-shu/</a>
+                    <a href="http://aspire-zero.github.io/2022/03/16/fang-yang-dan-mei-you-wan-quan-fang-yang/">http://aspire-zero.github.io/2022/03/16/fang-yang-dan-mei-you-wan-quan-fang-yang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -606,16 +590,8 @@ public class Main
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%9F%83%E6%B0%8F%E7%AD%9B/">
-                                    <span class="chip bg-color">埃氏筛</span>
+                                <a href="/tags/JAVA-%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">-JAVA -算法</span>
                                 </a>
                             
                         </div>
@@ -660,7 +636,7 @@ public class Main
         repo: 'aspire-zero.github.io',
         owner: 'aspire-zero',
         admin: ["aspire-zero"],
-        id: '2022-03-07T18-23-42',
+        id: '2022-03-16T19-04-17',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -686,17 +662,18 @@ public class Main
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/03/16/ni-zhi-dao-ni-de-abc-ma/">
+                <a href="/2022/03/16/fang-yang-dan-mei-you-wan-quan-fang-yang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/73.jpg" class="responsive-img" alt="你知道你的ABC吗">
+                        <img src="/medias/featureimages/38.jpg" class="responsive-img" alt="放养但没有完全放养">
                         
-                        <span class="card-title">你知道你的ABC吗</span>
+                        <span class="card-title">放养但没有完全放养</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -706,9 +683,9 @@ public class Main
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -721,6 +698,7 @@ public class Main
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -739,13 +717,13 @@ public class Main
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/05/zui-shao-fa-ma/">
+                <a href="/2022/03/16/ni-zhi-dao-ni-de-abc-ma/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="最少砝码">
+                        <img src="/medias/featureimages/73.jpg" class="responsive-img" alt="你知道你的ABC吗">
                         
-                        <span class="card-title">最少砝码</span>
+                        <span class="card-title">你知道你的ABC吗</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -756,14 +734,14 @@ public class Main
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="post-category">
-                                    蓝桥杯
+                            <a href="/categories/JAVA/" class="post-category">
+                                    JAVA
                                 </a>
                             
                             
@@ -773,12 +751,8 @@ public class Main
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/JAVA-%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">-JAVA -算法</span>
                     </a>
                     
                 </div>

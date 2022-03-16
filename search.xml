@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>放养但没有完全放养</title>
+      <link href="2022/03/16/fang-yang-dan-mei-you-wan-quan-fang-yang/"/>
+      <url>2022/03/16/fang-yang-dan-mei-you-wan-quan-fang-yang/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a href="https://www.acwing.com/problem/content/3361/">3358. 放养但没有完全放养 - AcWing题库</a></p><p>一个鲜为人知的事实是，奶牛拥有自己的文字：「牛文」。</p><p>牛文由 $26$ 个字母 <code>a</code> 到 <code>z</code> 组成，但是当奶牛说牛文时，可能与我们所熟悉的 <code>abcdefghijklmnopqrstuvwxyz</code> 不同，她会按某种特定的顺序排列字母。</p><p>为了打发时间，奶牛 Bessie 在反复哼唱牛文字母歌，而 Farmer John 好奇她唱了多少遍。</p><p>给定一个小写字母组成的字符串，为 Farmer John 听到 Bessie 唱的字母，计算 Bessie 至少唱了几遍完整的牛文字母歌，使得 Farmer John 能够听到给定的字符串。</p><p>Farmer John 并不始终注意 Bessie 所唱的内容，所以他可能会漏听 Bessie 唱过的一些字母。</p><p>给定的字符串仅包含他记得他所听到的字母。</p><h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入的第一行包含 $26$ 个小写字母，为<code>a</code>到<code>z</code>的牛文字母表顺序。</p><p>下一行包含一个小写字母组成的字符串，为 Farmer John 听到 Bessie 唱的字母。</p><h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出 Bessie 所唱的完整的牛文字母歌的最小次数。</p><h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>字符串的长度不小于 $1$ 且不大于 $1000$。</p><h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><pre><code>abcdefghijklmnopqrstuvwxyzmood</code></pre><h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><pre><code>3</code></pre><h4 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h4><p>在这个样例中，牛文字母表与日常的字母表的排列一致。</p><p>Bessie 至少唱了三遍牛文字母歌。</p><p>有可能 Bessie 只唱了三遍牛文字母歌，而 Farmer John 听到了以下被标记为大写的字母。</p><pre><code>abcdefghijklMnOpqrstuvwxyzabcdefghijklmnOpqrstuvwxyzabcDefghijklmnopqrstuvwxyz</code></pre><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>这道理没什么可说的，就是进行遍历两个字符串就行了。</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;public class Main{    static StringBuilder s;    static StringBuilder s1;    static int ans = 1;    public static void work()    {        int j = 0, i = 0;        while(j &lt; s1.length())        {            if(s.charAt(i) == s1.charAt(j))                j ++;            i ++;            if(i == s.length())            {                i = 0;                ans ++;            }        }        return;    }    public static void main(String[] args) {        Scanner inScanner = new Scanner(System.in);        s = new StringBuilder(inScanner.next());        s1 = new StringBuilder(inScanner.next());        inScanner.close();        work();        System.out.println(ans);    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JAVA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -JAVA -算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>你知道你的ABC吗</title>
+      <link href="2022/03/16/ni-zhi-dao-ni-de-abc-ma/"/>
+      <url>2022/03/16/ni-zhi-dao-ni-de-abc-ma/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a href="https://www.acwing.com/problem/content/3349/">3346. 你知道你的ABC吗 - AcWing题库</a></p><p>Farmer John 的奶牛正在 <code>mooZ</code> 视频会议平台上举行每日集会。</p><p>她们发明了一个简单的数字游戏，为会议增添一些乐趣。</p><p>Elsie 有三个正整数 A、B 和 C (A≤B≤C）。</p><p>这些数字是保密的，她不会直接透露给她的姐妹 Bessie。</p><p>她告诉 Bessie 七个范围在 $1…10^9$之间的整数（不一定各不相同），并宣称这是 A、B、C、A+B、B+C、C+A 和 A+B+C 的某种排列。</p><p>给定这七个整数，请帮助 Bessie 求出 A、B 和 C。</p><p>可以证明，答案是唯一的。</p><h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入一行，包含七个空格分隔的整数。</p><h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出 A、B和 C，用空格分隔。</p><h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>$1≤所有输入的整数≤10^9$1</p><h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><pre><code>2 2 11 4 9 7 9</code></pre><h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><pre><code>2 2 7</code></pre><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>核心的思想就是：</p><p>假设$a,b$都为正整数，那么$a&lt;a+b同时b&lt;a+b$</p><p>所以思路就出来了，只需要对于这七个数进行排序，然后最大的数减去最小的两个数结果为$N$，其中最小的两个数以及$N$一定是$A,B,C$,然后对于这三个数进行排序，就求出结果了($A&lt;=B&lt;=C$)</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;public class Main{    static int[] a = new int[10];    public static void main(String[] args) {        Scanner inScanner = new Scanner(System.in);        for(int i = 1; i &lt;= 7; i ++)            a[i] = inScanner.nextInt();        Arrays.sort(a, 1, 8);        System.out.printf("%d %d %d", a[1], a[2], a[7] - a[1] - a[2]);        inScanner.close();    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JAVA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -JAVA -算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>完全平方数</title>
       <link href="2022/03/07/wan-quan-ping-fang-shu/"/>
       <url>2022/03/07/wan-quan-ping-fang-shu/</url>
