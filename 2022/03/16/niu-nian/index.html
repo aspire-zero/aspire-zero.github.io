@@ -3,7 +3,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="救生员, Hexo,HTML,CSS">
+    <meta name="keywords" content="牛年, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>救生员 | 姜小白</title>
+    <title>牛年 | 姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/42.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">救生员</h1>
+                    <h1 class="description center-align post-title">牛年</h1>
                 </div>
             </div>
         </div>
@@ -422,8 +422,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/JAVA/">
+                                <span class="chip bg-color">JAVA</span>
                             </a>
                         
                     </div>
@@ -434,8 +438,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -447,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-04
+                    2022-03-16
                 </div>
                 
 
@@ -473,61 +477,80 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1752/">1750. 救生员 - AcWing题库</a></p>
-<p>农夫约翰为他的牛开设了一个游泳池，他认为这将帮助它们放松并产出更多的奶。</p>
-<p>为了确保安全，他雇佣了 N 头奶牛作为救生员，每头奶牛的工作班次都是一段连续的时间。</p>
-<p>为了简单起见，游泳池每天的开放时间从时刻 0 到时刻 1000。</p>
-<p>每个奶牛的工作班次都可以用两个整数来描述，它们分别表示该奶牛工作班次的开始时刻和结束时刻。</p>
-<p>例如，从时刻 t=4 开始工作并在时刻 t=7 结束工作的救生员，它的工作时间为三个时间单位（请注意，时间“段”两端的端点是时间轴上的“点”）。</p>
-<p>不幸的是，由于资金紧张问题，约翰不得不解雇一头奶牛。</p>
-<p>请问通过合理裁员，剩余救生员的工作班次仍然可以覆盖的最大时间有多长？</p>
-<p>一个时间间隔内如果存在至少一名救生员当值，那么这个时间间隔就认为是被覆盖的。</p>
+                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/3373/">3370. 牛年 - AcWing题库</a></p>
+<p>Farmer John 的奶牛们得知最近正在庆祝牛年的到来时十分兴奋。</p>
+<p>牛年总是奶牛们的最爱。</p>
+<p>我们知道，中国历法中每一年所对应的生肖遵循 $12$ 年的周期：<code>Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, Pig, Rat</code>（牛、虎、兔、龙、蛇、马、羊、猴、鸡、狗、猪、鼠），然后回到牛。</p>
+<p>奶牛 Bessie 自豪地说她是在许多年前的一个牛年出生的。</p>
+<p>她的朋友 Elsie 想要知道她与 Bessie 出生相差多少年，并且希望你能够通过查看农场上若干奶牛出生年份之间的关系来帮助她推算。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入的第一行包含一个整数 $N$。</p>
+<p>以下 $N$ 行每行包含一个 $8$ 个单词的短语，指定了两头奶牛的出生年份之间的关系，格式为 <code>Mildred born in previous Dragon year from Bessie</code>（Mildred 在 Bessie 出生的前一个龙年出生），或 <code>Mildred born in next Dragon year from Bessie</code>（Mildred 在 Bessie 出生的后一个龙年出生）。</p>
+<p>最后一个单词是农场上某一头奶牛的名字，为 “Bessie” 或一头已经在之前的输入中出现过的奶牛。</p>
+<p>第一个单词是农场上某一头奶牛的名字，不为 “Bessie” 且未在之前的输入中出现过。</p>
+<p>所有的奶牛名字不超过 $10$ 个字符，且仅包含字符 $a..z$ 或 $A..Z$。</p>
+<p>第 $5$ 个单词是上述十二生肖之一。</p>
+<p>第 $4$ 个单词是 <code>previous</code>（之前）或 <code>next</code>（之后）之一。</p>
+<p>例如，如果短语为 <code>Mildred born in previous Dragon year from Bessie</code>，则 Mildred 的出生年份为最为接近且严格处于 Bessie 的出生年份之前（不等于）的龙年。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出 Bessie 和 Elsie 的出生年份之间相差的年数。输入保证可以通过给定的信息求出结果。</p>
+<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>$1≤N≤100$</p>
+<h4 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h4><pre><code class="lang-html">4
+Mildred born in previous Dragon year from Bessie
+Gretta born in previous Monkey year from Mildred
+Elsie born in next Ox year from Gretta
+Paulina born in next Dog year from Bessie
+</code></pre>
+<h4 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h4><pre><code class="lang-html">12
+</code></pre>
+<h4 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h4><p>在以上的输入中，</p>
+<ul>
+<li>Elsie 在 Bessie 之前 $12$ 年出生。</li>
+<li>Mildred 在 Bessie 之前 $9$ 年出生。</li>
+<li>Gretta 在 Bessie 之前 $17$ 年出生。</li>
+<li>Paulina 在 Bessie 之后 $9$ 年出生。</li>
+</ul>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>设置Bessie起始的年份为0，然后进行有关的模拟，进行$+1$或者$-1$操作就行了，模型去遍历</p>
 <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;
-
-public class Main {
-    static int N = 100010;
-    static int n, ans = 0;
-    static boolean[] f = new boolean[1010];
-    static node[] a = new node[110];
+public class Main
+{
+    static int n;
+    static String a1, a2, a3, a4, a5, a6, a7, a8;
+    static String[] q = {"Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig", "Rat"};
+    static Map&lt;String, Integer&gt; ans = new TreeMap&lt;String, Integer&gt;();
     public static void main(String[] args) {
         Scanner inScanner = new Scanner(System.in);
         n = inScanner.nextInt();
-        for(int i = 0; i &lt; n; i ++)
-            a[i] = new node(inScanner.nextInt(), inScanner.nextInt());
-        for(int i = 0; i &lt; n; i ++)
+        ans.put("Bessie", 0);
+        for(int i = 1; i &lt;= n; i ++)
         {
-            Arrays.fill(f, false);
-            int sum = 0;
-            for(int j = 0; j &lt; n; j ++)
+            a1 = inScanner.next();
+            a2 = inScanner.next();
+            a3 = inScanner.next();
+            a4 = inScanner.next();
+            a5 = inScanner.next();
+            a6 = inScanner.next();
+            a7 = inScanner.next();
+            a8 = inScanner.next();
+            int k;
+            if(a4.equals("next"))
             {
-                if(i != j)
+                for(k = ans.getOrDefault(a8, 0) + 1;; k ++)
                 {
-                    int l = a[j].l;
-                    int r = a[j].r;
-                    while(l &lt; r)
-                    {
-                        if(!f[l])
-                        {
-                            f[l] = true;
-                            sum ++;
-                        }
-                        l ++;
-                    }
+                    if(q[(k + 12 * 50000) % 12].equals(a5))
+                        break;
                 }
             }
-            ans = sum &gt; ans ? sum : ans;
+            else 
+            {
+                for(k = ans.getOrDefault(a8, 0) - 1;; k --)
+                {
+                    if(q[(k + 12 * 50000) % 12].equals(a5))
+                        break;
+                }
+            }
+            ans.put(a1, k);
         }
-        System.out.println(ans);
         inScanner.close();
-    }
-}
-class node
-{
-    int l, r;
-    public node(int l, int r)
-    {
-        this.l = l;
-        this.r = r;
+        System.out.println(Math.abs(ans.get("Elsie") - ans.get("Bessie")));
     }
 }
 </code></pre>
@@ -557,7 +580,7 @@ class node
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/02/04/jiu-sheng-yuan/">http://aspire-zero.github.io/2022/02/04/jiu-sheng-yuan/</a>
+                    <a href="http://aspire-zero.github.io/2022/03/16/niu-nian/">http://aspire-zero.github.io/2022/03/16/niu-nian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -595,8 +618,12 @@ class node
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/JAVA/">
+                                    <span class="chip bg-color">JAVA</span>
                                 </a>
                             
                         </div>
@@ -641,7 +668,7 @@ class node
         repo: 'aspire-zero.github.io',
         owner: 'aspire-zero',
         admin: ["aspire-zero"],
-        id: '2022-02-04T11-48-19',
+        id: '2022-03-16T19-37-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -667,17 +694,18 @@ class node
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/02/05/ti-qiu/">
+                <a href="/2022/03/16/niu-nian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/79.jpg" class="responsive-img" alt="蹄球">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="牛年">
                         
-                        <span class="card-title">蹄球</span>
+                        <span class="card-title">牛年</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -687,26 +715,31 @@ class node
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/JAVA/">
+                        <span class="chip bg-color">JAVA</span>
                     </a>
                     
                 </div>
@@ -720,13 +753,13 @@ class node
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/03/niu-de-xi-pai/">
+                <a href="/2022/03/16/fang-yang-dan-mei-you-wan-quan-fang-yang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/62.jpg" class="responsive-img" alt="牛的洗牌">
+                        <img src="/medias/featureimages/38.jpg" class="responsive-img" alt="放养但没有完全放养">
                         
-                        <span class="card-title">牛的洗牌</span>
+                        <span class="card-title">放养但没有完全放养</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -737,14 +770,14 @@ class node
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/JAVA/" class="post-category">
+                                    JAVA
                                 </a>
                             
                             
@@ -754,8 +787,12 @@ class node
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/JAVA/">
+                        <span class="chip bg-color">JAVA</span>
                     </a>
                     
                 </div>
@@ -923,6 +960,13 @@ class node
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
     <footer class="page-footer bg-color">
