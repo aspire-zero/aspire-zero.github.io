@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>牛的学术圈I</title>
+      <link href="2022/03/17/niu-de-xue-zhu-quan-i/"/>
+      <url>2022/03/17/niu-de-xue-zhu-quan-i/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p><a href="https://www.acwing.com/problem/content/3748/">3745. 牛的学术圈 I - AcWing题库</a></p><p>由于对计算机科学的热爱，以及有朝一日成为 「Bessie 博士」的诱惑，奶牛 Bessie 开始攻读计算机科学博士学位。</p><p>经过一段时间的学术研究，她已经发表了 $N$ 篇论文，并且她的第 $i$ 篇论文得到了来自其他研究文献的 $c_i$ 次引用。</p><p>Bessie 听说学术成就可以用 $h$ 指数来衡量。</p><p>$h$ 指数等于使得研究员有至少 $h$ 篇引用次数不少于 $h$ 的论文的最大整数 $h$。</p><p>例如，如果一名研究员有 $4$ 篇论文，引用次数分别为 $(1,100,2,3)$，则 $h$ 指数为 $2$，然而若引用次数为 $(1,100,3,3)$ 则 $h$ 指数将会是 $3$。</p><p>为了提升她的 $h$ 指数，Bessie 计划写一篇综述，并引用一些她曾经写过的论文。</p><p>由于页数限制，她至多可以在这篇综述中引用 $L$ 篇论文，并且她只能引用每篇她的论文至多一次。</p><p>请帮助 Bessie 求出在写完这篇综述后她可以达到的最大 $h$ 指数。</p><p>注意 Bessie 的导师可能会告知她纯粹为了提升 $h$ 指数而写综述存在违反学术道德的嫌疑；我们不建议其他学者模仿 Bessie 的行为。</p><h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入的第一行包含 $N$ 和 $L$。</p><p>第二行包含 $N$ 个空格分隔的整数 $c_1,…,c_N$。</p><h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出写完综述后 Bessie 可以达到的最大 hh 指数。</p><h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>$1≤N≤10^5$,<br>$0≤c_i≤10^5$,<br>$0≤L≤10^5$</p><h4 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h4><pre><code>4 01 100 2 3</code></pre><h4 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h4><pre><code>2</code></pre><h4 id="样例1解释"><a href="#样例1解释" class="headerlink" title="样例1解释"></a>样例1解释</h4><p>Bessie 不能引用任何她曾经写过的论文。上文中提到，$(1,100,2,3)$ 的 $h$ 指数为 $2$。</p><h4 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h4><pre><code>4 11 100 2 3</code></pre><h4 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h4><pre><code>3</code></pre><p>如果 Bessie 引用她的第三篇论文，引用数会变为 $(1,100,3,3)$。上文中提到，这一引用数的 $h$ 指数为 $3$。</p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>核心就是至少$h$篇引用次数不少于$h$的论文的最大整数$h$，求的结果为$h$</p><p>所以进行有关的枚举,$ans$表示枚举的数</p><p>$c[i]$表示引用次数为$i$的论文的篇数</p><p>$sum$表示满足$h=ans$的文章数量</p><p>所以$sum + min(c[i], l) &gt; ans$那么$ans$还可以进行进一步$+1$操作，否则当前的$ans$就是答案</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;public class Main{    static int n, l;    static int[] a = new int[100010];    static int[] c = new int[100010];    public static void main(String[] args) {        Scanner inScanner = new Scanner(System.in);        n = inScanner.nextInt();        l = inScanner.nextInt();        for(int i = 1; i &lt;= n; i ++)        {            c[i] = inScanner.nextInt();            a[c[i]] ++;        }        inScanner.close();        int ans = 0, sum = n;        for(;ans &lt; n; ans ++)        {            sum -= a[ans];            if(sum + Math.min(a[ans], l) &lt;= ans)                break;        }        System.out.println(ans);    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JAVA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>牛年</title>
       <link href="2022/03/16/niu-nian/"/>
       <url>2022/03/16/niu-nian/</url>
