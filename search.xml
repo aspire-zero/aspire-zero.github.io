@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Hexo操作</title>
+      <link href="2023/12/13/hexo-cao-zuo/"/>
+      <url>2023/12/13/hexo-cao-zuo/</url>
+      
+        <content type="html"><![CDATA[<h4 id="Hexo指令"><a href="#Hexo指令" class="headerlink" title="Hexo指令"></a>Hexo指令</h4><p>新建文件：<code>hexo new "name"</code></p><p>本地渲染：<code>hexo s</code></p><p>上传github：<code>hexo deploy -g</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>单词处理器</title>
       <link href="2022/03/19/dan-ci-chu-li-qi/"/>
       <url>2022/03/19/dan-ci-chu-li-qi/</url>
