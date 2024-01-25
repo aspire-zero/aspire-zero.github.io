@@ -481,17 +481,17 @@
 </tbody>
 </table>
 </div>
-<p><img src=".//Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录//1.png" alt=""></p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/1.png" alt=""></p>
 <p>安装过程网上很多，这里就不多介绍</p>
 <p>安装好之后，打开虚拟机，输入账号密码登录进去，如下：</p>
-<p><img src=".//Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录//2.png" alt=""></p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/2.png" alt=""></p>
 <h3 id="二、网络配置"><a href="#二、网络配置" class="headerlink" title="二、网络配置"></a>二、网络配置</h3><p>在主机Windows命令行中输入<code>ipconfig /all</code>,记下IPv4地址，子网掩码、DNS服务器</p>
 <p>注意虚拟机设置网络类型为<strong>桥接网络</strong></p>
 <p>回到虚拟机、输入指令<code>ifconfig -a</code>查看网络信息，我这里是enp0s3</p>
-<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/hexo\hexo\test\source\_posts\Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录\3.png" alt=""></p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/3.png" alt=""></p>
 <p>输入指令<code>cd /etc/netplan</code>, 然后<code>ls</code> （Centos与ubuntu有点不一样，可以自行上网查询, 如果ubuntu没找到这个文件，可能版本不一样）</p>
-<p><img src=".//Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录//image-20240125153152814.png" alt=""></p>
-<pre><code>network:
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/image-20240125153152814.png" alt=""></p>
+<pre><code class="lang-javascript">network:
   version: 2
   ethernets:
     eth0:
@@ -500,9 +500,11 @@
       gateway4: *.*.*.* #填写宿主机的网关
       nameservers:
               addresses: [*.*.*.*,*.*.*.*] #填写宿主机的DNS
-</code></pre><p>切记，如果你是在校园网环境下，可能配置不成功，原因有的校园网需要认证。</p>
-<pre><code>sudo netplan --debug apply
-</code></pre><p>运行上面指令，重新启动网络，这样就能ping通主机、外网。</p>
+</code></pre>
+<p>切记，如果你是在校园网环境下，可能配置不成功，原因有的校园网需要认证。</p>
+<pre><code class="lang-bash">sudo netplan --debug apply
+</code></pre>
+<p>运行上面指令，重新启动网络，这样就能ping通主机、外网。</p>
 <p>可以设置优先ipv4</p>
 <p><code>vim /etc/gai.conf</code></p>
 <p>把其中<code>precedence ::ffff:0:0/96 100</code>取消注释,这样就优先ipv4</p>
@@ -516,29 +518,30 @@
 <h3 id="四、多台虚拟机连通"><a href="#四、多台虚拟机连通" class="headerlink" title="四、多台虚拟机连通"></a>四、多台虚拟机连通</h3><p>首先，两台虚拟机都打开，检查两天机器是否ping通</p>
 <p>但是我们也可以通过主机名进行连接，比较直观</p>
 <p>在hadoop1虚拟机上输入指令<code>vim /etc/hosts</code>，设置ip对应主机名<code>172.20.10.9 hadoop2</code>，同样在hadoop2也做这样处理</p>
-<p><img src="\\Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录\\uTools_1706173872837.png" alt=""></p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/uTools_1706173872837.png" alt=""></p>
 <p>输入指令<code>ssh hadoop2</code>,首次登录需要确认和密码，然后<code>exit</code>退出返回hadoop1</p>
 <p><img src="\\Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录\\image-20240125171459315.png" alt="image-20240125171459315"></p>
 <p>如果可能是root用户，可能没有权限，编辑 /etc/ssh/sshd_config文件</p>
-<pre><code>找到PermitRootLogin，注释掉这一行
+<pre><code class="lang-javascript">找到PermitRootLogin，注释掉这一行
 
 添加PermitRootLogin yes，保存，退出
-</code></pre><p>介绍一下双向免密登录</p>
+</code></pre>
+<p>介绍一下双向免密登录</p>
 <p>在hadoop1虚拟机通过指令生成<code>.ssh</code>文件夹，生成密钥，将公钥通过<code>scp</code>指令远程拷贝到hadoop2虚拟机的<code>.ssh</code>文件夹中（拷贝前，hadoop2也需要产生<code>.ssh</code>文件夹）</p>
 <p>之后，将hadoop1的公钥通过<code>cat</code>指令写道<code>authorized_keys</code>文件中，hadoop2同理</p>
 <p>首先,hadoop1输入指令<code>ssh-keygen -t rsa</code>，产生<code>.ssh</code>文件夹，连续按三下回车，采用默认设置</p>
 <p>，同理对hadoop2也这么处理。</p>
-<p><img src="\\Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录\\image-20240125172345579.png" alt=""></p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/image-20240125172345579.png" alt=""></p>
 <p>回到虚拟机hadoop1，输入指令<code>cd /hadoop1/.ssh</code>(就是我自己用户产生的密钥，返回的你产生密钥的用户的.ssh文件，假设你是hadoop2用户，那就是<code>cd /hadoop2/.ssh</code>)，然后<code>ls</code>查看目录</p>
 <p>拷贝前我们先重命名，与其他虚拟机的密钥区分开,指令<code>cp id_rsa.pub id_rsa_1.pub</code></p>
-<p><img src="\\Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录\\image-20240125174738811.png" alt=""></p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/image-20240125174738811.png" alt=""></p>
 <p>输入指令<code>scp id_rsa_1.pub hadoop1@hadoop2:/home/hadoop1/.ssh/</code>，首次输入<code>yes</code>和密码，注意以你的用户为准</p>
-<p><img src="\\Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录\\image-20240125175006942.png" alt="image-20240125175006942"></p>
+<p><img src="\Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录\image-20240125175006942.png" alt=""></p>
 <p><img src="\\Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录\\image-20240125175034198.png" alt="image-20240125175034198"></p>
 <p>同理，把hadoop2产生的公钥，传送到hadoop1虚拟机上。</p>
 <p>接着分别在两台虚拟机上将两个公钥写到<code>authorized_keys</code>文件中。</p>
 <p>分别输入指令<code>cat id_rsa_1.pub id_rsa_2.pub &gt;&gt; authorized_keys</code></p>
-<p><img src="\\Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录\\image-20240125175504945.png" alt="image-20240125175504945"></p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/image-20240125175504945.png" alt=""></p>
 <p>这样就完成了双向免密登录！</p>
 
                 
