@@ -3,7 +3,7 @@
   
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="奶牛棒球, Hexo,HTML,CSS">
+    <meta name="keywords" content="Hadoop集群搭建(二)JDK和Hadoop, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>奶牛棒球 | 昕昕的姜小白</title>
+    <title>Hadoop集群搭建(二)JDK和Hadoop | 昕昕的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -299,12 +299,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/70.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/43.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">奶牛棒球</h1>
+                    <h1 class="description center-align post-title">Hadoop集群搭建(二)JDK和Hadoop</h1>
                 </div>
             </div>
         </div>
@@ -418,25 +418,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Java/" class="post-category">
-                                Java
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -445,7 +432,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-21
+                    2024-01-25
                 </div>
                 
 
@@ -471,49 +458,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/1947/">1945. 奶牛棒球 - AcWing题库</a></p>
-<p>农夫约翰的 <code>N</code> 头奶牛排成一排，每头奶牛都位于数轴中的不同位置上。</p>
-<p>它们正在练习投掷棒球。</p>
-<p>农夫约翰观看时，观察到一组三头牛 <code>(X,Y,Z)</code> 完成了两次成功的投掷。</p>
-<p>牛 XX 把球扔给她右边的牛 <code>Y</code>，然后牛 <code>Y</code> 把球扔给她右边的牛 <code>Z</code>。</p>
-<p>约翰指出，第二次投掷的距离不少于第一次投掷的距离，也不超过第一次投掷的距离的两倍。</p>
-<p>请计算共有多少组牛 <code>(X,Y,Z)</code> 可能是约翰所看到的。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code class="lang-java">import java.util.*;
-
-
-public class Main {
-    static int n;
-    static int[] a = new int[1010];
-    public static void main(String[] args) {
-        Scanner inScanner = new Scanner(System.in);
-        n = inScanner.nextInt();
-        for(int i = 1; i &lt;= n; i ++)
-            a[i] = inScanner.nextInt();
-        int ans = 0;
-        inScanner.close();
-        Arrays.sort(a, 1, n + 1);
-        for(int i = 1; i + 1 &lt; n; i ++)
-        {
-            for(int j = i + 1, l = j + 1, r = j + 1; j &lt; n; j ++)
-            {
-                int t = a[j] - a[i];
-                while(l &lt;= n &amp;&amp; t &gt; a[l] - a[j]) l ++;
-                while(r &lt;= n &amp;&amp; a[r] - a[j] &lt;= 2 * t) r ++;
-                ans += r - l;
-            }
-        }
-        System.out.println(ans);
-    }
-}
-/*
-5
-3
-1
-10
-7
-4
-*/
+                <h3 id="一、使用ftp工具"><a href="#一、使用ftp工具" class="headerlink" title="一、使用ftp工具"></a>一、使用ftp工具</h3><p>使用xftp工具建立windows和linux的联系，还有jdk和hadoop压缩包，能传文件.</p>
+<p>xftp连接为：<a target="_blank" rel="noopener" href="https://www.xshell.com/zh/free-for-home-school/">家庭/学校免费 - NetSarang Website (xshell.com)</a></p>
+<p>然后具体传文件过程，可以看这个连接，然后就在<code>sw</code>文件夹中存在jdk和hadoop压缩包。</p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/image-20240125195009050.png" alt="image-20240125195009050"></p>
+<h3 id="解压配置文件"><a href="#解压配置文件" class="headerlink" title="解压配置文件"></a>解压配置文件</h3><p>上传完，我们就能在虚拟机里面看到已经有了这两个压缩包</p>
+<p>分别对两个压缩包解压，指令<code>tar -zxvf 压缩包名称</code></p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/image-20240125195425540.png" alt="image-20240125195425540"></p>
+<p>接下来就是配置环境，输入指令<code>vim ~/.bashrc</code> 添加环境变量,在这个文件的开头位置，添加如下几行内容：</p>
+<pre><code class="lang-javascript">export JAVA_HOME=/sw/jdk
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+#配置Hadoop环境变量
+export HADOOP_PATH=/sw/hadoop
+export PATH=${PATH}:${HADOOP_PATH}/bin:${HADOOP_PATH}/sbin
 </code></pre>
+<p>保存.bashrc文件并退出vim编辑器。然后，继续执行如下命令让.bashrc文件的配置立即生效：</p>
+<pre><code class="lang-javascript">source ~/.bashrc
+</code></pre>
+<p>使用命令<code>java -version</code>查看是否安装成功：</p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/image-20240125200150080.png" alt="image-20240125200150080"></p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/image-20240125200520256.png" alt="image-20240125200520256"></p>
+<p>配置完成</p>
 
                 
             </div>
@@ -540,7 +507,7 @@ public class Main {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2022/01/21/nai-niu-bang-qiu/">http://aspire-zero.github.io/2022/01/21/nai-niu-bang-qiu/</a>
+                    <a href="http://aspire-zero.github.io/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/">http://aspire-zero.github.io/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -577,11 +544,7 @@ public class Main {
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -624,7 +587,7 @@ public class Main {
         repo: 'aspire-zero.github.io',
         owner: 'aspire-zero',
         admin: ["aspire-zero"],
-        id: '2022-01-21T11-12-51',
+        id: '2024-01-25T19-17-42',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -650,66 +613,18 @@ public class Main {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/21/jing-zi-tian-di/">
+                <a href="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/52.jpg" class="responsive-img" alt="镜子田地">
+                        <img src="/medias/featureimages/43.jpg" class="responsive-img" alt="Hadoop集群搭建(二)JDK和Hadoop">
                         
-                        <span class="card-title">镜子田地</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-21
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/01/20/shan-shuo/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="闪烁">
-                        
-                        <span class="card-title">闪烁</span>
+                        <span class="card-title">Hadoop集群搭建(二)JDK和Hadoop</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -720,27 +635,53 @@ public class Main {
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-25
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            姜小白
                             
                         </span>
                     </div>
                 </div>
+
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/66.jpg" class="responsive-img" alt="Hadoop集群搭建(一)---多台虚拟机的相互连通和远程登录">
+                        
+                        <span class="card-title">Hadoop集群搭建(一)---多台虚拟机的相互连通和远程登录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            姜小白
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>

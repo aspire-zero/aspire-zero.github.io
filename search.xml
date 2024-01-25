@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Hadoop集群搭建(二)JDK和Hadoop</title>
+      <link href="2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/"/>
+      <url>2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、使用ftp工具"><a href="#一、使用ftp工具" class="headerlink" title="一、使用ftp工具"></a>一、使用ftp工具</h3><p>使用xftp工具建立windows和linux的联系，还有jdk和hadoop压缩包，能传文件.</p><p>xftp连接为：<a href="https://www.xshell.com/zh/free-for-home-school/">家庭/学校免费 - NetSarang Website (xshell.com)</a></p><p>然后具体传文件过程，可以看这个连接，然后就在<code>sw</code>文件夹中存在jdk和hadoop压缩包。</p><p><img src="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/image-20240125195009050.png" alt="image-20240125195009050"></p><h3 id="解压配置文件"><a href="#解压配置文件" class="headerlink" title="解压配置文件"></a>解压配置文件</h3><p>上传完，我们就能在虚拟机里面看到已经有了这两个压缩包</p><p>分别对两个压缩包解压，指令<code>tar -zxvf 压缩包名称</code></p><p><img src="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/image-20240125195425540.png" alt="image-20240125195425540"></p><p>接下来就是配置环境，输入指令<code>vim ~/.bashrc</code> 添加环境变量,在这个文件的开头位置，添加如下几行内容：</p><pre><code class="lang-javascript">export JAVA_HOME=/sw/jdkexport JRE_HOME=${JAVA_HOME}/jreexport CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/libexport PATH=${JAVA_HOME}/bin:$PATH#配置Hadoop环境变量export HADOOP_PATH=/sw/hadoopexport PATH=${PATH}:${HADOOP_PATH}/bin:${HADOOP_PATH}/sbin</code></pre><p>保存.bashrc文件并退出vim编辑器。然后，继续执行如下命令让.bashrc文件的配置立即生效：</p><pre><code class="lang-javascript">source ~/.bashrc</code></pre><p>使用命令<code>java -version</code>查看是否安装成功：</p><p><img src="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/image-20240125200150080.png" alt="image-20240125200150080"></p><p><img src="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/image-20240125200520256.png" alt="image-20240125200520256"></p><p>配置完成</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hadoop集群搭建(一)---多台虚拟机的相互连通和远程登录</title>
       <link href="2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/"/>
       <url>2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/</url>
