@@ -520,7 +520,7 @@
 <p>在hadoop1虚拟机上输入指令<code>vim /etc/hosts</code>，设置ip对应主机名<code>172.20.10.9 hadoop2</code>，同样在hadoop2也做这样处理</p>
 <p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/uTools_1706173872837.png" alt=""></p>
 <p>输入指令<code>ssh hadoop2</code>,首次登录需要确认和密码，然后<code>exit</code>退出返回hadoop1</p>
-<p><img src="\\Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录\\image-20240125171459315.png" alt="image-20240125171459315"></p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/image-20240125171459315.png" alt="image-20240125171459315"></p>
 <p>如果可能是root用户，可能没有权限，编辑 /etc/ssh/sshd_config文件</p>
 <pre><code class="lang-javascript">找到PermitRootLogin，注释掉这一行
 
@@ -536,8 +536,8 @@
 <p>拷贝前我们先重命名，与其他虚拟机的密钥区分开,指令<code>cp id_rsa.pub id_rsa_1.pub</code></p>
 <p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/image-20240125174738811.png" alt=""></p>
 <p>输入指令<code>scp id_rsa_1.pub hadoop1@hadoop2:/home/hadoop1/.ssh/</code>，首次输入<code>yes</code>和密码，注意以你的用户为准</p>
-<p><img src="\Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录\image-20240125175006942.png" alt=""></p>
-<p><img src="\\Hadoop集群搭建-一-多台虚拟机的相互连通和远程登录\\image-20240125175034198.png" alt="image-20240125175034198"></p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/image-20240125175006942.png" alt=""></p>
+<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/image-20240125175034198.png" alt=""></p>
 <p>同理，把hadoop2产生的公钥，传送到hadoop1虚拟机上。</p>
 <p>接着分别在两台虚拟机上将两个公钥写到<code>authorized_keys</code>文件中。</p>
 <p>分别输入指令<code>cat id_rsa_1.pub id_rsa_2.pub &gt;&gt; authorized_keys</code></p>
