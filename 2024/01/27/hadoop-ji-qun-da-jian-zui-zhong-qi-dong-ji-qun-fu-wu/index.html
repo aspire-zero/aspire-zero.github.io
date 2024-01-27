@@ -3,7 +3,7 @@
   
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Hadoop集群搭建(二)JDK和Hadoop, Hexo,HTML,CSS">
+    <meta name="keywords" content="Hadoop集群搭建(最终)启动集群服务, Hexo,HTML,CSS">
     <meta name="description" content="分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hadoop集群搭建(二)JDK和Hadoop | 昕昕的姜小白</title>
+    <title>Hadoop集群搭建(最终)启动集群服务 | 昕昕的姜小白</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -299,12 +299,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/43.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/36.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hadoop集群搭建(二)JDK和Hadoop</h1>
+                    <h1 class="description center-align post-title">Hadoop集群搭建(最终)启动集群服务</h1>
                 </div>
             </div>
         </div>
@@ -425,6 +425,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/hadoop/" class="post-category">
+                                hadoop
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -432,7 +441,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-01-25
+                    2024-01-27
                 </div>
                 
 
@@ -458,29 +467,149 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="一、使用ftp工具"><a href="#一、使用ftp工具" class="headerlink" title="一、使用ftp工具"></a>一、使用ftp工具</h3><p>使用xftp工具建立windows和linux的联系，还有jdk和hadoop压缩包，能传文件.</p>
-<p>xftp连接为：<a target="_blank" rel="noopener" href="https://www.xshell.com/zh/free-for-home-school/">家庭/学校免费 - NetSarang Website (xshell.com)</a></p>
-<p>然后具体传文件过程，可以看这个连接，然后就在<code>sw</code>文件夹中存在jdk和hadoop压缩包。</p>
-<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/image-20240125195009050.png" alt="image-20240125195009050"></p>
-<h3 id="解压配置文件"><a href="#解压配置文件" class="headerlink" title="解压配置文件"></a>解压配置文件</h3><p>上传完，我们就能在虚拟机里面看到已经有了这两个压缩包</p>
-<p>分别对两个压缩包解压，指令<code>tar -zxvf 压缩包名称</code></p>
-<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/image-20240125195425540.png" alt="image-20240125195425540"></p>
-<p>接下来就是配置环境，输入指令<code>vim ~/.bashrc</code> 添加环境变量,在这个文件的开头位置，添加如下几行内容：</p>
-<pre><code class="lang-javascript">export JAVA_HOME=/sw/jdk
-export JRE_HOME=${JAVA_HOME}/jre
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
-export PATH=${JAVA_HOME}/bin:$PATH
-#配置Hadoop环境变量
-export HADOOP_PATH=/sw/hadoop
-export PATH=${PATH}:${HADOOP_PATH}/bin:${HADOOP_PATH}/sbin
+                <h3 id="配置开始"><a href="#配置开始" class="headerlink" title="配置开始"></a>配置开始</h3><p>首先，确保虚拟机完成了网卡、主机名等配置，安装了jdk以及hadoop。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>ip地址</th>
+<th>主机名</th>
+<th>节点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>172.20.10.10</td>
+<td>hadoop1</td>
+<td>主节点</td>
+</tr>
+<tr>
+<td>172.20.10.9</td>
+<td>hadoop2</td>
+<td>子节点</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>下面的操作都是在<strong>主节点</strong>的操作：</p>
+<p><img src="/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/image-20240127160637341.png" alt></p>
+<p>然后，输入指令<code>cd /etc/hadoop</code></p>
+<p><img src="/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/image-20240127160814207.png" alt></p>
+<p>(1)修改core-site.xml文件</p>
+<pre><code class="lang-xml">&lt;configuration&gt;
+        &lt;property&gt;
+                &lt;!-- 指定namenode在hadoop1虚拟机上--&gt;
+                &lt;name&gt;fs.defaultFS&lt;/name&gt;
+                &lt;value&gt;hdfs://hadoop1:9000&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property&gt;
+                &lt;!--块大小--&gt;
+                &lt;name&gt;io.file.buffer.size&lt;/name&gt;
+                &lt;value&gt;131072&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property&gt;
+                &lt;!--hadoop临时目录--&gt;
+                &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+                &lt;value&gt;file:/usr/local/hadoop/tmp&lt;/value&gt;
+        &lt;/property&gt;
+&lt;/configuration&gt;
 </code></pre>
-<p>保存.bashrc文件并退出vim编辑器。然后，继续执行如下命令让.bashrc文件的配置立即生效：</p>
-<pre><code class="lang-javascript">source ~/.bashrc
+<p>(2)修改hdfs-site.xml</p>
+<pre><code class="lang-xml">&lt;configuration&gt;
+        &lt;property&gt;
+                &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
+                &lt;value&gt;file:/usr/local/hadoop/dfs/name&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property&gt;
+                &lt;name&gt;dfs.namenode.data.dir&lt;/name&gt;&lt;!--每个子节点路径不一样就行--&gt;
+                &lt;value&gt;file:/usr/local/hadoop/dfs/data&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property&gt;
+                &lt;!--指定Hdfs副本数量--&gt;
+                &lt;name&gt;dfs.replication&lt;/name&gt;
+                &lt;value&gt;2&lt;/value&gt;
+        &lt;/property&gt;
+&lt;/configuration&gt;
 </code></pre>
-<p>使用命令<code>java -version</code>查看是否安装成功：</p>
-<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/image-20240125200150080.png" alt="image-20240125200150080"></p>
-<p><img src="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/image-20240125200520256.png" alt="image-20240125200520256"></p>
-<p>配置完成</p>
+<p>(3)修改mapred-site.xml(复制mapred-site.xml.template,再修改文件名)</p>
+<p><code>cp mapred-site.xml.template  mapred-site.xml</code></p>
+<pre><code class="lang-xml">&lt;configuration&gt;
+        &lt;!--MR核心配置文件--&gt;
+        &lt;property&gt;
+                &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+                &lt;value&gt;yarn&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property&gt;
+                &lt;name&gt;mapreduce.jobhistory.address&lt;/name&gt;
+                &lt;value&gt;hadoop1:10020&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property&gt;
+                &lt;name&gt;mapreduce.jobhistory.webapp.address&lt;/name&gt;
+                &lt;value&gt;hadoop1:19888&lt;/value&gt;
+        &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>(4)修改yarn-site.xml</p>
+<pre><code class="lang-xml">&lt;configuration&gt;
+
+&lt;!-- Site specific YARN configuration properties --&gt;
+        &lt;property&gt;
+                &lt;name&gt;yarn.resourcemanager.address&lt;/name&gt;
+                &lt;value&gt;hadoop1:8032&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property&gt;
+                &lt;name&gt;yarn.resourcemanager.scheduler.address&lt;/name&gt;
+                &lt;value&gt;hadoop1:8030&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property&gt;
+                &lt;name&gt;yarn.resourcemanager.resource-tracker.address&lt;/name&gt;
+                &lt;value&gt;hadoop1:8031&lt;/value&gt;
+        &lt;/property&gt;
+
+&lt;/configuration&gt;
+</code></pre>
+<p>(5)修改masters文件，需要自己创建</p>
+<p>里面是主节点的信息</p>
+<pre><code class="lang-xml">hadoop1
+</code></pre>
+<p>(6)修改slaves文件</p>
+<p>里面是子节点</p>
+<pre><code>hadoop2
+</code></pre><p>(7)把这些拷贝到其他节点中</p>
+<pre><code>scp -r hadoop hadoop2:/sw/hadoop/etc/
+</code></pre><p><img src="/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/image-20240127163635318.png" alt></p>
+<p>(8)创建目录，就是你前面配置文件中的目录</p>
+<p><img src="/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/image-20240127163818070.png" alt></p>
+<p>(9)赋予权限</p>
+<pre><code class="lang-bash">sudo groupadd hadoop
+sudo useradd -g hadoop1 hadoop -s /bin/false
+sudo chown -R hadoop1:hadoop /usr/local/hadoop
+</code></pre>
+<p>将/usr/local拷贝到子节点</p>
+<pre><code class="lang-bash">scp -r /usr/local/hadoop hadoop2:/usr/local
+</code></pre>
+<p><img src="/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/image-20240127165514982.png" alt></p>
+<p>(10)配置变量，子节点</p>
+<p><code>vi ~/.bashrc</code></p>
+<p>在前面安装Hadoop已经配置了，所以这一步可以忽略，如果没有配置，请看前一节。</p>
+<p><img src="/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/image-20240127170049924.png" alt></p>
+<p>(11)格式化，主节点上</p>
+<p><code>hadoop namenode -format</code></p>
+<p><img src="/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/image-20240127170223651.png" alt></p>
+<p>(12)启动集群</p>
+<p><code>start-all.sh</code>一键启动所有集群，必须相互免密登录</p>
+<p>尽量使用下面指令</p>
+<pre><code>start-dfs.sh
+start-yarn.sh
+</code></pre><p>输入<code>jps</code>可以看节点信息</p>
+<p><img src="/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/image-20240127172521330.png" alt></p>
+<p>也可以windows上查看，</p>
+<pre><code>sudo ufw status#查看防火墙状态，如果是开启则关闭
+sudo ufw disable
+</code></pre><p>然后在windows输入主机ip：172.20.10.10:9870(HDFS文件系统)</p>
+<p><img src="/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/image-20240127185902853.png" alt></p>
+<p>172.20.10.10:8088(YARN服务)</p>
+<p><img src="/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/image-20240127173756069.png" alt></p>
 
                 
             </div>
@@ -507,7 +636,7 @@ export PATH=${PATH}:${HADOOP_PATH}/bin:${HADOOP_PATH}/sbin
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://aspire-zero.github.io/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/">http://aspire-zero.github.io/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/</a>
+                    <a href="http://aspire-zero.github.io/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/">http://aspire-zero.github.io/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -587,7 +716,7 @@ export PATH=${PATH}:${HADOOP_PATH}/bin:${HADOOP_PATH}/sbin
         repo: 'aspire-zero.github.io',
         owner: 'aspire-zero',
         admin: ["aspire-zero"],
-        id: '2024-01-25T19-17-42',
+        id: '2024-01-27T16-01-36',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -613,9 +742,10 @@ export PATH=${PATH}:${HADOOP_PATH}/bin:${HADOOP_PATH}/sbin
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/01/27/hadoop-ji-qun-da-jian-zui-zhong-qi-dong-ji-qun-fu-wu/">
                     <div class="card-image">
@@ -633,9 +763,9 @@ export PATH=${PATH}:${HADOOP_PATH}/bin:${HADOOP_PATH}/sbin
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-01-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -648,6 +778,7 @@ export PATH=${PATH}:${HADOOP_PATH}/bin:${HADOOP_PATH}/sbin
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -658,13 +789,13 @@ export PATH=${PATH}:${HADOOP_PATH}/bin:${HADOOP_PATH}/sbin
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/01/25/hadoop-ji-qun-da-jian-yi-duo-tai-xu-ni-ji-de-xiang-hu-lian-tong-he-yuan-cheng-deng-lu/">
+                <a href="/2024/01/25/hadoop-ji-qun-da-jian-er-jdk-he-hadoop/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/66.jpg" class="responsive-img" alt="Hadoop集群搭建(一)---多台虚拟机的相互连通和远程登录">
+                        <img src="/medias/featureimages/43.jpg" class="responsive-img" alt="Hadoop集群搭建(二)JDK和Hadoop">
                         
-                        <span class="card-title">Hadoop集群搭建(一)---多台虚拟机的相互连通和远程登录</span>
+                        <span class="card-title">Hadoop集群搭建(二)JDK和Hadoop</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
